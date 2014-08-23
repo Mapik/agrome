@@ -12,8 +12,48 @@
   </head>
 
   <body>
-
-    <%= yield %>
+    
+    <!-- HEADER SECTION -->
+    <div class="contain-to-grid header-section">
+     
+        <!-- TOPBAR SECTION -->
+        <nav class="top-bar important-class" data-topbar>
+          <!-- TITLE AREA & LOGO -->
+          <ul class="title-area">
+              <li class="name">
+                  <%= image_tag "logo_large.jpg" %>
+                  <!--<h1>AGROMAT</h1>-->
+              </li>
+              <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+          </ul> <!-- END TITLE AREA & LOGO -->
+ 
+          <!-- MENU ITEMS -->
+          <section class="top-bar-section">
+              <ul class="right">
+                  <li class="active"><a href="#">Start</a></li>
+                  <li><a href="#">Funkcje</a></li>
+                  <li><a href="#">Zespół</a></li>
+                  <li><a href="#" class="button">Zarejestruj się</a></li>
+                  <li><a href="#" class="button signin">Zaloguj się</a></li>
+              </ul>
+          </section> <!-- END MENU ITEMS -->
+        </nav> <!-- END TOPBAR SECTION -->
+    </div> <!-- END HEADER SECTION
+ 
+    <!-- CONTENT FILL WHEN SCROLL = 0 -->
+    <div class="header-fill"></div>
+ 
+      <%= yield %>
+ 
+    <!-- FOOTER SECTION -->
+    <div class="footer-section">
+        <div class="row">
+            <div class="small-12 medium-12 large-12 columns">
+                <p>&copy; Copyright 2014</p>
+            </div>
+        </div>
+    </div> <!-- END FOOTER SECTION -->
+    
     <%= javascript_include_tag "application" %>
   </body>
 </html>
