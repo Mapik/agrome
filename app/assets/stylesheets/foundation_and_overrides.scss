@@ -882,16 +882,16 @@ $button-round: $global-rounded;
 // 19. Orbit
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// $include-html-orbit-classes: $include-html-classes;
+$include-html-orbit-classes: $include-html-classes;
 
 // We use these to control the caption styles
 // $orbit-container-bg: none;
-// $orbit-caption-bg: rgba(51,51,51, 0.8);
+$orbit-caption-bg: rgba(51,51,51, 0.3);
 // $orbit-caption-font-color: $white;
-// $orbit-caption-font-size: rem-calc(14);
+$orbit-caption-font-size: rem-calc(35);//rem-calc(14);
 // $orbit-caption-position: "bottom"; // Supported values: "bottom", "under"
-// $orbit-caption-padding: rem-calc(10 14);
-// $orbit-caption-height: auto;
+$orbit-caption-padding: rem-calc(10 14);
+$orbit-caption-height: 300px;
 
 // We use these to control the left/right nav styles
 // $orbit-nav-bg: transparent;
@@ -1372,7 +1372,7 @@ $button-round: $global-rounded;
 $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-$topbar-bg-color: #F6F6F6;
+$topbar-bg-color: #FFFFFF;//#F6F6F6;
 $topbar-bg: $topbar-bg-color;
 
 // Height and margin
@@ -1402,9 +1402,9 @@ $topbar-link-color-active-hover: #43AC6A;//$white;
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
 // $topbar-link-bg-color-hover: $charcoal;
-$topbar-link-bg-hover: #F6F6F6;//#272727;
-$topbar-link-bg-active: #F6F6F6;//$primary-color;
-$topbar-link-bg-active-hover: #F6F6F6;//scale-color($primary-color, $lightness: -14%);
+$topbar-link-bg-hover: #FFFFFF;//#F6F6F6;//#272727;
+$topbar-link-bg-active: #FFFFFF;//#F6F6F6;//$primary-color;
+$topbar-link-bg-active-hover: #FFFFFF;//#F6F6F6;//scale-color($primary-color, $lightness: -14%);
 // $topbar-link-font-family: $body-font-family;
 // $topbar-link-text-transform: none;
 // $topbar-link-padding: $topbar-height / 3;
@@ -1449,7 +1449,7 @@ $topbar-menu-icon-color: #777777;//$white;
 // $include-legacy-visibility-classes: true;
 // $include-accessibility-classes: true;
 
-$primary-color: #43AC6A;
+$primary-color: #149B00;
  
 /*
    HEADER SECTION
@@ -1469,7 +1469,7 @@ $primary-color: #43AC6A;
 // FILL USED FOR HEADER
 .header-fill {
     background: #fff;
-    height: 135px;											//odległość między menu a content
+    height: 80px;											//odległość między menu a content
     .tablet-mobile-logo img {
         padding-top: 30px;
     }
@@ -1528,7 +1528,9 @@ p {
     transition: all 0.5s ease 0.1s;
     // LOGO ADJUSTMENT
     ul.title-area img {
-        margin: -10px 0 0 0;
+        margin: -5px 0 0 0;
+        max-width:100%;
+        max-height:100%;
     }
     .top-bar-section ul {
         //background: none;
@@ -1586,7 +1588,10 @@ p {
     
 }
 
-/*================================================================*/
+/*================================================================
+Ustawienia menu mobilnego
+*/
+
 
 @media only screen and (max-width: 1024px) {
  
@@ -1626,6 +1631,8 @@ p {
                     text-transform: uppercase;
                     text-align: left;
                     border: 0px;
+                    height: 50px;
+                    line-height: 25px;
                     &:hover {
                         background: $primary-color;
                         color: #fff;
@@ -1685,4 +1692,35 @@ p {
  
 }
 
+//Formatowanie tekstu w orbit caption:
+
+.orbit-caption-header{
+	font-size: 150%;
+	color:#FFFFFF;
+	padding: 0,0,200px,0;
+}
+
+//Położenie orbit caption:
+
+.orbit-container .orbit-slides-container li .orbit-caption{
+	position: absolute;
+    bottom: 100px;
+    left: 50px;
+}
+
+//Formatowanie i położenie orbit caption na stronie mobilnej:
+
+@media only screen and (max-width: 1024px) {
+	.orbit-caption-header{
+	font-size: 50%;
+	color:#FFFFFF;
+	}
+	.orbit-container .orbit-slides-container li .orbit-caption{
+	position: absolute;
+    bottom: 10px;
+}
+
+
+
+}
 @import 'foundation';
