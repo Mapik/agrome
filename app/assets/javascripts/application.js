@@ -16,6 +16,6 @@
 //= require turbolinks
 //= require_tree .
 
-//= require init
+
 
 $(function(){ $(document).foundation(); });
