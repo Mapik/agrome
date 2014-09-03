@@ -1458,7 +1458,7 @@ $topbar-menu-icon-color: #777777;//$white;
 }
 
 .header-fill-within-app{
-    height: 45px;											//odległość między menu a content
+    height: 90px;											//odległość między menu a content
 }
 
 /*========================================================================== */
@@ -1569,6 +1569,22 @@ $topbar-menu-icon-color: #777777;//$white;
 	}
 }
 
+/*========================================================================== */
+// Second top bar
+
+.main-header{
+	.fixed{
+		.second-top-bar-in-app{
+			.top-bar{
+				.top-bar-section{
+					margin-left: 10px;
+				}
+			}
+		}
+	}
+}
+
+
 /*================================================================
 //Formatowanie tekstu w orbit caption:
 */
@@ -1634,59 +1650,60 @@ $topbar-menu-icon-color: #777777;//$white;
 /*================================================================*/
 // Formatowanie contentu
 
-.content-section {
-    .main-content {
-        //margin-top: 35px;
-    }
-}
+.main-site-formatting{
+	.content-section {
+	    .main-content {
+	        //margin-top: 35px;
+	    }
+	}
 
-.content-section{
-	.main-content{
-		.columns{
-			.main-content-title{
-				text-align: center
-			}
-			.main-content-subtitle{
-				text-align: center;
-				color: #149B00;
+	.content-section{
+		.main-content{
+			.columns{
+				.main-content-title{
+					text-align: center
+				}
+				.main-content-subtitle{
+					text-align: center;
+					color: #149B00;
+				}
 			}
 		}
 	}
-}
 
-.basic-info-section{
-	margin-top: 40px;
-}
+	.basic-info-section{
+		margin-top: 40px;
+	}
 
-.function-title-section{
-	background: #149B00;
-	.main-content{
-		.columns{
-			.function-title{
-				text-align: center;
+	.function-title-section{
+		background: #149B00;
+		.main-content{
+			.columns{
+				.function-title{
+					text-align: center;
+					color: #FFFFFF;
+					margin-top: 50px;
+				}
+			}
+		}
+	}
+
+
+	.function-section{
+		$primary-color: #149B00;
+
+		background: $primary-color;
+		.row{
+			.columns{
 				color: #FFFFFF;
 				margin-top: 50px;
+				h3{
+					color: #FFFFFF;	
+				}
 			}
 		}
 	}
 }
-
-
-.function-section{
-	$primary-color: #149B00;
-
-	background: $primary-color;
-	.row{
-		.columns{
-			color: #FFFFFF;
-			margin-top: 50px;
-			h3{
-				color: #FFFFFF;	
-			}
-		}
-	}
-}
-
 
 /*================================================================
 Ustawienia dla urządzeń mobilnych

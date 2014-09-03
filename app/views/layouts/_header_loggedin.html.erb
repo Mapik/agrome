@@ -9,7 +9,7 @@
             <!-- TITLE AREA & LOGO -->
             <ul class="title-area">
                 <li class="name">
-                    <%= image_tag "Logo/logo.png" %>
+                    <%= link_to image_tag("Logo/logo.png", alt: "AGROME"), root_path  %>
                     <!--<h1>AGROMAT</h1>-->
                 </li>
                 <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
@@ -27,5 +27,68 @@
           </nav> <!-- END TOPBAR SECTION -->
       
     </div> <!-- END HEADER SECTION -->
+
+    <div class="second-top-bar-in-app">
+      <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+          <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+
+        <section class="top-bar-section">
+          <!-- Left Nav Section -->
+          <ul class="left">
+            <li>
+              <a a href="#" class="button">DODAJ ZADANIE +</a>
+            </li>
+            <li class="has-dropdown">
+              <a href="#">PRZEGLĄDAJ</a>
+              <ul class="dropdown">
+                <li><a href="#">Strona główna</a></li>
+                <li><a href="#">Rolnicy</a></li>
+                <li><a href="#">Kalendarz</a></li>
+                <li><a href="#">Budżet</a></li>
+                <li><a href="#">Ceny</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="left">
+            <li class="has-dropdown">
+              <a href="#">ZARZĄDZAJ</a>
+              <ul class="dropdown">
+                <li><a href="#">Uprawy</a></li>
+                <li><a href="#">Inwentarz</a></li>
+                <li><a href="#">Zapasy</a></li>
+                <li><a href="#">Wyposażenie</a></li>
+                <li><a href="#">Budynki</a></li>
+              </ul>
+            </li>
+            <li class="has-dropdown">
+              <a href="#">WSPÓŁPRACUJ</a>
+              <ul class="dropdown">
+                <li><a href="#">Zakupy grupowe</a></li>
+                <li><a href="#">Eko Zakupy</a></li>
+                <li><a href="#">Weterynarze</a></li>
+                <li><a href="#">Usługi</a></li>
+                <li><a href="#">Skrzynka pocztowa</a></li>
+              </ul>
+            </li>
+            <li class="has-dropdown">
+              <a href="#">FINANSUJ</a>
+              <ul class="dropdown">
+                <li><a href="#">Lokaty</a></li>
+                <li><a href="#">Kredyty</a></li>
+                <li><a href="#">Ubezpieczenia</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">ANALIZY</a>
+            </li>
+          </ul>
+          
+        </section>
+      </nav>
+    </div>
   </div> <!-- END FIXED -->
 </div> <!-- END MAIN HEADER -->
+<div class="header-fill-within-app"></div>

@@ -15,7 +15,8 @@
 
     <!-- HEADER SECTION -->
         
-      <%= if yield(:title)=='Home'
+      
+      <%= if yield(:title)=='Home'||'Rejestracja'
             render  'layouts/header'
           else
             render 'layouts/header_loggedin'
@@ -33,9 +34,7 @@
 
     <!-- FOOTER SECTION -->
         
-      <%= if yield(:title)=='Home' 
-            render 'layouts/footer'
-          end%> 
+      <%= render 'layouts/footer' if yield(:title)=='Home'||'Rejestracja' %> 
 
     <!--END of FOOTER SECTION -->
 
