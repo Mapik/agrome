@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 	before_save { self.email = email.downcase }
+	
+
 	validates :name, presence: true, 
 					 length: { maximum: 50 },
 					 uniqueness: {case_sensitive: false}
@@ -13,6 +15,10 @@ class User < ActiveRecord::Base
 	validates :zipcode, presence: true, 
 						length: { minimum: 6 , maximum: 6 }, 
 						format: { with: VALID_ZIPCODE_REGEX }
+	
 	has_secure_password
 	validates :password, length: { minimum: 6 }
+
+	validates :user_type_id, presence: true
+
 end

@@ -1,3 +1,59 @@
 <% provide(:title, 'Rejestracja') %>
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+
+<div class="signup-form">
+	<div class="row">
+		
+		<div class="title">
+			<div class="text-center">
+				<div class="title-text"><h2>ZAREJESTRUJ SIĘ W AGROME!</h2></div>
+			</div> <!-- END OF text-center -->
+		</div> <!-- END OF title -->
+
+		<div class="small-6 large-6 large-centered columns" >
+			<div class="form">
+				<%= form_for(@user) do |f| %>
+					<%= render 'shared/error_messages' %>
+
+					<%= f.label :name, "Nazwa użytkownika:" %>
+					<%= f.text_field :name %>
+
+					<%= f.label :email, "Adres mailowy:" %>
+					<%= f.text_field :email %>
+
+					<%= f.label :zipcode, "Kod pocztowy:" %>
+					<%= f.text_field :zipcode %>
+
+					<%= f.label :password, "Hasło:" %>
+					<%= f.password_field :password %>
+
+					<%= f.label :password_confirmation, "Powtórz hasło:" %>
+					<%= f.password_field :password_confirmation %>
+
+					<h4>Zarejestruj jako:</h4>
+					
+					<div align = "center">
+						<div class="small-2 large-4 columns">
+						<%= f.label :user_type_id, "Rolnik" %>
+						<%= f.radio_button :user_type_id, 1 %> 
+						</div>
+						
+						<div class="small-2 large-4 columns">
+						<%= f.label :user_type_id, "Konsument" %>
+						<%= f.radio_button :user_type_id, 2 %> 
+						</div>
+
+						<div class="small-2 large-4 columns">
+						<%= f.label :user_type_id, "Pośrednik" %>
+						<%= f.radio_button :user_type_id, 3 %>
+						</div>
+					</div>
+
+					<div class="submit">	
+						<%= f.submit "Utwórz darmowe konto", class: "button" %>
+					</div>
+
+				<% end %>
+			</div> <!-- END OF form -->
+		</div> <!-- END OF small-6 large-6 large-centered columns -->
+	</div> <!-- END OF row -->
+</div> <!-- END OF signup-form -->

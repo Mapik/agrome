@@ -114,7 +114,7 @@ $include-html-global-classes: $include-html-classes;
 // $last-child-float: $opposite-direction;
 
 // We use these as default colors throughout
-// $primary-color: #008CBA;
+$primary-color: #008CBA;
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
@@ -453,13 +453,13 @@ $xxlarge-range: (120.063em, 99999999em);
 // $button-font-align: center;
 
 // We use these to control various hover effects.
-// $button-function-factor: -20%;
+$button-function-factor: -20%;
 
 // We use these to control button border and hover styles.
 $button-border-width: 1px;//0px;
 // $button-border-style: solid;
-// $button-bg-color: $primary-color;
-// $button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
+$button-bg-color: $primary-color;
+$button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
 // $button-border-color: $button-bg-hover;
 // $secondary-button-bg-hover: scale-color($secondary-color, $lightness: $button-function-factor);
 // $secondary-button-border-color: $secondary-button-bg-hover;
@@ -1690,9 +1690,9 @@ $topbar-menu-icon-color: #777777;//$white;
 
 
 	.function-section{
-		$primary-color: #149B00;
+		//$primary-color: #149B00;
 
-		background: $primary-color;
+		background: #149B00;//$primary-color;
 		.row{
 			.columns{
 				color: #FFFFFF;
@@ -1852,6 +1852,63 @@ FOOTER SECTION
         color: #fff;
         margin-top: 50px;
     }
+}
+
+
+/*
+LOGI
+========================================================================== */
+.panel{
+	margin-top: 45px;	
+	.debug_dump {
+	  clear: both;
+	  float: left;
+	  width: 100%;
+	}
+}
+
+/*
+SIGNUP
+========================================================================== */
+
+.signup-form{
+	margin-top: 5px;
+	.row{
+		.title{
+			margin-bottom: 5px;
+		}
+		.columns{
+			.form{
+				.new_user{
+					.submit{
+						.button{
+							//$primary-color: #149b00;
+							$button-bg-color: #149b00;//$primary-color;
+							$button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
+							//margin-top: 10px;
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/*
+LOGGED IN MAIN PAGE
+========================================================================== */
+.loggedin-main-page{
+	.full-width{
+		.kolumna-jeden{
+			.columns{
+				.panel{
+					//padding-top: 0px;
+					//margin-top: 0px;
+				}
+			}
+		}
+	}
 }
 
 

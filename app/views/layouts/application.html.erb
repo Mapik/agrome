@@ -30,13 +30,20 @@
     <!-- HEADER SECTION -->
         
       
-      <%= if yield(:title)=='Home'||'Rejestracja'
+      <%= if yield(:title)=='Home'||yield(:title)=='Rejestracja'
             render  'layouts/header'
           else
             render 'layouts/header_loggedin'
           end%> 
 
     <!--END of HEADER SECTION -->
+
+
+    <!-- FLASH SECTION -->
+    <% flash.each do |message_type, message| %>
+        <%= content_tag(:div, @user.name + ": " + message, class: "alert-box success") %>
+      <% end %>
+    <!--END OF FLASH SECTION -->
 
 
     <!-- CONTENT SECTION -->
@@ -48,11 +55,25 @@
 
     <!-- FOOTER SECTION -->
         
-      <%= render 'layouts/footer' if yield(:title)=='Home'||'Rejestracja' %> 
+      <%= render 'layouts/footer' if yield(:title)=='Home'||yield(:title)=='Rejestracja' %> 
 
     <!--END of FOOTER SECTION -->
 
-    
+<div class="row">
+  <div class="contain-to-grid">
+    <div class="small-12 large-12 columns">
+
+      <div class="panel clearfix">    
+          <%= debug(params) if Rails.env.development? %>
+      </div>
+
+      <div class="panel clearfix">    
+          <%= debug(@user) if Rails.env.development? %>
+      </div>
+    </div>
+  </div>
+</div>
+
     <%= javascript_include_tag "application" %>
   </body>
 </html>

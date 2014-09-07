@@ -1,0 +1,40 @@
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert-box alert">
+      Formularz zawiera <%= @user.errors.count  %>
+      <%= error_num = @user.errors.count 
+      
+      
+      case 
+      when error_num == 1               then "błąd:"
+      when error_num.between?(10,20)    then "błądów:"
+      when error_num % 10 >= 5          then "błędów:"
+      when error_num % 10 >= 2          then "błędy:"
+      when error_num % 10 >= 0          then "błądów:"
+      else "błąd:"
+      end %>
+    </div>
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= 
+      case msg 
+      when "Email has already been taken" then "Email jest już zarejestrowany."
+      when "Name has already been taken" then "Nazwa użytkownika jest już w użyciu."
+      when "Name can't be blank" then "Nazwa użytkownika nie może być pusta."
+      when "Email can't be blank" then "Email nie może być pusty."
+      when "Email is invalid" then "Email ma nieprawidłowy format. Poprawny format email to: example@example.com."
+      when "Zipcode can't be blank" then "Kod pocztowy nie może być pusty."
+      when "Zipcode is too short (minimum is 6 characters)" then "Za krótki kod pocztowy. Poprawny format to 00-001."
+      when "Zipcode is invalid" then "Kod pocztowy ma niepoprawny format. Poprawny format to 00-001."
+      when "Password can't be blank" then "Hasło nie może być puste."
+      when "Password is too short (minimum is 6 characters)" then "Hasło jest za krókie. Hasło powinno zawierać minimum 6 znaków."
+      when "User type can't be blank" then "Należy wybrać typ użytkownika."
+      else msg
+      end
+
+
+        %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
