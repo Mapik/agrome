@@ -1,7 +1,7 @@
 <!-- HEADER SECTION -->
 <div class="main-header">
   <div class="fixed">
-    <div class="contain-to-grid header-section">
+    <div class="full-width header-section">
       <!-- TOPBAR SECTION -->
       
         
@@ -18,12 +18,12 @@
             <!-- MENU ITEMS -->
             <section class="top-bar-section">
                 <ul class="right">
-                    <li><%= link_to "O Agrome", about_path %></li>
+                    <li><%= link_to "O Agrome", root_path(:anchor => "o-agrome") %></li>
                     <li><%= link_to "Funkcje", help_path %></li>
                     <li><a href="#">Zespół</a></li>
                     <li><a href="#">Kontakt</a></li>
                     <li><%= link_to "Zarejestruj się", signup_path, class: "button" %></li>
-                    <li><a href="#" class="signin button">Zaloguj się</a></li>
+                    <li><%= link_to "Zaloguj się", login_path, class: "signin button" %></li>
                 </ul>
             </section> <!-- END MENU ITEMS -->
           </nav> <!-- END TOPBAR SECTION -->

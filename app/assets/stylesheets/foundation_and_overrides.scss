@@ -1705,6 +1705,148 @@ $topbar-menu-icon-color: #777777;//$white;
 	}
 }
 
+
+/*
+FOOTER SECTION
+========================================================================== */
+ 
+.footer-section {
+    background: #333;
+    min-height: 100px;
+    p {
+        color: #fff;
+        margin-top: 50px;
+    }
+}
+
+
+/*
+LOGI
+========================================================================== */
+.panel{
+	margin-top: 45px;	
+	.debug_dump {
+	  clear: both;
+	  float: left;
+	  width: 100%;
+	}
+}
+
+/*
+SIGNUP
+========================================================================== */
+
+.signup-form{
+	margin-top: 5px;
+
+
+	.row{
+		.title{
+			margin-top: 1rem;
+			margin-bottom: 2rem;
+			margin-left: 7rem;
+			margin-right: 1rem;
+		}
+		.columns{
+			.form{
+				margin-left: 7rem;
+				margin-right: 3rem;
+				.new_user{
+					.radio-button{
+						margin-top: 20px;
+						margin-bottom: 20px;
+					}
+					.submit{
+						.button{
+							//$primary-color: #149b00;
+							$button-bg-color: #149b00;//$primary-color;
+							$button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
+							margin-top: 10px;
+							width: 100%;
+						}
+					}
+					.regulamin p{
+						margin-top: 10px;
+						margin-bottom: 10px;
+					}
+				}
+			}
+
+			.panel{
+				margin-top: 0.5rem;
+				margin-right: 2rem;
+				padding-bottom: 0rem;
+				.foto img{
+					margin-top: 0px;
+					//max-width:60%;
+		        	//max-height:60%;
+		        	-webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,0.4); 			//?? - pewnie cień
+    				box-shadow: 0 0 5px 0 rgba(0,0,0,0.4);					//?? - pewnie cień
+		        	
+				}
+				.opis p{
+					margin-top: 0.5rem;
+					margin-bottom: 1rem;
+						
+				}
+
+				.final-title h3{
+					margin-top: 1rem;
+					//font-style: italic;
+
+				}
+			}
+		}
+	}
+}
+
+.tooltip{
+	margin-top: 1.7rem;
+}
+
+/*
+SIGNIN
+========================================================================== */
+
+.signin-form{
+	margin-top: 5px;
+	.row{
+		.title{
+			margin-top: 1rem;
+			margin-bottom: 2rem;
+		}
+		.columns{
+			.form{
+				.submit{
+					.button{
+						margin-top: 20px;
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+/*
+LOGGED IN MAIN PAGE
+========================================================================== */
+.loggedin-main-page{
+	.full-width{
+		.kolumna-jeden{
+			.columns{
+				.panel{
+					//padding-top: 0px;
+					//margin-top: 0px;
+				}
+			}
+		}
+	}
+}
+
+
 /*================================================================
 Ustawienia dla urządzeń mobilnych
 */
@@ -1839,72 +1981,34 @@ Ustawienia dla urządzeń mobilnych
 			}
 		} 
 	}
-}
 
-/*
-FOOTER SECTION
-========================================================================== */
- 
-.footer-section {
-    background: #333;
-    min-height: 100px;
-    p {
-        color: #fff;
-        margin-top: 50px;
-    }
-}
+	/*--------------
+	Ustawienia Signup
+	--------------*/
 
-
-/*
-LOGI
-========================================================================== */
-.panel{
-	margin-top: 45px;	
-	.debug_dump {
-	  clear: both;
-	  float: left;
-	  width: 100%;
-	}
-}
-
-/*
-SIGNUP
-========================================================================== */
-
-.signup-form{
+	.signup-form{
 	margin-top: 5px;
-	.row{
-		.title{
-			margin-bottom: 5px;
-		}
-		.columns{
-			.form{
-				.new_user{
-					.submit{
-						.button{
-							//$primary-color: #149b00;
-							$button-bg-color: #149b00;//$primary-color;
-							$button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
-							//margin-top: 10px;
-							width: 100%;
+		.row{
+			.title{
+				margin-bottom: 15px;
+				margin-left: 0rem;
+				margin-right: 0rem;
+			}
+			.columns{
+				.form{
+					margin-left: 0rem;
+					margin-right: 0rem;
+					.new_user{
+						.submit{
+							.button{
+								//$primary-color: #149b00;
+								$button-bg-color: #149b00;//$primary-color;
+								$button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
+								//margin-top: 10px;
+								width: 100%;
+							}
 						}
 					}
-				}
-			}
-		}
-	}
-}
-
-/*
-LOGGED IN MAIN PAGE
-========================================================================== */
-.loggedin-main-page{
-	.full-width{
-		.kolumna-jeden{
-			.columns{
-				.panel{
-					//padding-top: 0px;
-					//margin-top: 0px;
 				}
 			}
 		}

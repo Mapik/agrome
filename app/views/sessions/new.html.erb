@@ -1,0 +1,38 @@
+<% provide(:title, 'Zaloguj się') %>
+
+<div class="signin-form">
+	<div class="row">
+		<div class="small-12 large-7 large-centered columns" >
+			<div class="text-center">
+				<div class="title">
+						<div class="title-text"><h2>ZALOGUJ SIĘ W AGROME!</h2></div>
+				</div> <!-- END OF title -->
+
+				<!-- FLASH SECTION -->
+			    <div class="flash">
+			    <% flash.each do |message_type, message| %>
+			        <%= content_tag(:div, message, class: "alert-box #{message_type}") %>
+			      <% end %>
+			    </div>
+			    <!--END OF FLASH SECTION -->
+
+			</div>
+
+			<div class="form">
+				<%= form_for(:session, url: sessions_path) do |f| %>
+
+			      <%= f.text_field :email, placeholder: "Twój Email" %>
+
+			      <%= f.password_field :password, placeholder: "Hasło" %>
+			    
+			    <div class="submit">
+			      <%= f.submit "Zaloguj się", class: "button" %>
+			    </div> <!-- END OF submit -->
+			    
+			    <% end %>
+			</div> <!-- END OF form -->
+
+		</div> <!-- END OF small-12 large-6 columns -->
+	</div> <!-- END OF row -->
+</div> <!-- END OF signin-form -->
+

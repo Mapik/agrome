@@ -3,49 +3,57 @@
 <div class="signup-form">
 	<div class="row">
 		
-		<div class="title">
-			<div class="text-center">
-				<div class="title-text"><h2>ZAREJESTRUJ SIĘ W AGROME!</h2></div>
-			</div> <!-- END OF text-center -->
-		</div> <!-- END OF title -->
+		<div class="small-12 large-9 columns" >
 
-		<div class="small-6 large-6 large-centered columns" >
+			<div class="title">
+					<div class="title-text"><h2>ZAREJESTRUJ SIĘ W AGROME!</h2></div>
+			</div> <!-- END OF title -->
+
 			<div class="form">
 				<%= form_for(@user) do |f| %>
 					<%= render 'shared/error_messages' %>
 
-					<%= f.label :name, "Nazwa użytkownika:" %>
-					<%= f.text_field :name %>
+					<span data-tooltip aria-haspopup="true" class="has-tip" title="Twoja nazwa użytkownika. Maksymalnie 50 znaków.">
+					<%= f.text_field :name, placeholder: "Nazwa użytkownika" %>
+					</span>
 
-					<%= f.label :email, "Adres mailowy:" %>
-					<%= f.text_field :email %>
+					<span data-tooltip aria-haspopup="true" class="has-tip" title="Adres mailowy - poprawny format adres@domen.com">
+					<%= f.text_field :email, placeholder: "Adres mailowy"%>
+					</span>
 
-					<%= f.label :zipcode, "Kod pocztowy:" %>
-					<%= f.text_field :zipcode %>
+					<span data-tooltip aria-haspopup="true" class="has-tip" title="Kod pocztowy w formacie 00-001">
+					<%= f.text_field :zipcode, placeholder: "Kod pocztowy" %>
+					</span>
 
-					<%= f.label :password, "Hasło:" %>
-					<%= f.password_field :password %>
+					<span data-tooltip aria-haspopup="true" class="has-tip" title="Hasło powinno zawierać przynajmniej 6 znaków.">
+					<%= f.password_field :password, placeholder: "Hasło" %>
+					</span>
 
-					<%= f.label :password_confirmation, "Powtórz hasło:" %>
-					<%= f.password_field :password_confirmation %>
+					<%= f.password_field :password_confirmation, placeholder: "Powtórz hasło" %>
 
-					<h4>Zarejestruj jako:</h4>
-					
-					<div align = "center">
-						<div class="small-2 large-4 columns">
-						<%= f.label :user_type_id, "Rolnik" %>
-						<%= f.radio_button :user_type_id, 1 %> 
-						</div>
+					<div class="radio-button">
+						<h4>Zarejestruj jako:</h4>
 						
-						<div class="small-2 large-4 columns">
-						<%= f.label :user_type_id, "Konsument" %>
-						<%= f.radio_button :user_type_id, 2 %> 
-						</div>
+						<div align = "center">
+							<div class="small-4 large-4 columns">
+							<%= f.label :user_type_id, "Rolnik" %>
+							<%= f.radio_button :user_type_id, 1 %> 
+							</div>
+							
+							<div class="small-4 large-4 columns">
+							<%= f.label :user_type_id, "Konsument" %>
+							<%= f.radio_button :user_type_id, 2 %> 
+							</div>
 
-						<div class="small-2 large-4 columns">
-						<%= f.label :user_type_id, "Pośrednik" %>
-						<%= f.radio_button :user_type_id, 3 %>
+							<div class="small-4 large-4 columns">
+							<%= f.label :user_type_id, "Pośrednik" %>
+							<%= f.radio_button :user_type_id, 3 %>
+							</div>
 						</div>
+					</div>
+
+					<div class="regulamin">
+						<p>Tworząc konto akceptujesz <a href=#>regulamin</a> aplikacji.</p>
 					</div>
 
 					<div class="submit">	
@@ -54,6 +62,40 @@
 
 				<% end %>
 			</div> <!-- END OF form -->
-		</div> <!-- END OF small-6 large-6 large-centered columns -->
+		</div> <!-- END OF small-6 large-6 columns -->
+		
+
+		<div class="hide-for-small large-3 columns">
+			<div class="panel" align="center">
+				
+				<div class="foto">
+					<%= image_tag "small_slide_f5.jpg" %>
+				</div>
+				<div class="opis">
+					<p>UPRAWY</p>
+				</div>
+				
+				<div class="foto">
+					<%= image_tag "small_slide_c4.jpg" %>
+				</div>
+				<div class="opis">
+					<p>INWENTARZ</p>
+				</div>
+				
+				<div class="foto">
+					<%= image_tag "small_slide_m2.jpg" %>
+				</div>
+				<div class="opis">
+					<p>SPRZĘT</p>
+				</div>
+
+				<div class="final-title">
+					<h3 class="subheader">Wszystko w jednym miejscu!</h3>
+				</div>
+				
+			</div> <!-- END OF panel-boczny -->
+		</div> <!-- END OF small-6 large-6 columns -->
+
 	</div> <!-- END OF row -->
 </div> <!-- END OF signup-form -->
+

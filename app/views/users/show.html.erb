@@ -1,4 +1,13 @@
 <% provide(:title, 'Profil') %>
+
+<!-- FLASH SECTION -->
+<div class="flash">
+<% flash.each do |message_type, message| %>
+    <%= content_tag(:div, @user.name + ": " + message, class: "alert-box #{message_type}") %>
+  <% end %>
+</div>
+<!--END OF FLASH SECTION -->
+
 <div class="loggedin-main-page">
 	<div class="full-width">
 		
