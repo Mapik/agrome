@@ -19,7 +19,8 @@ group :test do
   gem 'factory_girl_rails', '4.2.1'
 end
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
+#gem 'sass-rails', '~> 4.0.3'
+gem 'sass', '~> 3.4.4'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
