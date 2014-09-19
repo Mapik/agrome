@@ -1759,8 +1759,8 @@ SIGNUP
 					.submit{
 						.button{
 							//$primary-color: #149b00;
-							//$button-bg-color: #149b00;//$primary-color;
-							//$button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
+							$button-bg-color: #149b00;//$primary-color;
+							$button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
 							margin-top: 10px;
 							width: 100%;
 						}
