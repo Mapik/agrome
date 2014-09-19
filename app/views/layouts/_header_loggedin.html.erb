@@ -20,7 +20,7 @@
                 <ul class="right">
                     <li><%= link_to "Mój Profil", user_path(current_user) %></li>
                     <li><a href="#">Pomoc</a></li>
-                    <li><a href="#">Ustawienia</a></li>
+                    <li><%= link_to "Ustawienia", edit_user_path(current_user) %></li>
                     <li><%= link_to "#{@current_user.name}: wyloguj się", logout_path, method: "delete", class: "signin button" %></li>
                 </ul>
             </section> <!-- END MENU ITEMS -->

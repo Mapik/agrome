@@ -1744,13 +1744,13 @@ SIGNUP
 		.title{
 			margin-top: 1rem;
 			margin-bottom: 2rem;
-			margin-left: 7rem;
-			margin-right: 1rem;
+			margin-left: 4rem;
+			margin-right: 4rem;
 		}
 		.columns{
 			.form{
-				margin-left: 7rem;
-				margin-right: 3rem;
+				margin-left: 4rem;
+				margin-right: 4rem;
 				.new_user{
 					.radio-button{
 						margin-top: 20px;
@@ -1846,6 +1846,25 @@ LOGGED IN MAIN PAGE
 	}
 }
 
+/*
+EDIT FORM
+========================================================================== */
+
+.edit-form_for{
+  margin-top: 1rem;
+  .row{
+    .tabs{
+      a{
+        border: 1px solid #d4d4d4;
+      }
+      .active a{
+        border: 1px solid #149b00;
+        //background-color: #149b00;
+        //color: #FFFFFF;
+      }
+    }
+  }
+}
 
 /*================================================================
 Ustawienia dla urządzeń mobilnych

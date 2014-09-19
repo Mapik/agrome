@@ -1,0 +1,142 @@
+<% provide(:title, "Edytuj Profil") %>
+
+<!-- FLASH SECTION -->
+<div class="flash">
+<% flash.each do |message_type, message| %>
+    <%= content_tag(:div, @user.name + ": " + message, class: "alert-box #{message_type}") %>
+  <% end %>
+</div>
+<!--END OF FLASH SECTION -->
+
+<div class="edit-form_for" >
+
+	<div class="row">
+		<div class="title-text">
+			<h2>Edytuj profil:</h2>
+		</div> <!-- END OF title-text -->
+
+			<dl class="tabs" data-tab>
+				<dd class="active"><a href="#panel1">Informacje podstawowe</a></dd>
+				<dd><a href="#panel2">Informacje dodatkowe</a></dd>
+				<dd><a href="#panel3">Hasło</a></dd>
+				<dd><a href="#panel4">Zdjęcie</a></dd>
+			</dl>
+
+			<div class="large-6">
+				<div class="tabs-content">
+
+					<div class="content active" id="panel1">
+						<%= form_for(@user) do |f| %>
+							<%= render 'shared/error_messages' %>
+							<%= f.label :name, "Nazwa użytkownika" %>
+							<span data-tooltip aria-haspopup="true" class="has-tip" title="Twoja 
+							nazwa użytkownika. Maksymalnie 50 znaków.">
+							<%= f.text_field :name, placeholder: "Nazwa użytkownika" %>
+							</span>
+							<%= f.label :email, "Email" %>
+							<span data-tooltip aria-haspopup="true" class="has-tip" title="Adres 
+							mailowy - poprawny format adres@domen.com">
+							<%= f.text_field :email, placeholder: "Adres mailowy"%>
+							</span>
+							<div class="edit-submit">
+								<%= f.submit "Zapisz zmiany", class: "button" %>
+							</div>
+					</div><!-- END OF panel1-->
+
+					<div class="content" id="panel2">
+							<%= render 'shared/error_messages' %>
+
+							<%= f.label :zipcode, "Kod pocztowy" %>
+							<span data-tooltip aria-haspopup="true" class="has-tip" title="Kod 
+							pocztowy w formacie 00-001">
+							<%= f.text_field :zipcode%>
+							</span>
+
+
+							<div class="radio-button">
+								<%= f.label :main_production_type, "Rodzaj produkcji:" %>
+
+								<div align = "center">
+									<div class="small-4 large-4 columns">
+										<%= f.label :main_production_type, "Zwierzęca" %>
+										<%= f.radio_button :main_production_type, 1 %> 
+									</div>
+
+									<div class="small-4 large-4 columns">
+										<%= f.label :main_production_type, "Roślinna" %>
+										<%= f.radio_button :main_production_type, 2 %> 
+									</div>
+
+									<div class="small-4 large-4 columns">
+										<%= f.label :main_production_type, "Mieszana" %>
+										<%= f.radio_button :main_production_type, 3 %>
+									</div>
+								</div>
+							</div><!-- END OF radio-button-->
+
+							<%= f.label :number_of_hectars, "Ilość hektarów" %>
+							<%= f.text_field :number_of_hectars %>
+
+							<%= f.label :main_cultivation, "Dominująca uprawa" %>
+							<%= f.text_field :main_cultivation %>
+
+							<%= f.label :main_herd, "Główne stado" %>
+							<%= f.text_field :main_herd %>
+
+							<%= f.label :size_of_herd, "Wielkość stada" %>
+							<%= f.text_field :size_of_herd %>
+
+							<%= f.label :date_of_birth, "Data urodzenia" %>
+							<%= f.text_field :date_of_birth %>
+
+							<div class="radio-button">
+								<%= f.label :gender, "Płeć:" %>
+
+								<div align = "center">
+									<div class="small-4 large-6 columns">
+										<%= f.label :gender, "Kobieta" %>
+										<%= f.radio_button :gender, 1 %> 
+									</div>
+
+									<div class="small-4 large-6 columns">
+										<%= f.label :gender, "Mężczyzna" %>
+										<%= f.radio_button :gender, 2 %> 
+									</div>
+								</div>
+							</div>
+
+
+							<div class="edit-submit">
+								<%= f.submit "Zapisz zmiany", class: "button" %>
+							</div>
+
+					</div><!-- END OF panel2-->
+
+
+					<div class="content" id="panel3">
+							<%= f.label :password, "Hasło" %>
+							<%= f.password_field :password %>
+
+							<%= f.label :password_confirmation, "Powtórz hasło" %>
+							<%= f.password_field :password_confirmation %>
+
+						<div class="edit-submit">
+							<%= f.submit "Zapisz zmiany", class: "button" %>
+						</div>
+
+						<% end %>
+					</div><!-- END OF panel3-->
+
+					
+					<div class="content" id="panel4">
+						<div class="gravatar_edit hide-for-small">
+						<%= gravatar_for @user %>
+						<a href="http://gravatar.com/emails">zmień zdjęcie</a>
+						</div> <!-- END OF gravatar_edit -->
+					</div>
+				</div> <!-- END OF tabs-content -->
+			</div> <!-- END OF large-6-->
+
+
+	</div> <!-- END OF row -->
+</div> <!-- END OF edit-form_for -->
