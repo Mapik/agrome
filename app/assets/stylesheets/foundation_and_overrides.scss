@@ -114,36 +114,36 @@ $include-html-global-classes: $include-html-classes;
 // $last-child-float: $opposite-direction;
 
 // We use these as default colors throughout
-// $primary-color: #008CBA;
+$primary-color: #008CBA;
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
 // $warning-color: #f08a24;
 // $info-color: #a0d3e8;
 
-// $white       : #FFFFFF;
-// $ghost       : #FAFAFA;
-// $snow        : #F9F9F9;
-// $vapor       : #F6F6F6;
-// $white-smoke : #F5F5F5;
-// $silver      : #EFEFEF;
-// $smoke       : #EEEEEE;
-// $gainsboro   : #DDDDDD;
-// $iron        : #CCCCCC;
-// $base        : #AAAAAA;
-// $aluminum    : #999999;
-// $jumbo       : #888888;
-// $monsoon     : #777777;
-// $steel       : #666666;
-// $charcoal    : #555555;
-// $tuatara     : #444444;
-// $oil         : #333333;
-// $jet         : #222222;
-// $black       : #000000;
+$white       : #FFFFFF;
+$ghost       : #FAFAFA;
+$snow        : #F9F9F9;
+$vapor       : #F6F6F6;
+$white-smoke : #F5F5F5;
+$silver      : #EFEFEF;
+$smoke       : #EEEEEE;
+$gainsboro   : #DDDDDD;
+$iron        : #CCCCCC;
+$base        : #AAAAAA;
+$aluminum    : #999999;
+$jumbo       : #888888;
+$monsoon     : #777777;
+$steel       : #666666;
+$charcoal    : #555555;
+$tuatara     : #444444;
+$oil         : #333333;
+$jet         : #222222;
+$black       : #000000;
 
 // We use these to make sure border radius matches unless we want it different.
-// $global-radius: 3px;
-// $global-rounded: 1000px;
+$global-radius: 3px;
+$global-rounded: 1000px;
 
 // We use these to control inset shadow shiny edges and depressions.
 // $shiny-edge-size: 0 1px 0;
@@ -158,6 +158,13 @@ $include-html-global-classes: $include-html-classes;
 // $large-range: (64.063em, 90em);
 // $xlarge-range: (90.063em, 120em);
 // $xxlarge-range: (120.063em, 99999999em);
+
+// Media Query Ranges - zmienione na podstawie tutoriala: http://webdesign.tutsplus.com/tutorials/how-to-build-a-shrinking-fixed-top-bar-with-foundation--cms-20895
+$small-range: (0em, 64em);
+$medium-range: (64em, 64em);
+$large-range: (64.063em, 90em);
+$xlarge-range: (90.063em, 120em);
+$xxlarge-range: (120.063em, 99999999em);
 
 // $screen: "only screen";
 
@@ -446,13 +453,13 @@ $include-html-global-classes: $include-html-classes;
 // $button-font-align: center;
 
 // We use these to control various hover effects.
-// $button-function-factor: -20%;
+$button-function-factor: -20%;
 
 // We use these to control button border and hover styles.
-// $button-border-width: 0px;
+$button-border-width: 1px;//0px;
 // $button-border-style: solid;
-// $button-bg-color: $primary-color;
-// $button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
+$button-bg-color: $primary-color;
+$button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
 // $button-border-color: $button-bg-hover;
 // $secondary-button-bg-hover: scale-color($secondary-color, $lightness: $button-function-factor);
 // $secondary-button-border-color: $secondary-button-bg-hover;
@@ -462,8 +469,8 @@ $include-html-global-classes: $include-html-classes;
 // $alert-button-border-color: $alert-button-bg-hover;
 
 // We use this to set the default radius used throughout the core.
-// $button-radius: $global-radius;
-// $button-round: $global-rounded;
+$button-radius: $global-radius;
+$button-round: $global-rounded;
 
 // We use this to set default opacity and cursor for disabled buttons.
 // $button-disabled-opacity: 0.7;
@@ -874,16 +881,16 @@ $include-html-global-classes: $include-html-classes;
 // 19. Orbit
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// $include-html-orbit-classes: $include-html-classes;
+$include-html-orbit-classes: $include-html-classes;
 
 // We use these to control the caption styles
 // $orbit-container-bg: none;
-// $orbit-caption-bg: rgba(51,51,51, 0.8);
+$orbit-caption-bg: rgba(51,51,51, 0.3);//rgba(255,255,255, 0.75);//rgba(51,51,51, 0.3);
 // $orbit-caption-font-color: $white;
-// $orbit-caption-font-size: rem-calc(14);
+$orbit-caption-font-size: rem-calc(35);//rem-calc(14);
 // $orbit-caption-position: "bottom"; // Supported values: "bottom", "under"
-// $orbit-caption-padding: rem-calc(10 14);
-// $orbit-caption-height: auto;
+$orbit-caption-padding: rem-calc(10 14);
+$orbit-caption-height: 300px;
 
 // We use these to control the left/right nav styles
 // $orbit-nav-bg: transparent;
@@ -1414,8 +1421,8 @@ $include-html-global-classes: $include-html-classes;
 // $topbar-menu-link-transform: uppercase;
 // $topbar-menu-link-font-size: rem-calc(13);
 // $topbar-menu-link-weight: $font-weight-bold;
-// $topbar-menu-link-color: $white;
-// $topbar-menu-icon-color: $white;
+$topbar-menu-link-color: #777777;//$white;
+$topbar-menu-icon-color: #777777;//$white;
 // $topbar-menu-link-color-toggled: $jumbo;
 // $topbar-menu-icon-color-toggled: $jumbo;
 
@@ -1440,5 +1447,592 @@ $include-html-global-classes: $include-html-classes;
 // $include-table-visibility-classes: true;
 // $include-legacy-visibility-classes: true;
 // $include-accessibility-classes: true;
+
+
+
+/*========================================================================== */
+// Header Fill (służy do wypełnienia pod top menu)
+
+.header-fill {
+    height: 80px;											//odległość między menu a content
+}
+
+.header-fill-within-app{
+    height: 90px;											//odległość między menu a content
+}
+
+/*========================================================================== */
+// Formatowanie Main Top Bar
+
+.main-header {
+	.fixed{
+		.header-section{
+			background: #FFFFFF;
+			-webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,0.4); 			//?? - pewnie cień
+    		box-shadow: 0 0 5px 0 rgba(0,0,0,0.4);					//?? - pewnie cień
+    		//z-index: 999;
+
+			.top-bar{
+				background: #FFFFFF;
+				padding: 25px 0.9375rem 55px 0.9375rem;
+    			transition: all 0.5s ease 0.1s;
+
+
+
+    			// LOGO ADJUSTMENT
+			    ul.title-area img {
+			        margin: -5px 0 0 0;
+			        max-width:100%;
+			        max-height:100%;
+			    }
+
+			    .top-bar-section{
+			    	
+			    	// MENU ITEM STYLES
+        			li a:not(.button), li.active a:not(.button){
+        				background: #FFFFFF;
+        				line-height: 30px;
+            			font-size: 14px;
+            			padding: 0;
+        				color: #888;
+        				text-transform: uppercase;
+        			}
+
+        			// MENU ITEM HOVERS
+			        li a:not(.button):hover {
+			            border-bottom: 2px solid #149b00;
+			            color: #149b00;
+			        }
+
+			        // MENU ITEM ACTIVE
+			        li.active a:not(.button) {
+			            border-bottom: 2px solid #149b00;
+			            color: #149b00;
+			            &:hover {
+			                //background: none;
+			            }
+			        }
+			        
+			        li {
+			            margin-left: 30px;
+			            
+			        }
+
+			        .button{
+			        	margin: -7px 0 0 0;
+			        	background: #149b00;
+			        	border-color: #107c00;
+			        	color: #FFFFFF;
+			        	&:hover {
+			                background: #35c56a;
+			                border-color: #107c00;
+			                color: #FFFFFF;
+			            }
+			       	}
+
+			       	.signin{
+		            	background: #F6F6F6;
+		            	color: #777777;
+		            	border-color: #107c00;
+		            	&:hover {
+			                background: #35c56a;//#60e71f;
+			                border-color: #107c00;
+			                color: #FFFFFF;
+			            	}
+		            }
+
+			    }
+			}
+		}
+	}
+}
+
+//Inne ustawienie padding dla menu głównego wewnątrz aplikacji (węższe)
+
+.header-loggedin-section {
+	.fixed{
+		.header-section{
+			.top-bar{
+				padding: 0 0 0 0;	
+				
+				ul.title-area img{
+    				margin-top: 0px;
+    				margin-left: 20px;
+    			}
+
+    			.top-bar-section{
+    				margin-top: 7px;
+    				margin-right: 20px;
+    			}
+			}
+		}
+	}
+}
+
+/*========================================================================== */
+// Second top bar
+
+.main-header{
+	.fixed{
+		.second-top-bar-in-app{
+			.top-bar{
+				.top-bar-section{
+					margin-left: 10px;
+				}
+			}
+		}
+	}
+}
+
+
+/*================================================================
+//Formatowanie tekstu w orbit caption:
+*/
+
+.orbit-caption-header{
+	font-size: 120%;
+	color: #FFFFFF;//#149B00;//#0f7200; //#2b2c2f;
+	//padding: 0,0,0px,20px;
+	text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+	text-align: center;
+}
+.orbit-caption-subheader{
+	color: #FFFFFF;//#3a3a3a;
+	text-align: center;	
+}
+
+/*================================================================*/
+//Właściwości orbit caption:
+
+.orbit-container .orbit-slides-container li .orbit-caption{
+	position: absolute;
+    bottom: 150px;
+    //left: 50px;
+    //width: 50%
+    border-bottom: 1px solid #c1c1c1;
+    border-top: 1px solid #c1c1c1;
+    -webkit-box-shadow: 0 0 15px 0 rgba(0,0,0,0.4); 			//?? - pewnie cień
+    box-shadow: 0 0 15px 0 rgba(0,0,0,0.4);					//?? - pewnie cień
+
+    
+}
+
+/*================================================================*/
+//Właściwości przycisków w orbit
+
+//$primary-color: #149B00;
+
+.orbit-container {
+	.orbit-slides-container li {
+		.orbit-caption {
+			
+			.button {
+				background: #149B00;	
+				margin-left: 25px;
+				border-color: #107c00;
+				&:hover {
+                background: #2ba519;
+                }
+			}
+
+			.orbit-button-poznaj{
+				background: rgba(255,255,255, 0.75);
+				color: #149B00;
+				border-color: #149B00;
+				&:hover {
+                background: #FFFFFF;
+                }
+			}	
+		}
+	} 
+}
+
+/*================================================================*/
+// Formatowanie contentu
+
+.main-site-formatting{
+	.content-section {
+	    .main-content {
+	        //margin-top: 35px;
+	    }
+	}
+
+	.content-section{
+		.main-content{
+			.columns{
+				.main-content-title{
+					text-align: center
+				}
+				.main-content-subtitle{
+					text-align: center;
+					color: #149B00;
+				}
+			}
+		}
+	}
+
+	.basic-info-section{
+		margin-top: 40px;
+	}
+
+	.function-title-section{
+		background: #149B00;
+		.main-content{
+			.columns{
+				.function-title{
+					text-align: center;
+					color: #FFFFFF;
+					margin-top: 50px;
+				}
+			}
+		}
+	}
+
+
+	.function-section{
+		//$primary-color: #149B00;
+
+		background: #149B00;//$primary-color;
+		.row{
+			.columns{
+				color: #FFFFFF;
+				margin-top: 50px;
+				h3{
+					color: #FFFFFF;	
+				}
+			}
+		}
+	}
+}
+
+
+/*
+FOOTER SECTION
+========================================================================== */
+ 
+.footer-section {
+    background: #333;
+    min-height: 100px;
+    p {
+        color: #fff;
+        margin-top: 50px;
+    }
+}
+
+
+/*
+LOGI
+========================================================================== */
+.panel{
+	margin-top: 45px;	
+	.debug_dump {
+	  clear: both;
+	  float: left;
+	  width: 100%;
+	}
+}
+
+/*
+SIGNUP
+========================================================================== */
+
+.signup-form{
+	margin-top: 5px;
+
+
+	.row{
+		.title{
+			margin-top: 1rem;
+			margin-bottom: 2rem;
+			margin-left: 4rem;
+			margin-right: 4rem;
+		}
+		.columns{
+			.form{
+				margin-left: 4rem;
+				margin-right: 4rem;
+				.new_user{
+					.radio-button{
+						margin-top: 20px;
+						margin-bottom: 20px;
+					}
+					.submit{
+						.button{
+							//$primary-color: #149b00;
+							$button-bg-color: #149b00;//$primary-color;
+							$button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
+							margin-top: 10px;
+							width: 100%;
+						}
+					}
+					.regulamin p{
+						margin-top: 10px;
+						margin-bottom: 10px;
+					}
+				}
+			}
+
+			.panel{
+				margin-top: 0.5rem;
+				margin-right: 2rem;
+				padding-bottom: 0rem;
+				.foto img{
+					margin-top: 0px;
+					//max-width:60%;
+		        	//max-height:60%;
+		        	-webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,0.4); 			//?? - pewnie cień
+    				box-shadow: 0 0 5px 0 rgba(0,0,0,0.4);					//?? - pewnie cień
+		        	
+				}
+				.opis p{
+					margin-top: 0.5rem;
+					margin-bottom: 1rem;
+						
+				}
+
+				.final-title h3{
+					margin-top: 1rem;
+					//font-style: italic;
+
+				}
+			}
+		}
+	}
+}
+
+.tooltip{
+	margin-top: 1.7rem;
+}
+
+/*
+SIGNIN
+========================================================================== */
+
+.signin-form{
+	margin-top: 5px;
+	.row{
+		.title{
+			margin-top: 1rem;
+			margin-bottom: 2rem;
+		}
+		.columns{
+			.form{
+				.submit{
+					.button{
+						margin-top: 20px;
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+/*
+LOGGED IN MAIN PAGE
+========================================================================== */
+.loggedin-main-page{
+	.full-width{
+		.kolumna-jeden{
+			.columns{
+				.panel{
+					//padding-top: 0px;
+					//margin-top: 0px;
+				}
+			}
+		}
+	}
+}
+
+/*
+EDIT FORM
+========================================================================== */
+
+.edit-form_for{
+  margin-top: 1rem;
+  .row{
+    .tabs{
+      a{
+        border: 1px solid #d4d4d4;
+      }
+      .active a{
+        border: 1px solid #149b00;
+        //background-color: #149b00;
+        //color: #FFFFFF;
+      }
+    }
+  }
+}
+
+/*================================================================
+Ustawienia dla urządzeń mobilnych
+*/
+
+
+@media only screen and (max-width: 1024px) {
+	
+	/*------------------------
+	//Ustawienia głównego menu - do dopracowania!
+	------------------------*/
+
+	.main-header{
+		.fixed{
+			.header-section{
+				.top-bar{
+					margin-top: 0;
+        			padding: 0;
+       				float: none;
+       				// MENU BUTTON AND HAMBURGER ICON
+       				.toggle-topbar.menu-icon a {
+            		color: #222;
+            			&:after {
+                		box-shadow: 0 10px 0 1px #222, 0 16px 0 1px #222, 0 22px 0 1px #222;
+            			}
+        			}
+        			// LOGO
+        			ul.title-area img {
+           			 	margin: 5px 0 0;
+           			 	width: 145px;
+        			}
+        			.top-bar-section{
+        				ul{
+        					background: #333;
+        					li {
+                    			margin-left: 0;
+               		 		}
+               		 		li > a {
+                    			background: #149B00;
+                    			border-radius: 0;
+                    			font-size: 0.9rem;
+                			}
+                			// NORMAL BUTTONS
+			                .button {
+			                    background: none;
+			                    color: #fff;
+			                    padding: 10px 15px;
+			                    margin-top: 0;
+			                    text-transform: uppercase;
+			                    text-align: left;
+			                    border: 0px;
+			                    height: 50px;
+			                    line-height: 25px;
+			                    &:hover {
+			                        background: #149B00;
+			                        color: #fff;
+			                        margin-top: 0;
+			                    }
+			                }
+			                li:not(.has-form) a:not(.button) {
+                    			background: none;
+                    			color: #fff;
+                    			padding: 10px 15px;
+                    			margin-top: 0;
+                    			border-bottom: 0px;
+                    			&:hover {
+                        			background: #149B00;
+                        			color: #fff;
+                        			margin-top: 0;
+                    			}
+                			}
+                			// ACTIVE BUTTON
+			                li.active:not(.has-form) a:not(.button) {
+			                    background: #149B00;
+			                    color: #fff;
+			                    padding: 10px 15px;
+			                    margin-top: 0;
+			                    border-bottom: 0px;
+			                    &:hover {
+			                        background: lighten(#149B00, 5%);
+			                        margin-top: 0;
+			                    }
+			                }
+        				}
+        			}
+				}
+			}
+		}
+	}
+
+	/*--------------
+	Ustawienia Orbit - do dopracowania!
+	--------------*/
+
+	.orbit-caption-header{
+		font-size: 50%;
+		color:#FFFFFF;
+	}
+
+	.orbit-caption-subheader{
+		font-size: 50%;
+		color:#FFFFFF;
+	}
+
+	.orbit-container .orbit-slides-container li .orbit-caption{
+		position: absolute;
+    	bottom: 0px;
+	}
+
+	.orbit-container {
+		.orbit-slides-container li {
+			.orbit-caption {
+			
+				.orbit-button-register {
+					//background: #FFFFFF;	
+				}
+
+				.orbit-button-poznaj{
+					background: rgba(255,255,255, 0.75);
+					color: #149B00;
+					&:hover {
+	                background: #FFFFFF;
+	            	}
+				}
+
+				.button {
+					//background: #FFFFFF;	
+					margin-left: 5px;
+					height: 20px;
+	                line-height: 1px;
+
+				}
+			}
+		} 
+	}
+
+	/*--------------
+	Ustawienia Signup
+	--------------*/
+
+	.signup-form{
+	margin-top: 5px;
+		.row{
+			.title{
+				margin-bottom: 15px;
+				margin-left: 0rem;
+				margin-right: 0rem;
+			}
+			.columns{
+				.form{
+					margin-left: 0rem;
+					margin-right: 0rem;
+					.new_user{
+						.submit{
+							.button{
+								//$primary-color: #149b00;
+								$button-bg-color: #149b00;//$primary-color;
+								$button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
+								//margin-top: 10px;
+								width: 100%;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
 
 @import 'foundation';
