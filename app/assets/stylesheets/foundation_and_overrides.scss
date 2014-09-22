@@ -1524,7 +1524,7 @@ $topbar-menu-icon-color: #777777;//$white;
 			        	border-color: #107c00;
 			        	color: #FFFFFF;
 			        	&:hover {
-			                background: #35c56a;
+			                background: scale-color(#149B00, $lightness: $button-function-factor);
 			                border-color: #107c00;
 			                color: #FFFFFF;
 			            }
@@ -1629,9 +1629,9 @@ $topbar-menu-icon-color: #777777;//$white;
 			.button {
 				background: #149B00;	
 				margin-left: 25px;
-				border-color: #107c00;
+				border-color: scale-color(#149b00, $lightness: $button-function-factor);
 				&:hover {
-                background: #2ba519;
+                background: scale-color(#149b00, $lightness: $button-function-factor);
                 }
 			}
 
@@ -1758,11 +1758,16 @@ SIGNUP
 					}
 					.submit{
 						.button{
-							//$primary-color: #149b00;
-							$button-bg-color: #149b00;//$primary-color;
-							$button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
+							background: #149b00;
 							margin-top: 10px;
-							width: 100%;
+              width: 100%;
+              border-color: scale-color(#149b00, $lightness: $button-function-factor);
+              &:hover {
+                background: scale-color(#149b00, $lightness: $button-function-factor);
+                }
+              //$button-bg-color: #149b00;//$primary-color;
+							//$button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
+							
 						}
 					}
 					.regulamin p{
@@ -1819,8 +1824,13 @@ SIGNIN
 			.form{
 				.submit{
 					.button{
+            background: #149b00;
 						margin-top: 20px;
 						width: 100%;
+            border-color: scale-color(#149b00, $lightness: $button-function-factor);
+            &:hover {
+            background: scale-color(#149b00, $lightness: $button-function-factor);
+            }
 					}
 				}
 			}
@@ -1861,6 +1871,21 @@ EDIT FORM
         border: 1px solid #149b00;
         //background-color: #149b00;
         //color: #FFFFFF;
+      }
+    }
+    .columns{
+      .tabs-content{
+        .active{
+          .edit-submit{
+            .button{
+              background: #149b00;
+              border-color: scale-color(#149b00, $lightness: $button-function-factor);
+              &:hover {
+              background: scale-color(#149b00, $lightness: $button-function-factor);
+              }
+            }
+          }
+        }
       }
     }
   }
