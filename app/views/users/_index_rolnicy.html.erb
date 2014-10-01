@@ -1,0 +1,14 @@
+<ul class="users">
+	<% @farmers.each do |user| %>
+		<li>
+			<%= gravatar_for user %>
+			Rolnik: <%= link_to user.name, user %>
+			Kod pocztowy: <%= user.zipcode %>
+			Typ: <%= user.user_type_id %>
+			<% if current_user.admin? && !current_user?(user) %>
+		    | <%= link_to "delete", user, method: :delete,
+		                                  data: { confirm: "You sure?" } %>
+		  <% end %>
+		</li>
+	<% end %>
+</ul>

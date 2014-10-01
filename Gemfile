@@ -60,3 +60,9 @@ end
 gem 'mail_form'
 gem 'simple_form'
 gem 'foundation-rails'
+gem 'ransack'
+
+# Pagination
+# gem 'will_paginate', '3.0.7'
+gem 'kaminari'
+

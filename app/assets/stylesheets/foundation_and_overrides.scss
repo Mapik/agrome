@@ -1857,31 +1857,64 @@ LOGGED IN MAIN PAGE
 }
 
 /*
-EDIT FORM
+Formatowanie tabów
 ========================================================================== */
 
-.edit-form_for{
-  margin-top: 1rem;
-  .row{
-    .tabs{
-      a{
-        border: 1px solid #d4d4d4;
-      }
-      .active a{
-        border: 1px solid #149b00;
-        //background-color: #149b00;
-        //color: #FFFFFF;
+.row{
+  .tabs{
+    a{
+      border: 1px solid #d4d4d4;
+    }
+    .active a{
+      border: 1px solid #149b00;
+      //background-color: #149b00;
+      //color: #FFFFFF;
+    }
+  }
+  .columns{
+    .tabs-content{
+      border: 1px solid #d4d4d4;
+      .active{
+        .edit-submit{
+          .button{
+            background: #149b00;
+            border-color: scale-color(#149b00, $lightness: $button-function-factor);
+            &:hover {
+            background: scale-color(#149b00, $lightness: $button-function-factor);
+            }
+          }
+        }
+        .gravatar-edit{
+          margin-bottom: 1rem;
+        }
+        .users{
+          list-style-type: none;
+          li{
+            margin-bottom: 1rem;
+          }
+        }
+        .pagination{
+          margin-bottom: 1rem;
+          margin-left: 1rem;
+        }
       }
     }
+  }
+}
+
+/*
+Formatowanie User Index
+========================================================================== */
+.user-index{
+  .row{
     .columns{
       .tabs-content{
         .active{
-          .edit-submit{
-            .button{
-              background: #149b00;
-              border-color: scale-color(#149b00, $lightness: $button-function-factor);
-              &:hover {
-              background: scale-color(#149b00, $lightness: $button-function-factor);
+          .columns{
+            .columns{
+              .button{
+                padding-top: 8px;
+                padding-bottom: 8px;
               }
             }
           }
@@ -1890,6 +1923,7 @@ EDIT FORM
     }
   }
 }
+
 
 /*================================================================
 Ustawienia dla urządzeń mobilnych

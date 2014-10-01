@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       # Log the user in and redirect to the user's show page.
       log_in user
       remember user
-      redirect_to user
+      redirect_back_or user
     else
       flash.now[:alert] = 'Niepoprawny email lub haslo' # Not quite right!
       render 'new'

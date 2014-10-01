@@ -1,0 +1,67 @@
+<% provide(:title, 'Użytkownicy') %>
+
+<div class="user-index">
+
+	<div class="row">
+		<div class="title">
+			<h2>Użytkownicy</h2>
+		</div> <!-- END OF title-->
+	</div> <!--END OF row-->
+		
+	<div class="row">	
+		<div class="large-12 columns">
+			<dl class="tabs" data-tab>
+			  <dd class="active"><a href="#panel1">Rolnicy</a></dd>
+			  <dd><a href="#panel2">Skupnicy</a></dd>
+			</dl>
+		</div> <!--END OF columns-->	
+	</div> <!--END OF row-->
+
+	<div class="row">	
+		<div class="large-12 columns">
+			<div class="tabs-content">
+
+					  <div class="content active" id="panel1">
+					  	
+						  	<div class="large-6 columns">
+						  		<%= paginate @farmers, param_name: :farmers %>
+						  	</div>
+						  	<div class="large-6 columns">
+						  		<div class="large-8 columns" id="search-farmer">
+						  		<%= search_form_for @search_farmers do |f| %>
+									  
+									   
+									    
+									    	<%= f.text_field :name_cont, placeholder: "Nazwa Rolnika" %>
+									  	</div>
+									  	<div class="large-4 columns">
+									  		<%= f.submit "Wyszukaj", class: "button" %>
+									  	</div>
+									  
+									<% end %>
+						  	</div>
+					  	
+					  	<div class="large-12 columns" id="rolnicy">
+								<%= render 'index_rolnicy' %>
+							</div>
+							<div class="large-12 columns">
+					  		<%= paginate @farmers, param_name: :farmers %>
+					  	</div>
+					  </div> <!--END OF panel1-->
+
+
+
+					  <div class="content" id="panel2">
+					  	<div class="large-6 columns">
+					  		<%= paginate @skupnicy, param_name: :skupnicy %>
+					  	</div>
+					  		<div id="skupnicy"><%= render 'index_skupnicy'%></div>
+							<div class="large-12 columns">
+						  		<%= paginate @skupnicy, param_name: :skupnicy %>
+						  </div>
+					  </div> <!--END OF panel2-->
+				</div> <!-- END OF tabs-content -->
+			</div> <!-- END OF columns -->
+	</div> <!-- END OF row -->
+</div> <!-- END OF user-index -->
+
