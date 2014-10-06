@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class SessionsController < ApplicationController
   def new
   end
@@ -10,7 +11,7 @@ class SessionsController < ApplicationController
       remember user
       redirect_back_or user
     else
-      flash.now[:alert] = 'Niepoprawny email lub haslo' # Not quite right!
+      flash.now[:alert] = 'Niepoprawny email lub hasło' # Not quite right!
       render 'new'
     end
   end

@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class UsersController < ApplicationController
   
   before_action :logged_in_user, only: [:index, :edit, :update, :show, :destroy]
@@ -73,7 +74,7 @@ class UsersController < ApplicationController
       def logged_in_user
         unless logged_in?
           store_location
-          flash[:alert] = "Zaloguj sie."
+          flash[:alert] = "Zaloguj się."
           redirect_to login_url
         end
       end

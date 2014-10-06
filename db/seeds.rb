@@ -14,7 +14,7 @@
 #             zipcode: "45-098",
 #             user_type_id: "1"
 #            )
-
+=begin
 User.create!(name:  "Admin",
              email: "admin@railstutorial.org",
              password:              "foobar",
@@ -22,9 +22,9 @@ User.create!(name:  "Admin",
              zipcode: "45-098",
              user_type_id: "4",
              admin: true)
+=end
 
-=begin
-1.times do |n|
+10.times do |n|
   r = rand(10000)
   name  = "UserName_#{r}"
   email = "example-#{r}@railstutorial.org"
@@ -44,4 +44,3 @@ User.create!(name:  "Admin",
                user_type_id: type
                )
 end
-=end

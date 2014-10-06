@@ -1,6 +1,13 @@
+
 <% provide(:title, 'Home') %>
 
-        
+<!-- FLASH SECTION -->
+          <div class="flash">
+          <% flash.each do |message_type, message| %>
+              <%= content_tag(:div, message, class: "alert-box #{message_type}") %>
+            <% end %>
+          </div>
+<!--END OF FLASH SECTION -->
 <!-- CONTENT SECTION -->
 
 <ul class="example-orbit" data-orbit

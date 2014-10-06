@@ -24,6 +24,7 @@
 			      <%= f.text_field :email, placeholder: "Twój Email" %>
 
 			      <%= f.password_field :password, placeholder: "Hasło" %>
+			      <%= link_to "(zapomniałem hasło)", new_password_reset_path %>
 			    
 			    <div class="submit">
 			      <%= f.submit "Zaloguj się", class: "button" %>

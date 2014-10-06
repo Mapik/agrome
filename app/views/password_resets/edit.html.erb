@@ -1,0 +1,31 @@
+<% provide(:title, 'Odzyskiwanie hasła') %>
+
+<div class="signin-form">
+  <div class="row">
+    <div class="small-12 large-7 large-centered columns" >
+      <div class="text-center">
+        <div class="title">
+            <div class="title-text"><h2>PODAJ NOWE HASŁO:</h2></div>
+        </div> <!-- END OF title -->
+      </div>
+
+      <div class="form">
+        <%= form_for(@user, url: password_reset_path(params[:id])) do |f| %>
+
+            <%= hidden_field_tag :email, @user.email %>
+
+            <%= f.password_field :password, placeholder: "Hasło" %>
+            <%= f.password_field :password_confirmation, placeholder: "Powtórz hasło" %>
+              
+          
+          <div class="submit">
+            <%= f.submit "Zmień hasło", class: "button" %>
+          </div> <!-- END OF submit -->
+          
+          <% end %>
+      </div> <!-- END OF form -->
+
+    </div> <!-- END OF small-12 large-6 columns -->
+  </div> <!-- END OF row -->
+</div> <!-- END OF signin-form -->
+
