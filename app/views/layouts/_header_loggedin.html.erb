@@ -38,25 +38,20 @@
         <section class="top-bar-section">
           <!-- Left Nav Section -->
           <ul class="left">
-            <li>
-              <a a href="#" class="button">DODAJ ZADANIE +</a>
-            </li>
             <li class="has-dropdown">
               <a href="#">PRZEGLĄDAJ</a>
               <ul class="dropdown">
-                <li><a href="#">Strona główna</a></li>
+                <li><%= link_to "Strona główna", root_path %></li>
                 <li><%= link_to "Użytkownicy", users_path %></li>
                 <li><a href="#">Kalendarz</a></li>
                 <li><a href="#">Budżet</a></li>
                 <li><a href="#">Ceny</a></li>
               </ul>
             </li>
-          </ul>
-          <ul class="left">
             <li class="has-dropdown">
               <a href="#">ZARZĄDZAJ</a>
               <ul class="dropdown">
-                <li><a href="#">Uprawy</a></li>
+                <li><%= link_to "Uprawy", fields_path %></li>
                 <li><a href="#">Inwentarz</a></li>
                 <li><a href="#">Zapasy</a></li>
                 <li><a href="#">Wyposażenie</a></li>

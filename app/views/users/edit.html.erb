@@ -33,7 +33,7 @@
 					<div class="content active" id="panel1">
 						<div class="large-6 columns">
 							<%= form_for(@user) do |f| %>
-								<%= render 'shared/error_messages' %>
+								<%= render 'shared/error_messages', object: f.object %>
 								<%= f.label :name, "Nazwa użytkownika" %>
 								<span data-tooltip aria-haspopup="true" class="has-tip" title="Twoja 
 								nazwa użytkownika. Maksymalnie 50 znaków.">

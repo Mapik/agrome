@@ -49,7 +49,10 @@
 
     <!-- FOOTER SECTION -->
         
-      <%= render 'layouts/footer' if yield(:title)=='Home'||yield(:title)=='Rejestracja' %>
+      <%= if logged_in?
+          else
+            render 'layouts/footer' if yield(:title)=='Home'||yield(:title)=='Rejestracja' 
+          end%>
 
     <!--END of FOOTER SECTION -->
 

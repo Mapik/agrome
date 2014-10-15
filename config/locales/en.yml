@@ -28,3 +28,7 @@ en:
         previous: "&lsaquo; Poprzednia"
         next: "Następna &rsaquo;"
         truncate: "&hellip;"
+  number:
+      format:
+        separator: ','
+        delimiter: '.'

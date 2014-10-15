@@ -33,7 +33,7 @@ class PasswordResetsController < ApplicationController
       else
         flash[:success] = "Hasło zostało zresetowane."
         log_in @user
-        redirect_to @user
+        redirect_to root_url
       end
     else
       render 'edit'

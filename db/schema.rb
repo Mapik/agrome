@@ -11,7 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141002195552) do
+ActiveRecord::Schema.define(version: 20141015052814) do
+
+# Could not dump table "area_units" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
+
+  create_table "fields", force: true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.decimal  "area",           precision: 16, scale: 4
+    t.integer  "area_unit_id"
+    t.string   "location"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "unit_symbol"
+    t.integer  "archive"
+    t.string   "archive_string"
+  end
+
+  create_table "user_types", force: true do |t|
+    t.string   "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"

@@ -22,6 +22,7 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
+    #@fields = @user.fields.all - przyda się przy robienu czynności
 	end
 
 	def new
@@ -69,15 +70,6 @@ class UsersController < ApplicationController
 			end
 
       # Before filters
-
-      # Confirms a logged-in user.
-      def logged_in_user
-        unless logged_in?
-          store_location
-          flash[:alert] = "Zaloguj się."
-          redirect_to login_url
-        end
-      end
 
       # Confirms the correct user.
       def correct_user

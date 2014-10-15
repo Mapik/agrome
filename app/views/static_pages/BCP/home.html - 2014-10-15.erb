@@ -1,0 +1,115 @@
+
+<% provide(:title, 'Home') %>
+
+<!-- FLASH SECTION -->
+          <div class="flash">
+          <% flash.each do |message_type, message| %>
+              <%= content_tag(:div, message, class: "alert-box #{message_type}") %>
+            <% end %>
+          </div>
+<!--END OF FLASH SECTION -->
+<!-- CONTENT SECTION -->
+
+<ul class="example-orbit" data-orbit
+data-options="animation:slide;
+                  pause_on_hover:true;
+                  resume_on_mouseout:true;
+                  animation_speed:500;
+                  navigation_arrows:true;
+                  bullets:true;
+                  slide_number: false;
+                  timer_speed: 5000">
+  
+  
+  <li>
+    <%= image_tag "slide_f5.jpg" %>
+    <div class="orbit-caption" align = "center">
+      <h1 class="orbit-caption-header">TWOJE GOSPODARSTWO 2.0</h1>
+      <h3 class="orbit-caption-subheader">Zarządzaj Gospodarstwem przez Internet za darmo!</h3>
+      <a class="button orbit-button-poznaj" href="#">POZNAJ FUNKCJE</a><%= link_to "ZAREJESTRUJ SIĘ!", signup_path, class: "button orbit-button-register" %>
+    </div>
+    
+  </li>
+  <li class="active">
+    <%= image_tag "slide_c4.jpg" %>
+    <div class="orbit-caption" align = "center">
+      <h1 class="orbit-caption-header">WSZYKIE DANE W JEDNYM MIEJSCU</h1>
+      <h3 class="orbit-caption-subheader">Dane o gospodarstwie dostępne w komputerze, tablecie i na komórce</h3>
+      <a class="button orbit-button-poznaj" href="#">POZNAJ FUNKCJE</a><%= link_to "ZAREJESTRUJ SIĘ!", signup_path, class: "button orbit-button-register" %>    
+    </div>
+  </li>
+  <li>
+    <%= image_tag "slide_m2.jpg" %>
+    <div class="orbit-caption" align = "center">
+      <h1 class="orbit-caption-header">ZARZĄDZANIE UPRAWAMI I STADAMI</h1>
+      <h3 class="orbit-caption-subheader">Od teraz będziesz pamiętał o każdym zabiegu!</h3>
+      <a class="button orbit-button-poznaj" href="#">POZNAJ FUNKCJE</a><%= link_to "ZAREJESTRUJ SIĘ!", signup_path, class: "button orbit-button-register" %>
+    </div>
+  </li>
+  
+</ul>     
+
+<div class="main-site-formatting" id="o-agrome">
+  <div class="row content-section">
+      <div class="main-content">
+          
+          <!-- Main Content Title -->
+
+          <div class="small-12 medium-12 large-12 columns" >
+              <h1 class="main-content-title">Skuteczne zarządzanie <b>Gospodarstwem<b></h1>
+              <h2 class="main-content-subtitle">w zasięgu Twoich możliwości!</h2>
+          </div>
+      </div>
+  </div> 
+
+  <!-- BASIC INFO SECTION -->
+  <section class="full-width basic-info-section">
+      <div class="row">
+          <div class="small-12 medium-6 large-6 columns">
+              <h3>Czym jest <i>AGROME<i>?</h3>
+              <p>AGROME jest darmową platformą do zarządzania gospodarstwem rolnym. Składa się z modułów do zarządzania uprawami, stadami oraz zapasami. Jednocześnie umożliwia łatwą komunikację z innymi Rolnikami oraz obserwacje cen transakcyjnych.</p>
+          </div>
+
+          <div class="small-12 medium-6 large-6 columns">
+              <h3>Zawsze Darmowe!</h3>
+              <p>W przeciwieństwie do inncyh aplikacji AGROME zawsze będzie darmowe! Nie ma próbowania - dostajesz od razu pełną wersje produktu. Doatkowy opis, by było równo z pierwszym tekstem. <br><b>Za darmo. Na zawsze.<b></p>
+          </div>
+
+
+      </div> <!-- END ROW -->
+  </section> <!-- END SECTION.FULL-WIDTH.BASIC-INFO-SECTION -->
+
+
+  <!-- FUNCTION INFO SECTION -->
+  <section class="full-width function-title-section">
+    <div class="row">
+        <div class="main-content">
+            
+            <!-- Main Content Title -->
+
+            <div class="small-12 medium-12 large-12 columns">
+                <h1 class="function-title" id="funkcje">Poznaj funkcje <b><i>AGROME<i><b></h1>
+            </div>
+        </div>
+    </div> 
+  </section>
+
+  <section class="full-width function-section">
+      <div class="row">
+          <div class="small-12 medium-4 large-4 columns">
+              <%= image_tag "graphics/silos.png" %>
+          </div>
+
+          <div class="small-12 medium-8 large-8 columns">
+              <h3>Funckja 1</h3>
+              <p>opis funckji 1 opis funckji 1 opis funckji 1 opis funckji 1 opis funckji 1 opis funckji 1 opis funckji 1 opis funckji 1 opis funckji 1 opis funckji 1 opis funckji 1 opis funckji 1 opis funckji 1 opis funckji 1 opis funckji 1 </p>
+          </div>
+
+
+
+
+      </div> <!-- END ROW -->
+  </section> <!-- END SECTION.FULL-WIDTH.FUNCTION-SECTION -->
+</div> <!-- END OF main-site-formatting -->
+
+<!-- END CONTENT SECTION -->

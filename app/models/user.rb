@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :fields
 	attr_accessor :remember_token, :reset_token
 	before_save :downcase_email
 	

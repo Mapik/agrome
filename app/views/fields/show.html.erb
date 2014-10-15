@@ -1,0 +1,77 @@
+<% provide(:title, current_field.name) %>
+
+<div class="field-show">
+  <nav class="breadcrumbs">
+    <%= link_to "Strona główna", root_path %>
+    <%= link_to "Pola", fields_path %>
+    <a class="current" href="#"><%= current_field.name %></a>
+  </nav>
+
+  <div class="edit-errors">
+    <div class="row">
+      <%= render 'shared/error_messages', object: @field %>
+    </div>
+  </div> <!--END OF edit-errors -->
+
+  <div class="row">
+    <h1><%= current_field.name %></h1>
+  </div>
+
+  <div class="row">
+    <div class="large-3 columns">
+      <p>Powierzchnia: <%= "#{number_with_delimiter(current_field.area, 
+        separator: ",")} #{current_field.unit_symbol}" %> </p>
+    </div>
+    <div class="large-3 columns">
+      <p>Lokalizacja: <%= current_field.location %></p>
+    </div>
+    <div class="large-3 columns">
+      <a href="#" data-reveal-id="editField">Edytuj pole</a>
+    </div>
+    <div class="large-3 columns">
+      <a href="#" data-reveal-id="archiveField">Usuń pole</a>
+    </div>
+  </div>
+
+  <div id="editField" class="reveal-modal" data-reveal>
+    <p>Edytuj informacje o polu:</p>
+    <div class="form">
+      <%= form_for(@field) do |f| %>
+        <%= f.text_field :name, placeholder: "Nazwa pola" %>
+        <%= f.text_field :area, placeholder: "Powierzchnia pola w hektarach" %>
+        <%= f.text_field :location, placeholder: "Lokalizacja pola" %>
+        <%= f.submit "Zapisz zmiany", class: "button" %>
+      <% end %>
+    </div> <!--END OF form-->
+  </div> <!--END OF reveal-modal-->
+
+  <div id="archiveField" class="reveal-modal" data-reveal>
+    <p>Potwierdź usunięcie pola</p>
+    <div class="form">
+      <%= form_for(@field) do |f| %>
+        <%= f.hidden_field :archive, :value => '1' %>
+        <%= f.submit "Usuń pole", class: "button" %>
+      <% end %>
+    </div> <!--END OF form-->
+  </div> <!--END OF reveal-modal-->
+</div> <!--END OF field-show-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

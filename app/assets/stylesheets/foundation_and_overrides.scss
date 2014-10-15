@@ -1924,6 +1924,31 @@ Formatowanie User Index
   }
 }
 
+/*
+Formatowanie Field Index
+========================================================================== */
+.field-index{
+  //margin-top: 2rem;
+  span{
+    color:#008CBA
+  }
+  .clearfix{
+    margin-top: 1rem;
+    &:hover {
+                background: scale-color($white, $lightness: -8%);
+                }
+  }
+}
+
+/*
+Formatowanie Field Show
+========================================================================== */
+.field-show{
+  .columns{
+    padding-left: 0px;
+  }
+}
+
 
 /*================================================================
 Ustawienia dla urządzeń mobilnych

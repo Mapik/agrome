@@ -1,0 +1,36 @@
+<% if @field.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert-box alert">
+      Formularz zawiera <%= @field.errors.count  %>
+      <%= error_num = @field.errors.count 
+      
+      
+      case 
+      when error_num == 1               then "błąd:"
+      when error_num.between?(10,20)    then "błądów:"
+      when error_num % 10 >= 5          then "błędów:"
+      when error_num % 10 >= 2          then "błędy:"
+      when error_num % 10 >= 0          then "błądów:"
+      else "błąd:"
+      end %>
+    </div>
+    <ul>
+    <% @field.errors.full_messages.each do |msg| %>
+      <li><%= 
+      case msg 
+      when "Name can't be blank" then "Nazwa pola nie może być pusta."
+      when "Area can't be blank" then "Powierzchnia nie może być 0 lub pusta"
+      when "Name is too long (maximum is 20 characters)" then "Nazwa pola jest 
+        zbyt długa - maksymalnie 20 znaków"
+      when "Area is invalid" then "Powierzchnia powinna być liczbą np.: 12,34"
+      when "Location is too long (maximum is 20 characters)" then "Nazwa lokalizacji 
+        jest zbyt długa - maksymalnie 20 znaków"
+      else msg
+      end
+
+
+        %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

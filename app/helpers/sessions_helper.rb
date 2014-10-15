@@ -31,6 +31,16 @@ module SessionsHelper
     	end
   	end
 
+    #Returns the current field
+    def current_field
+      @current_field ||= Field.find_by(id: params[:id])
+    end
+
+    #Returns active fields
+    def user_active_fields
+      @user_active_fields ||= current_user.fields.where(archive: '0')
+    end
+
 	  	#Kod na @current_user ||= User.find_by(id: user_id) innymi słowy to:
 	  	#if @current_user.nil?
 	  	#	@current_user = User.find_by(id: session[:user_id])
