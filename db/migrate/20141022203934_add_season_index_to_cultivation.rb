@@ -1,5 +1,5 @@
 class AddSeasonIndexToCultivation < ActiveRecord::Migration
   def change
-    add_column :cultivations, :season_id, :reference, index: true
+    add_column :cultivations, :season_id, :integer, index: true
   end
 end
