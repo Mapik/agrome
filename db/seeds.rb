@@ -23,7 +23,7 @@ User.create!(name:  "Admin",
              user_type_id: "4",
              admin: true)
 =end
-
+=begin
 10.times do |n|
   r = rand(10000)
   name  = "UserName_#{r}"
@@ -44,3 +44,11 @@ User.create!(name:  "Admin",
                user_type_id: type
                )
 end
+=end
+
+Seasonlist.create!(name: '2014/2015')
+Seasonlist.create!(name: '2013/2014')
+Seasonlist.create!(name: '2012/2013')
+
+Croptype.create!(name: 'Kukurydza')
+Croptype.create!(name: 'Owies')
