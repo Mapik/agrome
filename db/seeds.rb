@@ -50,5 +50,5 @@ Seasonlist.create!(name: '2014/2015')
 Seasonlist.create!(name: '2013/2014')
 Seasonlist.create!(name: '2012/2013')
 
-Croptype.create!(name: 'Kukurydza')
-Croptype.create!(name: 'Owies')
+Croptype.create!(cropname: 'Kukurydza')
+Croptype.create!(cropname: 'Owies')
