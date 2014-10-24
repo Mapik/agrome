@@ -1,0 +1,64 @@
+<div class="section-accordion">
+  <div class="row">
+    <dl class="accordion" data-accordion>
+      <dd class="accordion-navigation">
+        <a href="#addseason">Dodaj sezon</a>
+        <div id="addseason" class="content">
+          <%= form_for(@season) do |f| %>
+            <%= f.collection_select(:season_name, Seasonlist.where.not(name: current_field.seasons.pluck(:season_name)), :name, :name) %>
+            <%= f.hidden_field :seasonlist_id, :value => '999' %>
+            <%= f.submit "Dodaj sezon", class: "button" %>
+          <% end %>          
+        </div>
+      </dd>
+      <% @field_seasons.each do |season| %>
+      <dd class="accordion-navigation">
+        <a href="#season<%= @field_seasons.index(season) %>"><%= season.season_name %></a>
+        <div id="season<%= @field_seasons.index(season) %>" class="content">
+
+          <div class="accordion-content">
+            <% cultivation_name_array = Croptype.joins(:cultivations).where(cultivations: { season_id: season.id} ) %>
+            
+            <div class="cultivations-tabs-section">
+              <div class="row">
+                <dl class="tabs" data-tab>
+                  <% cultivation_name_array.each do |cultivation_name| %>
+                    <dd><a href="#cultivation_name-<%= season.id %>-<%= cultivation_name_array.index(cultivation_name) %>"><%= cultivation_name.cropname %></a></dd>
+                  <% end %>
+                    <dd><a href="#addcultivation<%= season.id %>">Dodaj uprawę</a></dd>
+                </dl>
+                <div class="tabs-content">
+                  <% cultivation_name_array.each do |cultivation_name| %>
+                  <div class="content" id="cultivation_name-<%= season.id %>-<%= cultivation_name_array.index(cultivation_name) %>">
+                    <p><%= cultivation_name.cropname %></p>
+
+                    <% cultivation_details = Cultivation.where(season_id: season.id, croptype_id: cultivation_name.id) %>
+                    <% cultivation_details.each do |cultivation_details| %>
+                          <%= cultivation_details.croparea %><%= current_field.unit_symbol %>
+                      <% end %>
+
+                  </div>
+                  <% end %>
+                  <div class="content" id="addcultivation<%= season.id %>">
+                    <% current_cultivations = Cultivation.where(season_id: season.id) %>
+                    <% possible_cultivations = Croptype.where.not(id: current_cultivations.pluck(:croptype_id)) %>
+                    <%= form_for(@cultivation) do |f| %>
+                      <%= f.collection_select(:croptype_id, possible_cultivations.all, :id, :cropname) %>
+                      <%= f.text_field :croparea, placeholder: "Powierzchnia uprawy w #{current_field.unit_symbol}" %>
+                      <%= f.hidden_field :season_id, :value => season.id %>
+                      <%= f.hidden_field :unitsymbol, :value => current_field.unit_symbol %>
+                      <%= f.submit "Dodaj uprawę", class: "button" %>
+                    <% end %>
+
+                  </div>
+                </div><!--END OF tabs-content-->
+              </div><!--END OF row-->
+            </div><!--END OF cultivations-tabs-section-->
+          </div><!--END OF accordion-content-->
+        </div><!--END OF content-->
+
+      </dd>
+      <% end %>
+    </dl>
+  </div>
+</div><!--END OF section-accordion-->

@@ -1871,35 +1871,36 @@ Formatowanie tabów
       //color: #FFFFFF;
     }
   }
-  .columns{
-    .tabs-content{
-      border: 1px solid #d4d4d4;
-      .active{
-        .edit-submit{
-          .button{
-            background: #149b00;
-            border-color: scale-color(#149b00, $lightness: $button-function-factor);
-            &:hover {
-            background: scale-color(#149b00, $lightness: $button-function-factor);
-            }
+  .tabs-content{
+    border: 1px solid #d4d4d4;
+    .active{
+      padding-left: 15px;
+      padding-right: 15px;
+      .edit-submit{
+        .button{
+          background: #149b00;
+          border-color: scale-color(#149b00, $lightness: $button-function-factor);
+          &:hover {
+          background: scale-color(#149b00, $lightness: $button-function-factor);
           }
         }
-        .gravatar-edit{
+      }
+      .gravatar-edit{
+        margin-bottom: 1rem;
+      }
+      .users{
+        list-style-type: none;
+        li{
           margin-bottom: 1rem;
         }
-        .users{
-          list-style-type: none;
-          li{
-            margin-bottom: 1rem;
-          }
-        }
-        .pagination{
-          margin-bottom: 1rem;
-          margin-left: 1rem;
-        }
+      }
+      .pagination{
+        margin-bottom: 1rem;
+        //margin-left: 1rem;
       }
     }
   }
+
 }
 
 /*
@@ -1946,6 +1947,17 @@ Formatowanie Field Show
 .field-show{
   .columns{
     padding-left: 0px;
+  }
+}
+
+/*
+Formatowanie accordion
+========================================================================== */
+.row{
+  .accordion{
+    .accordion-navigation{
+      border: 1px solid #d4d4d4;
+    }
   }
 }
 

@@ -13,26 +13,10 @@
 				<%= form_for(@user) do |f| %>
 					<%= render 'shared/error_messages', object: f.object %>
 
-					<span data-tooltip aria-haspopup="true" class="has-tip" title="Twoja 
-						nazwa użytkownika. Maksymalnie 50 znaków.">
 					<%= f.text_field :name, placeholder: "Nazwa użytkownika" %>
-					</span>
-
-					<span data-tooltip aria-haspopup="true" class="has-tip" title="Adres 
-						mailowy - poprawny format adres@domen.com">
 					<%= f.text_field :email, placeholder: "Adres mailowy"%>
-					</span>
-
-					<span data-tooltip aria-haspopup="true" class="has-tip" title="Kod 
-						pocztowy w formacie 00-001">
 					<%= f.text_field :zipcode, placeholder: "Kod pocztowy" %>
-					</span>
-
-					<span data-tooltip aria-haspopup="true" class="has-tip" title="Hasło 
-						powinno zawierać przynajmniej 6 znaków.">
 					<%= f.password_field :password, placeholder: "Hasło" %>
-					</span>
-
 					<%= f.password_field :password_confirmation, placeholder: "Powtórz hasło" %>
 
 					<div class="radio-button">

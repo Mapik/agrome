@@ -11,9 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141015052814) do
+ActiveRecord::Schema.define(version: 20141022210851) do
 
 # Could not dump table "area_units" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
+
+  create_table "croptypes", force: true do |t|
+    t.string   "cropname"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+# Could not dump table "cultivations" because of following NoMethodError
 #   undefined method `[]' for nil:NilClass
 
   create_table "fields", force: true do |t|
@@ -28,6 +37,29 @@ ActiveRecord::Schema.define(version: 20141015052814) do
     t.integer  "archive"
     t.string   "archive_string"
   end
+
+  create_table "season_lists", force: true do |t|
+    t.string   "season_name_from_list"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "seasonlists", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "seasons", force: true do |t|
+    t.integer  "field_id"
+    t.string   "season_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "seasonlist_id"
+  end
+
+  add_index "seasons", ["field_id", "season_name"], name: "index_seasons_on_field_id_and_season_name"
+  add_index "seasons", ["field_id"], name: "index_seasons_on_field_id"
 
   create_table "user_types", force: true do |t|
     t.string   "type"

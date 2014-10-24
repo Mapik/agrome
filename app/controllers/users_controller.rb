@@ -36,7 +36,7 @@ class UsersController < ApplicationController
 			log_in @user
 			remember @user
 			flash[:success] = "Witamy w AGROME!"
-			redirect_to @user
+			redirect_to root_url
 		else
 			render 'new'
 		end

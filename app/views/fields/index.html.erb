@@ -66,14 +66,30 @@
   </div><!--END OF add-button-->
 
   <div id="addField" class="reveal-modal" data-reveal>
-    <p>Dodaj pole:</p>
+    <h1><small>Dodaj pole:</small></h1>
     <div class="form">
       <%= form_for(@field) do |f| %>
         <%= f.text_field :name, placeholder: "Nazwa pola" %>
-        <%= f.text_field :area, placeholder: "Powierzchnia pola w hektarach" %>
+        <div class="radio-button">
+          <h3><small>Jednostka powierzchni:</small></h3>
+          <div align = "center">
+            <div class="small-6 large-4 columns">
+            <%= f.label :unit_symbol, "hektar" %>
+            <%= f.radio_button :unit_symbol, "ha" %> 
+            </div>
+            
+            <div class="small-6 large-4 columns">
+            <%= f.label :unit_symbol, "ar" %>
+            <%= f.radio_button :unit_symbol, "ar" %> 
+            </div>
+            <div class="small-6 large-4 columns">
+            </div>
+            
+          </div>
+        </div>
+        <%= f.text_field :area, placeholder: "Powierzchnia pola" %>
         <%= f.text_field :location, placeholder: "Lokalizacja pola" %>
-        <%= f.hidden_field :unit_symbol, :value => 'ha' %>
-        <%= f.hidden_field :area_unit_id, :value => '1' %>
+        <%= f.hidden_field :area_unit_id, :value => '999' %>
         <%= f.hidden_field :archive, :value => '0' %>
         <%= f.submit "Dodaj pole", class: "button" %>
       <% end %>
@@ -81,3 +97,4 @@
   </div> <!--END OF reveal-modal-->
 </div> <!--END OF field-index-->
 
+<%= debug(current_field) %>

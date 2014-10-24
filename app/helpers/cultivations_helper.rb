@@ -1,0 +1,2 @@
+module CultivationsHelper
+end

@@ -13,40 +13,48 @@
     </div>
   </div> <!--END OF edit-errors -->
 
-  <div class="row">
-    <h1><%= current_field.name %></h1>
-  </div>
+  <div class="field-title">
+    <div class="row">
+      <h1><%= current_field.name %></h1>
+    </div>
+  </div><!--END OF field-title-->
 
-  <div class="row">
-    <div class="large-3 columns">
-      <p>Powierzchnia: <%= "#{number_with_delimiter(current_field.area, 
-        separator: ",")} #{current_field.unit_symbol}" %> </p>
+  <div class="field-description-and-edit">
+    <div class="row">
+      <div class="large-3 columns">
+        <p>Powierzchnia: <%= "#{number_with_delimiter(current_field.area, 
+          separator: ",")} #{current_field.unit_symbol}" %> </p>
+      </div>
+      <div class="large-3 columns">
+        <p>Lokalizacja: <%= current_field.location %></p>
+      </div>
+      <div class="large-3 columns">
+        <a href="#" data-reveal-id="editField">Edytuj pole</a>
+      </div>
+      <div class="large-3 columns">
+        <a href="#" data-reveal-id="archiveField">Usuń pole</a>
+      </div>
     </div>
-    <div class="large-3 columns">
-      <p>Lokalizacja: <%= current_field.location %></p>
-    </div>
-    <div class="large-3 columns">
-      <a href="#" data-reveal-id="editField">Edytuj pole</a>
-    </div>
-    <div class="large-3 columns">
-      <a href="#" data-reveal-id="archiveField">Usuń pole</a>
-    </div>
+  </div><!--END OF field-description-and-edit-->
+
+  <div class="seasons-section">
+    <%= render 'seasons' %>
   </div>
 
   <div id="editField" class="reveal-modal" data-reveal>
-    <p>Edytuj informacje o polu:</p>
+    <h1><small>Edytuj informacje o polu:</small></h1>
     <div class="form">
       <%= form_for(@field) do |f| %>
         <%= f.text_field :name, placeholder: "Nazwa pola" %>
         <%= f.text_field :area, placeholder: "Powierzchnia pola w hektarach" %>
         <%= f.text_field :location, placeholder: "Lokalizacja pola" %>
-        <%= f.submit "Zapisz zmiany", class: "button" %>
+        <%= f.submit "Dodaj sezon", class: "button" %>
       <% end %>
     </div> <!--END OF form-->
   </div> <!--END OF reveal-modal-->
 
   <div id="archiveField" class="reveal-modal" data-reveal>
-    <p>Potwierdź usunięcie pola</p>
+    <h1><small>Potwierdź usunięcie pola</small></h1>
     <div class="form">
       <%= form_for(@field) do |f| %>
         <%= f.hidden_field :archive, :value => '1' %>
@@ -55,22 +63,6 @@
     </div> <!--END OF form-->
   </div> <!--END OF reveal-modal-->
 </div> <!--END OF field-show-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

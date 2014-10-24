@@ -19,6 +19,8 @@ class FieldsController < ApplicationController
   end
 
   def show
+    field = Field.find_by(id: params[:id])
+    remember_field field
     @field = current_field
     #if @field.user != current_user
     #  redirect_to fields_path
@@ -26,6 +28,9 @@ class FieldsController < ApplicationController
     if @field.archive == 1
       redirect_to fields_path
     end
+    @field_seasons = current_field.seasons.all
+    @season = current_field.seasons.build
+    @cultivation = Cultivation.new
   end
   
   #def edit
@@ -52,12 +57,16 @@ class FieldsController < ApplicationController
         params.require(:field).permit(:name, :area, :unit_symbol, :location, 
           :archive, :area_unit_id)
       end
+
+      #def season_params
+      #  params.require(:season).permit(:season_name)
+      #end
       
       # Before filters
 
       # Confirms the correct user.
       def correct_user
-        @field = current_field
+        @field = Field.find_by(id: params[:id])
         @user = @field.user
         redirect_to(fields_path) unless current_user?(@user)
       end  
