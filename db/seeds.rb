@@ -47,6 +47,7 @@ User.create!(name:  "Admin",
 end
 =end
 
+=begin
 
 Seasonlist.create!(name: '2009/2010')
 Seasonlist.create!(name: '2010/2011')
@@ -108,3 +109,4 @@ Croptype.create!(cropname:'Wyka kosmata')
 Croptype.create!(cropname:'Wyka siewna')
 Croptype.create!(cropname:'Ziemniaki')
 Croptype.create!(cropname:'Żyto')
+=end
