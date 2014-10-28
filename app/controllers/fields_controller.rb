@@ -51,6 +51,10 @@ class FieldsController < ApplicationController
     end
   end
 
+  def jakasfunkcja
+  end
+
+  
   private
 
       def field_params
