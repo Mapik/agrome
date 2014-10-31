@@ -1,0 +1,35 @@
+<% provide(:title, "Inwentarz") %>
+
+<div "mob-index">
+  <nav class="breadcrumbs">
+    <%= link_to "Strona główna", root_path %>
+    <a class="current" href="#">Inwentarz</a>
+  </nav> <!--END OF breadcrumbs -->
+
+  <% if user_active_mobs.count == 0 %>
+    <div class="no-mob">
+      <div class="row">
+        <div class="panel clearfix"> 
+          <h2><small>Nie dodałeś jeszcze żadnego stada.</small></h2>
+          <h3><small>Wykorzystaj przycisk "Dodaj stado", który znajduje się poniżej
+            w celu dodania swojego pierwszego stada.</small></h3>  
+        </div>
+      </div>
+    </div> <!--END OF no-mob-->
+  <% end %>
+
+  <div class="sign-up-errors">
+    <div class="row">
+      <%= render 'shared/error_messages', object: @mob %>
+    </div>
+  </div><!--END OF sign-up-errors-->
+
+  <div class="mobs">
+    <%= render 'mobsindex' %>
+  </div><!--END OF mobs-->
+
+  <div class="add-mob">
+    <%= render 'addmob' %>
+  </div><!--END OF add-mob-->
+
+</div><!--END OF mob-index-->

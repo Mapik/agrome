@@ -1,0 +1,43 @@
+<% provide(:title, @mob.name) %>
+
+
+<nav class="breadcrumbs">
+    <%= link_to "Strona główna", root_path %>
+    <%= link_to "Inwentarz", mobs_path %>
+    <a class="current" href="#"><%= current_mob.name %></a>
+</nav>
+
+<div class="edit-errors">
+  <div class="row">
+    <%= render 'shared/error_messages', object: @mob %>
+  </div>
+</div> <!--END OF edit-errors -->
+
+<div class="mob-title">
+  <div class="row">
+    <h1><%= current_mob.name %></h1>
+  </div>
+</div><!--END OF mob-title-->
+
+<div class="mob-description-and-edit">
+  <%= render 'mob_description_and_edit' %>
+</div><!--END OF mob-description-and-edit-->
+
+<div class="submobs">
+  <%= render 'submobs_list' %>
+</div>
+
+<p>=========================================================================</p>
+<%= debug(@mob) %>
+<p>=========================================================================</p>
+<%= debug(@mob_type) %>
+<%= @mob_type.class %>
+<p>=========================================================================</p>
+<%= debug(@submobs_list) %>
+<%= @submobs_list.class %>
+<p>=========================================================================</p>
+<% @submobs_list.each do |submob| %>
+  <%= debug(submob) %>
+  <%= submob.class %>
+<% end %>
+

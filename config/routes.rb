@@ -20,7 +20,8 @@ Rails.application.routes.draw do
   resources :fields,     only: [:index, :create, :show, :update]
   resources :seasons,          only: [:new, :create, :destroy]
   resources :cultivations,          only: [:new, :create]
-  
+  resources :mobs,     only: [:index, :create, :show, :update]
+  resources :submobs,     only: [:new, :create]
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

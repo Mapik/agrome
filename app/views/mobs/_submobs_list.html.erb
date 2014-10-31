@@ -1,0 +1,35 @@
+<div class="section-accordion">
+  <div class="row">
+    <dl class="accordion" data-accordion>
+      <dd class="accordion-navigation">
+        <a href="#addsubmob">Dodaj podgrupę</a>
+        <div id="addsubmob" class="content">
+          <%= form_for(@submob) do |f| %>
+            <%= f.text_field :name, placeholder: "Nazwa podgrupy" %>
+            <%= f.text_field :quantity, placeholder: "Ilość sztuk" %>
+            <h3><small>Data założenia podgrupy:</small></h3>
+            <%= f.date_field :creation_date %>
+            <%= f.text_field :breed, placeholder: "Rasa" %>
+            <%= f.hidden_field :archive, :value => '0' %>
+            <%= f.submit "Dodaj podgrupe", class: "button" %>
+          <% end %>          
+        </div>
+      </dd>
+      <% @submobs_list.each do |submob| %>
+      <dd class="accordion-navigation">
+        <a href="#submob<%= @submobs_list.index(submob) %>"><%= submob.name %></a>
+        <div id="submob<%= @submobs_list.index(submob) %>" class="content">
+
+          <div class="accordion-content">
+            <%= submob.name %>
+            <%= submob.quantity %>
+            <%= submob.creation_date %>
+            <%= submob.breed %>
+          </div><!--END OF accordion-content-->
+        </div><!--END OF content-->
+
+      </dd>
+      <% end %>
+    </dl>
+  </div>
+</div><!--END OF section-accordion-->

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141022210851) do
+ActiveRecord::Schema.define(version: 20141031205557) do
 
 # Could not dump table "area_units" because of following NoMethodError
 #   undefined method `[]' for nil:NilClass
@@ -38,6 +38,26 @@ ActiveRecord::Schema.define(version: 20141022210851) do
     t.string   "archive_string"
   end
 
+  create_table "mobs", force: true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.integer  "quantity"
+    t.integer  "mobtype_id"
+    t.date     "creation_date"
+    t.integer  "archive"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "breed"
+  end
+
+  add_index "mobs", ["user_id"], name: "index_mobs_on_user_id"
+
+  create_table "mobtypes", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "season_lists", force: true do |t|
     t.string   "season_name_from_list"
     t.datetime "created_at"
@@ -60,6 +80,19 @@ ActiveRecord::Schema.define(version: 20141022210851) do
 
   add_index "seasons", ["field_id", "season_name"], name: "index_seasons_on_field_id_and_season_name"
   add_index "seasons", ["field_id"], name: "index_seasons_on_field_id"
+
+  create_table "submobs", force: true do |t|
+    t.integer  "mob_id"
+    t.string   "name"
+    t.integer  "quantity"
+    t.date     "creation_date"
+    t.integer  "archive"
+    t.string   "breed"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "submobs", ["mob_id"], name: "index_submobs_on_mob_id"
 
   create_table "user_types", force: true do |t|
     t.string   "type"

@@ -2,6 +2,8 @@
 class FieldsController < ApplicationController
   before_action :logged_in_user, only: [:index, :create, :show, :update]
   before_action :correct_user, only:[:show, :update]
+  
+
   def index
     #@fields = current_user.fields.where(archive: '0') #przeniesione do seesion_helper
     @field = current_user.fields.build

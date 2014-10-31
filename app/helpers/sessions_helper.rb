@@ -5,19 +5,19 @@ module SessionsHelper
     	session[:user_id] = user.id
   	end
 
-  	# Remembers a user in a persistent session.
+  # Remembers a user in a persistent session.
   	def remember(user)
     	user.remember
     	cookies.permanent.signed[:user_id] = user.id
     	cookies.permanent[:remember_token] = user.remember_token
   	end
 
-    # Returns true if the given user is the current user.
+  # Returns true if the given user is the current user.
     def current_user?(user)
       user == current_user
     end
 
-  	# Returns the current logged-in user (if any).
+  # Returns the current logged-in user (if any).
   	def current_user
     	if (user_id = session[:user_id])
       		@current_user ||= User.find_by(id: user_id)
@@ -31,34 +31,40 @@ module SessionsHelper
     	end
   	end
 
-    #Remeber last field
+  #Kod na @current_user ||= User.find_by(id: user_id) innymi słowy to:
+    #if @current_user.nil?
+      # @current_user = User.find_by(id: session[:user_id])
+    #else
+      # @current_user
+    #end
+
+  #Remeber last field
     def remember_field(field)
       session[:field_id] = field.id
     end
 
-    #Returns the current field
+  #Returns the current field
     #def remembered_field
     #  @remembered_field = Field.find_by(id: session[:field_id])
     #  @current_field ||= Field.find_by(id: params[:id])
     #end
 
-    #Returns the current field
+  #Returns the current field
     def current_field
       @current_field = Field.find_by(id: session[:field_id])
       #@current_field ||= Field.find_by(id: params[:id])
     end
 
-    #Returns active fields
+  #Returns active fields
     def user_active_fields
       @user_active_fields ||= current_user.fields.where(archive: '0')
     end
 
-	  	#Kod na @current_user ||= User.find_by(id: user_id) innymi słowy to:
-	  	#if @current_user.nil?
-	  	#	@current_user = User.find_by(id: session[:user_id])
-		#else
-	  	#	@current_user
-		#end
+
+  #Returns user active mobs
+    def user_active_mobs
+      @user_active_mobs ||= current_user.mobs.where(archive: '0')
+    end
 
 	# Returns true if the user is logged in, false otherwise.
   	def logged_in?
@@ -73,13 +79,13 @@ module SessionsHelper
   	end
 
   # Redirects to stored location (or to the default).
-  def redirect_back_or(default)
-    redirect_to(session[:forwarding_url] || default)
-    session.delete(:forwarding_url)
-  end
+    def redirect_back_or(default)
+      redirect_to(session[:forwarding_url] || default)
+      session.delete(:forwarding_url)
+    end
 
   # Stores the URL trying to be accessed.
-  def store_location
-    session[:forwarding_url] = request.url if request.get?
-  end
+    def store_location
+      session[:forwarding_url] = request.url if request.get?
+    end
 end

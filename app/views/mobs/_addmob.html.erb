@@ -1,0 +1,24 @@
+<div class="add-button">    
+  <div class="row">
+    <div class="large-12 columns">
+      <a href="#" class="button" data-reveal-id="addMob">Dodaj stado</a>
+    </div>
+  </div> <!--END OF row-->
+</div><!--END OF add-button-->
+
+
+<div id="addMob" class="reveal-modal" data-reveal>
+  <h1><small>Dodaj stado:</small></h1>
+  <div class="form">
+    <%= form_for(@mob) do |f| %>
+      <%= f.text_field :name, placeholder: "Nazwa stada" %>
+      <%= f.text_field :breed, placeholder: "Rasa" %>
+      <h3><small>Rodzaj zwierzęcia:</small></h3>
+      <%= f.collection_select(:mobtype_id, Mobtype.all, :id, :name) %>
+      <h3><small>Data założenia stada:</small></h3>
+      <%= f.date_field :creation_date %>
+      <%= f.hidden_field :archive, :value => '0' %>
+      <%= f.submit "Dodaj stado", class: "button" %>
+    <% end %>
+  </div> <!--END OF form-->
+</div> <!--END OF reveal-modal-->

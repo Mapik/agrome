@@ -1,0 +1,2 @@
+module SubmobsHelper
+end

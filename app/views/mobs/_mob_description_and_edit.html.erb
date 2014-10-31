@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="large-3 columns">
+    <p>Zwierze: <%= @mob_type.name %> </p>
+  </div>
+  <div class="large-3 columns">
+    <p>Data założenia: <%= current_mob.creation_date %></p>
+  </div>
+  <div class="large-3 columns">
+    <p>Rasa: <%= current_mob.breed %></p>
+  </div>
+  <div class="large-3 columns">
+  </div>
+</div>
+<div class="row">
+  <div class="large-3 columns">
+    <p><a href="edit" data-reveal-id="editMob">Edytuj stado</a></p>
+  </div>
+  <div class="large-3 columns">
+    <a href="remove" data-reveal-id="archiveMob">Usuń stado</a>
+  </div>
+  <div class="large-3 columns">
+  </div>
+  <div class="large-3 columns">
+  </div>
+</div>
+
+
+<div id="editMob" class="reveal-modal" data-reveal>
+  <h1><small>Edytuj informacje o stadzie:</small></h1>
+  <div class="form">
+    <%= form_for(@mob) do |f| %>
+      <%= f.text_field :name, placeholder: "Nazwa stada" %>
+      <%= f.text_field :breed, placeholder: "Rasa" %>
+      <h3><small>Rodzaj zwierzęcia:</small></h3>
+      <%= f.collection_select(:mobtype_id, Mobtype.all, :id, :name) %>
+      <h3><small>Data założenia stada:</small></h3>
+      <%= f.date_field :creation_date, placeholder: "Rasa" %>
+      <%= f.hidden_field :archive, :value => '0' %>
+      <%= f.submit "Edytuj stado", class: "button" %>
+    <% end %>
+  </div> <!--END OF form-->
+</div> <!--END OF reveal-modal-->
+
+<div id="archiveMob" class="reveal-modal" data-reveal>
+  <h1><small>Potwierdź usunięcie stada</small></h1>
+  <div class="form">
+    <%= form_for(@mob) do |f| %>
+      <%= f.hidden_field :archive, :value => '1' %>
+      <%= f.submit "Usuń stado", class: "button" %>
+    <% end %>
+  </div> <!--END OF form-->
+</div> <!--END OF reveal-modal-->
