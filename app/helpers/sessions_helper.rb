@@ -61,10 +61,7 @@ module SessionsHelper
     end
 
 
-  #Returns user active mobs
-    def user_active_mobs
-      @user_active_mobs ||= current_user.mobs.where(archive: '0')
-    end
+
 
 	# Returns true if the user is logged in, false otherwise.
   	def logged_in?

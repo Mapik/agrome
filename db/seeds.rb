@@ -111,7 +111,7 @@ Croptype.create!(cropname:'Ziemniaki')
 Croptype.create!(cropname:'Żyto')
 =end
 
-
+=begin
 Mobtype.create!(name:'Krowy')
 Mobtype.create!(name:'Byki')
 Mobtype.create!(name:'Świnie')
@@ -125,3 +125,4 @@ Mobtype.create!(name:'Gęsi')
 Mobtype.create!(name:'Indyki')
 Mobtype.create!(name:'Strusie')
 Mobtype.create!(name:'Kozy')
+=end

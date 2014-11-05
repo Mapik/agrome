@@ -1,0 +1,29 @@
+<% provide(:title, @machine.name) %>
+
+
+<nav class="breadcrumbs">
+    <%= link_to "Strona główna", root_path %>
+    <%= link_to "Maszyny", machines_path %>
+    <a class="current" href="#"><%= current_machine.name %></a>
+</nav>
+
+<div class="edit-errors">
+  <div class="row">
+    <%= render 'shared/error_messages', object: @machine %>
+  </div>
+</div> <!--END OF edit-errors -->
+
+<div class="machine-title">
+  <div class="row">
+    <h1><%= current_machine.name %></h1>
+  </div>
+</div><!--END OF machine-title-->
+
+<div class="machine-description-and-edit">
+  <%= render 'machine_description_and_edit' %>
+</div><!--END OF machine-description-and-edit-->
+
+
+
+
+

@@ -20,4 +20,9 @@ module MobsHelper
       @submobs_list = current_mob.submobs.all
     end
 
+  #Returns user active mobs
+    def user_active_mobs
+      @user_active_mobs ||= current_user.mobs.where(archive: '0')
+    end
+
 end

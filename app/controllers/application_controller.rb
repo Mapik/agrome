@@ -5,6 +5,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include SessionsHelper
   include MobsHelper
+  include WarehousesHelper
+  include BuildingsHelper
+  include MachinesHelper
 
   private
 

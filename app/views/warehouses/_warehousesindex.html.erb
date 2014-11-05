@@ -1,0 +1,31 @@
+<% user_active_warehouses.each do |warehouse| %>
+    <% if (user_active_warehouses.index(warehouse)+1) % 3 == 1 %>
+      <div class="row">
+    <%  end %>
+        <div class="large-4 columns">
+          <%= link_to warehouse do %>
+          <div class="panel clearfix"> 
+            <h2><small>Nazwa: <span><%= warehouse.name %></span></small></h2>
+            <h3><small>Pojemność:  <%= warehouse.volume %>
+              <%= warehouse_volume_unit(warehouse).name %> </small></h3>
+          </div>
+          <% end %>
+        </div>
+        <% if (user_active_warehouses.index(warehouse)+1) % 3 == 1 %>
+        <div class="large-4 columns">
+        </div>
+        <div class="large-4 columns">
+        </div>
+        <%  end %>
+        <% if (user_active_warehouses.index(warehouse)+1) % 3 == 2 %>
+        <div class="large-4 columns">
+        </div>
+        <%  end %>
+            
+    <% if (user_active_warehouses.index(warehouse)+1) % 3 == 0 || 
+      (user_active_warehouses.index(warehouse)+1) == user_active_warehouses.count %>
+      </div>
+    <%  end %>
+<% end %>
+
+

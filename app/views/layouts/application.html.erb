@@ -56,21 +56,6 @@
 
     <!--END of FOOTER SECTION -->
 
-<div class="row">
-  <div class="contain-to-grid">
-    <div class="small-12 large-12 columns">
-
-      <div class="panel clearfix">    
-          <%= debug(params) if Rails.env.development? %>
-      </div>
-
-      <div class="panel clearfix">    
-          <%= debug(@current_user) if Rails.env.development? %>
-      </div>
-    </div>
-  </div>
-</div>
-
     <%= javascript_include_tag "application" %>
   </body>
 </html>

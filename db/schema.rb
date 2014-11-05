@@ -11,10 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141031205557) do
+ActiveRecord::Schema.define(version: 20141105203544) do
 
 # Could not dump table "area_units" because of following NoMethodError
 #   undefined method `[]' for nil:NilClass
+
+  create_table "buildings", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "buildingtype_id"
+    t.string   "name"
+    t.date     "build_date"
+    t.integer  "area"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "archive"
+  end
+
+  add_index "buildings", ["user_id"], name: "index_buildings_on_user_id"
+
+  create_table "buildingtypes", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "croptypes", force: true do |t|
     t.string   "cropname"
@@ -24,6 +43,27 @@ ActiveRecord::Schema.define(version: 20141031205557) do
 
 # Could not dump table "cultivations" because of following NoMethodError
 #   undefined method `[]' for nil:NilClass
+
+  create_table "equipment", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "equipmenttype_id"
+    t.string   "name"
+    t.date     "production_date"
+    t.string   "manufacturer_name"
+    t.string   "model_name"
+    t.date     "buy_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "archive"
+  end
+
+  add_index "equipment", ["user_id"], name: "index_equipment_on_user_id"
+
+  create_table "equipmenttypes", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "fields", force: true do |t|
     t.integer  "user_id"
@@ -36,6 +76,28 @@ ActiveRecord::Schema.define(version: 20141031205557) do
     t.string   "unit_symbol"
     t.integer  "archive"
     t.string   "archive_string"
+  end
+
+  create_table "machines", force: true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.date     "production_date"
+    t.string   "manufacturer_name"
+    t.string   "model_name"
+    t.date     "buy_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "archive"
+    t.integer  "machinetype_id"
+  end
+
+  add_index "machines", ["machinetype_id"], name: "index_machines_on_machinetype_id"
+  add_index "machines", ["user_id"], name: "index_machines_on_user_id"
+
+  create_table "machinetypes", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "mobs", force: true do |t|
@@ -123,5 +185,24 @@ ActiveRecord::Schema.define(version: 20141031205557) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["name"], name: "index_users_on_name", unique: true
+
+  create_table "volumeunits", force: true do |t|
+    t.string   "name"
+    t.string   "symbol"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "warehouses", force: true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.integer  "volume"
+    t.integer  "volumeunit_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "archive"
+  end
+
+  add_index "warehouses", ["user_id"], name: "index_warehouses_on_user_id"
 
 end

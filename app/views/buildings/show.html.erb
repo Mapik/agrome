@@ -1,0 +1,26 @@
+<% provide(:title, @building.name) %>
+
+
+<nav class="breadcrumbs">
+    <%= link_to "Strona główna", root_path %>
+    <%= link_to "Budynki", buildings_path %>
+    <a class="current" href="#"><%= current_building.name %></a>
+</nav>
+
+<div class="edit-errors">
+  <div class="row">
+    <%= render 'shared/error_messages', object: @building %>
+  </div>
+</div> <!--END OF edit-errors -->
+
+<div class="building-title">
+  <div class="row">
+    <h1><%= current_building.name %></h1>
+  </div>
+</div><!--END OF building-title-->
+
+<div class="building-description-and-edit">
+  <%= render 'building_description_and_edit' %>
+</div><!--END OF building-description-and-edit-->
+
+

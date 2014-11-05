@@ -1,8 +1,12 @@
 class User < ActiveRecord::Base
   has_many :fields
   has_many :mobs
-	attr_accessor :remember_token, :reset_token
+	has_many :warehouses
+  has_many :buildings
+  has_many :machines
+  attr_accessor :remember_token, :reset_token
 	before_save :downcase_email
+
 	
 
 	validates :name, presence: true, 

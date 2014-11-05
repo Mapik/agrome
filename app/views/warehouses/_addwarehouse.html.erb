@@ -1,0 +1,22 @@
+<div class="add-button">    
+  <div class="row">
+    <div class="large-12 columns">
+      <a href="#" class="button" data-reveal-id="addWarehouse">Dodaj magazyn</a>
+    </div>
+  </div> <!--END OF row-->
+</div><!--END OF add-button-->
+
+
+<div id="addWarehouse" class="reveal-modal" data-reveal>
+  <h1><small>Dodaj magazyn:</small></h1>
+  <div class="form">
+    <%= form_for(@warehouse) do |f| %>
+      <%= f.text_field :name, placeholder: "Nazwa magazynu" %>
+      <h3><small>Jednostka pojemności:</small></h3>
+      <%= f.collection_select(:volumeunit_id, Volumeunit.all, :id, :name) %>
+      <%= f.text_field :volume, placeholder: "Pojemność magazynu" %>
+      <%= f.hidden_field :archive, :value => '0' %>
+      <%= f.submit "Dodaj magazyn", class: "button" %>
+    <% end %>
+  </div> <!--END OF form-->
+</div> <!--END OF reveal-modal-->

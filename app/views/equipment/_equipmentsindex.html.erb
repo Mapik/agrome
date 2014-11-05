@@ -1,0 +1,30 @@
+<% user_active_equipments.each do |equipment| %>
+    <% if (user_active_equipments.index(equipment)+1) % 3 == 1 %>
+      <div class="row">
+    <%  end %>
+        <div class="large-4 columns">
+          <%= link_to equipment do %>
+          <div class="panel clearfix"> 
+            <h2><small>Nazwa: <span><%= equipment.name %></span></small></h2>
+            <h3><small>Typ:  <%= equipment_type(equipment).name %></small></h3>
+          </div>
+          <% end %>
+        </div>
+        <% if (user_active_equipments.index(equipment)+1) % 3 == 1 %>
+        <div class="large-4 columns">
+        </div>
+        <div class="large-4 columns">
+        </div>
+        <%  end %>
+        <% if (user_active_equipments.index(equipment)+1) % 3 == 2 %>
+        <div class="large-4 columns">
+        </div>
+        <%  end %>
+            
+    <% if (user_active_equipments.index(equipment)+1) % 3 == 0 || 
+      (user_active_equipments.index(equipment)+1) == user_active_equipments.count %>
+      </div>
+    <%  end %>
+<% end %>
+
+

@@ -1,0 +1,36 @@
+<% provide(:title, "Magazyny") %>
+
+<div "warehouse-index">
+  <nav class="breadcrumbs">
+    <%= link_to "Strona główna", root_path %>
+    <a class="current" href="#">Magazyny</a>
+  </nav> <!--END OF breadcrumbs -->
+
+  <% if user_active_warehouses.count == 0 %>
+    <div class="no-warehouse">
+      <div class="row">
+        <div class="panel clearfix"> 
+          <h2><small>Nie dodałeś jeszcze żadnego magazynu.</small></h2>
+          <h3><small>Wykorzystaj przycisk "Dodaj magazyn", który znajduje się poniżej
+            w celu dodania swojego pierwszego magazynu.</small></h3>  
+        </div>
+      </div>
+    </div> <!--END OF no-warehouse-->
+  <% end %>
+
+  <div class="sign-up-errors">
+    <div class="row">
+      <%= render 'shared/error_messages', object: @warehouse %>
+    </div>
+  </div><!--END OF sign-up-errors-->
+
+
+  <div class="warehouses">
+    <%= render 'warehousesindex' %>
+  </div><!--END OF warehouses-->
+
+  <div class="add-warehouse">
+    <%= render 'addwarehouse' %>
+  </div><!--END OF add-warehouse-->
+
+</div><!--END OF warehouse-index-->

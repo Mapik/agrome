@@ -1,0 +1,24 @@
+<div class="add-button">    
+  <div class="row">
+    <div class="large-12 columns">
+      <a href="#" class="button" data-reveal-id="addBuilding">Dodaj budynek</a>
+    </div>
+  </div> <!--END OF row-->
+</div><!--END OF add-button-->
+
+
+<div id="addBuilding" class="reveal-modal" data-reveal>
+  <h1><small>Dodaj budynek:</small></h1>
+  <div class="form">
+    <%= form_for(@building) do |f| %>
+      <%= f.text_field :name, placeholder: "Nazwa budynku" %>
+      <h3><small>Typ budynku:</small></h3>
+      <%= f.collection_select(:buildingtype_id, Buildingtype.all, :id, :name) %>
+      <h3><small>Data wybudowania:</small></h3>
+      <%= f.date_field :build_date %>
+      <%= f.text_field :area, placeholder: "Powierzchnia budynku w m2" %>
+      <%= f.hidden_field :archive, :value => '0' %>
+      <%= f.submit "Dodaj budynek", class: "button" %>
+    <% end %>
+  </div> <!--END OF form-->
+</div> <!--END OF reveal-modal-->

@@ -1,0 +1,26 @@
+<% provide(:title, @warehouse.name) %>
+
+
+<nav class="breadcrumbs">
+    <%= link_to "Strona główna", root_path %>
+    <%= link_to "Magazyny", warehouses_path %>
+    <a class="current" href="#"><%= current_warehouse.name %></a>
+</nav>
+
+<div class="edit-errors">
+  <div class="row">
+    <%= render 'shared/error_messages', object: @warehouse %>
+  </div>
+</div> <!--END OF edit-errors -->
+
+<div class="warehouse-title">
+  <div class="row">
+    <h1><%= current_warehouse.name %></h1>
+  </div>
+</div><!--END OF warehouse-title-->
+
+<div class="warehouse-description-and-edit">
+  <%= render 'warehouse_description_and_edit' %>
+</div><!--END OF warehouse-description-and-edit-->
+
+

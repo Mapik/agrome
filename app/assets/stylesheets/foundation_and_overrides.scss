@@ -1987,6 +1987,80 @@ Formatowanie Mob Show
   }
 }
 
+/*
+Formatowanie warehouse Index
+========================================================================== */
+.warehouses{
+  //margin-top: 2rem;
+  span{
+    color:#008CBA
+  }
+  .clearfix{
+    margin-top: 1rem;
+    &:hover {
+                background: scale-color($white, $lightness: -8%);
+                }
+  }
+}
+
+/*
+Formatowanie Warehouse Show
+========================================================================== */
+.warehouse-description-and-edit{
+  .columns{
+    padding-left: 0px;
+  }
+}
+
+/*
+Formatowanie building Index
+========================================================================== */
+.buildings{
+  //margin-top: 2rem;
+  span{
+    color:#008CBA
+  }
+  .clearfix{
+    margin-top: 1rem;
+    &:hover {
+                background: scale-color($white, $lightness: -8%);
+                }
+  }
+}
+
+/*
+Formatowanie building Show
+========================================================================== */
+.building-description-and-edit{
+  .columns{
+    padding-left: 0px;
+  }
+}
+
+/*
+Formatowanie machine Index
+========================================================================== */
+.machine{
+  //margin-top: 2rem;
+  span{
+    color:#008CBA
+  }
+  .clearfix{
+    margin-top: 1rem;
+    &:hover {
+                background: scale-color($white, $lightness: -8%);
+                }
+  }
+}
+
+/*
+Formatowanie machine Show
+========================================================================== */
+.machine-description-and-edit{
+  .columns{
+    padding-left: 0px;
+  }
+}
 /*================================================================
 Ustawienia dla urządzeń mobilnych
 */
