@@ -109,8 +109,8 @@ Croptype.create!(cropname:'Wyka kosmata')
 Croptype.create!(cropname:'Wyka siewna')
 Croptype.create!(cropname:'Ziemniaki')
 Croptype.create!(cropname:'Żyto')
-=end
 Croptype.create!(cropname:'Inna')
+=end
 
 =begin
 Mobtype.create!(name:'Krowy')
@@ -126,7 +126,6 @@ Mobtype.create!(name:'Gęsi')
 Mobtype.create!(name:'Indyki')
 Mobtype.create!(name:'Strusie')
 Mobtype.create!(name:'Kozy')
-=end
 Mobtype.create!(name:'Inne')
 
 #Area Units
@@ -135,6 +134,7 @@ AreaUnit.create!(unit:'ar', symbol:'ar')
 AreaUnit.create!(unit:'akr', symbol:'ak')
 AreaUnit.create!(unit:'metr kwadratowy', symbol:'m2')
 AreaUnit.create!(unit:'morga', symbol:'m')
+=end
 
 #Building type
 Buildingtype.create!(name: 'Budynek gospodarczy')
