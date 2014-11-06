@@ -1,6 +1,7 @@
 class Field < ActiveRecord::Base
   belongs_to :user
   has_many :seasons
+  has_one :area_unit
   default_scope -> { order('name ASC') }
   #has_many :area_units
   #has_one :area_unit

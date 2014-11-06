@@ -1,6 +1,7 @@
 class Mob < ActiveRecord::Base
   belongs_to :user
   has_many :submobs
+  has_one :mobtype
   
   default_scope -> { order('creation_date DESC') }
   validates :user_id, presence: true
