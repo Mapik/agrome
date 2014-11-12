@@ -1,4 +1,4 @@
 class Croptype < ActiveRecord::Base
   has_many :cultivations  
-  validates :name, presence: true, uniqueness: true
+  validates :cropname, presence: true, uniqueness: true
 end
