@@ -5,16 +5,18 @@
         <a href="#addseason">Dodaj sezon</a>
         <div id="addseason" class="content">
           <%= form_for(@season) do |f| %>
-            <%= f.collection_select(:season_name, Seasonlist.where.not(name: current_field.seasons.pluck(:season_name)), :name, :name) %>
-            <%= f.hidden_field :seasonlist_id, :value => '999' %>
+            <%= f.collection_select(:seasonlist_id, Seasonlist.where.not(id: current_field.seasons.pluck(:seasonlist_id)), :id, :name) %>
+            
             <%= f.submit "Dodaj sezon", class: "button" %>
           <% end %>          
         </div>
       </dd>
       <% @field_seasons.each do |season| %>
       <dd class="accordion-navigation">
-        <a href="#season<%= @field_seasons.index(season) %>"><%= season.season_name %></a>
-        <div id="season<%= @field_seasons.index(season) %>" class="content">
+        <a href="#season<%= @field_seasons.index(season) %>">
+            <%= Seasonlist.where(id: season.seasonlist_id).first.name %></a>
+          
+          <div id="season<%= @field_seasons.index(season) %>" class="content">
 
           <div class="accordion-content">
             <% cultivation_name_array = Croptype.joins(:cultivations).where(cultivations: { season_id: season.id} ) %>

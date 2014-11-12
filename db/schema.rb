@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141111203759) do
+ActiveRecord::Schema.define(version: 20141112213608) do
 
 # Could not dump table "area_units" because of following NoMethodError
 #   undefined method `[]' for nil:NilClass
@@ -130,7 +130,7 @@ ActiveRecord::Schema.define(version: 20141111203759) do
   add_index "submobs", ["mob_id"], name: "index_submobs_on_mob_id"
 
   create_table "user_types", force: true do |t|
-    t.string   "type"
+    t.string   "user_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

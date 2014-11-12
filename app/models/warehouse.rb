@@ -5,7 +5,7 @@ class Warehouse < ActiveRecord::Base
 
   validates :name,  presence: true, 
                     length: { maximum: 40 },
-                    uniqueness: { scope: :mob_id }
+                    uniqueness: { scope: :user_id }
 
   validates :volume, length: { maximum: 10 }
 

@@ -47,7 +47,7 @@ User.create!(name:  "Admin",
 end
 =end
 
-=begin
+
 
 Seasonlist.create!(name: '2009/2010')
 Seasonlist.create!(name: '2010/2011')
@@ -110,9 +110,7 @@ Croptype.create!(cropname:'Wyka siewna')
 Croptype.create!(cropname:'Ziemniaki')
 Croptype.create!(cropname:'Żyto')
 Croptype.create!(cropname:'Inna')
-=end
 
-=begin
 Mobtype.create!(name:'Krowy')
 Mobtype.create!(name:'Byki')
 Mobtype.create!(name:'Świnie')
@@ -188,6 +186,12 @@ Machinetype.create!(name: 'Inna')
 
 #Volume unit
 Volumeunit.create!(name: 'litr', symbol: 'l')
-Volumeunit.create!(name: 'ton', symbol: 't')
+Volumeunit.create!(name: 'tona', symbol: 't')
 Volumeunit.create!(name: 'kilogram', symbol: 'kg')
-=end
+
+#User type
+UserType.create!(user_type: 'Rolnik')
+UserType.create!(user_type: 'Jednostka skupu')
+UserType.create!(user_type: 'Konsument')
+UserType.create!(user_type: 'Admin')
+
