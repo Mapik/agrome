@@ -6,7 +6,9 @@ class Mob < ActiveRecord::Base
   default_scope -> { order('creation_date DESC') }
   validates :user_id, presence: true
   
-  validates :name, presence: true, length: { maximum: 20 }
+  validates :name,  presence: true, 
+                    length: { maximum: 20 },
+                    uniqueness: { scope: :user_id }
 
   validates :breed, length: { maximum: 20 }
 

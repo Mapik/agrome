@@ -1,0 +1,40 @@
+  <div class="row">
+    <div class="large-3 columns">
+      <p>Powierzchnia: <%= "#{number_with_delimiter(current_field.area, 
+        separator: ",")} #{current_field.unit_symbol}" %> </p>
+    </div>
+    <div class="large-3 columns">
+      <p>Lokalizacja: <%= current_field.location %></p>
+    </div>
+    <div class="large-3 columns">
+      <a href="#edit" data-reveal-id="editField">Edytuj pole</a>
+    </div>
+    <div class="large-3 columns">
+      <a href="#remove" data-reveal-id="archiveField">Usuń pole</a>
+    </div>
+  </div>
+
+<div id="editField" class="reveal-modal" data-reveal>
+  <h1><small>Edytuj informacje o polu:</small></h1>
+  <div class="form">
+    <%= form_for(@field) do |f| %>
+      <h3><small>Nazwa pola:</small></h3>
+      <%= f.text_field :name, placeholder: "Nazwa pola" %>
+      <h3><small>Powierzchnia pola:</small></h3>
+      <%= f.text_field :area, placeholder: "Powierzchnia pola" %>
+      <h3><small>Lokalizacja pola:</small></h3>
+      <%= f.text_field :location, placeholder: "Lokalizacja pola" %>
+      <%= f.submit "Zapisz zmiany", class: "button" %>
+    <% end %>
+  </div> <!--END OF form-->
+</div> <!--END OF reveal-modal-->
+
+<div id="archiveField" class="reveal-modal" data-reveal>
+  <h1><small>Potwierdź usunięcie pola</small></h1>
+  <div class="form">
+    <%= form_for(@field) do |f| %>
+      <%= f.hidden_field :archive, :value => '1' %>
+      <%= f.submit "Usuń pole", class: "button" %>
+    <% end %>
+  </div> <!--END OF form-->
+</div> <!--END OF reveal-modal-->

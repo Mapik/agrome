@@ -5,17 +5,14 @@ class FieldsController < ApplicationController
   
 
   def index
-    #@fields = current_user.fields.where(archive: '0') #przeniesione do seesion_helper
     @field = current_user.fields.build
   end
 
   def create
     @field = current_user.fields.build(field_params)
     if @field.save
-      #flash[:success] = "Pole zostało dodane."
       redirect_to @field
     else
-      #@fields = current_user.fields.where(archive: '0') #przeniesione do seesion_helper
       render 'index'
     end
   end
@@ -24,9 +21,6 @@ class FieldsController < ApplicationController
     field = Field.find_by(id: params[:id])
     remember_field field
     @field = current_field
-    #if @field.user != current_user
-    #  redirect_to fields_path
-    #end
     if @field.archive == 1
       redirect_to fields_path
     end
@@ -35,14 +29,10 @@ class FieldsController < ApplicationController
     @cultivation = Cultivation.new
   end
   
-  #def edit
-  #  @field = current_field
-  #end
   
   def update
     @field = current_field
     if @field.update_attributes(field_params)
-      #flash[:success] = "Profil zaktualizowany"
       if @field.archive == 0
         redirect_to @field
       else

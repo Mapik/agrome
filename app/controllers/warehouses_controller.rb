@@ -1,7 +1,7 @@
 class WarehousesController < ApplicationController
 
   before_action :logged_in_user, only: [:index, :create, :show, :update]
-  before_action :correct_user, only:[:show]
+  before_action :correct_user, only:[:show, :update]
 
   def index
     @warehouse = current_user.warehouses.build

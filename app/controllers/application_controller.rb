@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   include WarehousesHelper
   include BuildingsHelper
   include MachinesHelper
+  include FieldsHelper
 
   private
 

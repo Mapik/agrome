@@ -13,7 +13,7 @@
     <%= form_for(@building) do |f| %>
       <%= f.text_field :name, placeholder: "Nazwa budynku" %>
       <h3><small>Typ budynku:</small></h3>
-      <%= f.collection_select(:buildingtype_id, Buildingtype.all, :id, :name) %>
+      <%= f.collection_select(:buildingtype_id, Buildingtype.all, :id, :name, {include_blank: true}) %>
       <h3><small>Data wybudowania:</small></h3>
       <%= f.date_field :build_date %>
       <%= f.text_field :area, placeholder: "Powierzchnia budynku w m2" %>

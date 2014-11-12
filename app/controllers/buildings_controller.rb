@@ -1,7 +1,7 @@
 class BuildingsController < ApplicationController
 
   before_action :logged_in_user, only: [:index, :create, :show, :update]
-  before_action :correct_user, only:[:show]
+  before_action :correct_user, only:[:show, :update]
 
   def index
     @building = current_user.buildings.build
@@ -39,7 +39,8 @@ class BuildingsController < ApplicationController
   private
 
       def buildings_params
-        params.require(:building).permit(:buildingtype_id, :name, :build_date, :area)
+        params.require(:building).permit(:buildingtype_id, :name, :build_date, 
+          :area, :archive)
       end
 
       # Confirms the correct user.

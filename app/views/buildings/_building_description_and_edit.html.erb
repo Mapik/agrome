@@ -27,6 +27,7 @@
   <h1><small>Edytuj informacje o budynku:</small></h1>
   <div class="form">
     <%= form_for(@building) do |f| %>
+      <h3><small>Nazwa budynku:</small></h3>
       <%= f.text_field :name, placeholder: "Nazwa budynku" %>
       <h3><small>Typ budynku:</small></h3>
       <%= f.collection_select(:buildingtype_id, Buildingtype.all, :id, :name) %>
@@ -35,7 +36,7 @@
       <h3><small>Powierzchnia budynku w m2:</small></h3>
       <%= f.text_field :area, placeholder: "Powierzchnia budynku w m2" %>
       <%= f.hidden_field :archive, :value => '0' %>
-      <%= f.submit "Edytuj budynek", class: "button" %>
+      <%= f.submit "Zapisz zmiany", class: "button" %>
     <% end %>
   </div> <!--END OF form-->
 </div> <!--END OF reveal-modal-->

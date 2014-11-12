@@ -14,7 +14,7 @@
       <%= f.text_field :name, placeholder: "Nazwa stada" %>
       <%= f.text_field :breed, placeholder: "Rasa" %>
       <h3><small>Rodzaj zwierzęcia:</small></h3>
-      <%= f.collection_select(:mobtype_id, Mobtype.all, :id, :name) %>
+      <%= f.collection_select(:mobtype_id, Mobtype.all, :id, :name, {include_blank: true}) %>
       <h3><small>Data założenia stada:</small></h3>
       <%= f.date_field :creation_date %>
       <%= f.hidden_field :archive, :value => '0' %>

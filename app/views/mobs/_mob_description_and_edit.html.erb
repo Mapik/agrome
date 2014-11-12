@@ -29,14 +29,16 @@
   <h1><small>Edytuj informacje o stadzie:</small></h1>
   <div class="form">
     <%= form_for(@mob) do |f| %>
+      <h3><small>Nazwa stada:</small></h3>
       <%= f.text_field :name, placeholder: "Nazwa stada" %>
+      <h3><small>Rasa:</small></h3>
       <%= f.text_field :breed, placeholder: "Rasa" %>
       <h3><small>Rodzaj zwierzęcia:</small></h3>
       <%= f.collection_select(:mobtype_id, Mobtype.all, :id, :name) %>
       <h3><small>Data założenia stada:</small></h3>
       <%= f.date_field :creation_date, placeholder: "Rasa" %>
       <%= f.hidden_field :archive, :value => '0' %>
-      <%= f.submit "Edytuj stado", class: "button" %>
+      <%= f.submit "Zapisz zmiany", class: "button" %>
     <% end %>
   </div> <!--END OF form-->
 </div> <!--END OF reveal-modal-->

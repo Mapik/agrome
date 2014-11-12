@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   match '/help',    to: 'static_pages#help',    via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/signup',  to: 'users#new',            via: 'get'
-  match '/fields/jakasfunkcja', to: 'fields#jakasfunkcja', via: 'get'
   get    'login'    => 'sessions#new'
   delete 'logout'   => 'sessions#destroy'
   resources :users

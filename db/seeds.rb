@@ -134,7 +134,6 @@ AreaUnit.create!(unit:'ar', symbol:'ar')
 AreaUnit.create!(unit:'akr', symbol:'ak')
 AreaUnit.create!(unit:'metr kwadratowy', symbol:'m2')
 AreaUnit.create!(unit:'morga', symbol:'m')
-=end
 
 #Building type
 Buildingtype.create!(name: 'Budynek gospodarczy')
@@ -191,3 +190,4 @@ Machinetype.create!(name: 'Inna')
 Volumeunit.create!(name: 'litr', symbol: 'l')
 Volumeunit.create!(name: 'ton', symbol: 't')
 Volumeunit.create!(name: 'kilogram', symbol: 'kg')
+=end

@@ -8,7 +8,7 @@ class SeasonsController < ApplicationController
     if @season.save
       redirect_to current_field
     else
-      render 'new'
+      redirect_to current_field
     end
   end
 

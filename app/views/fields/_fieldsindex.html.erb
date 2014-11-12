@@ -1,0 +1,31 @@
+<% user_active_fields.each do |field| %>
+    <% if (user_active_fields.index(field)+1) % 3 == 1 %>
+      <div class="row">
+    <%  end %>
+        <div class="large-4 columns">
+          <%= link_to field do %>
+          <div class="panel clearfix"> 
+            <h2><small>Pole: <span><%= field.name %></span></small></h2>
+            <h3><small>Powierzchnia: <%= "#{number_with_delimiter(field.area, separator: ",")} #{field.unit_symbol}" %> </small></h3>
+            <h3><small>Lokalizacja: <%= field.location %></small></h3>
+          </div>
+          <% end %>
+        </div>
+        <% if (user_active_fields.index(field)+1) % 3 == 1 %>
+        <div class="large-4 columns">
+        </div>
+        <div class="large-4 columns">
+        </div>
+        <%  end %>
+        <% if (user_active_fields.index(field)+1) % 3 == 2 %>
+        <div class="large-4 columns">
+        </div>
+        <%  end %>
+            
+    <% if (user_active_fields.index(field)+1) % 3 == 0 || 
+      (user_active_fields.index(field)+1) == user_active_fields.count %>
+      </div>
+    <%  end %>
+<% end %>
+
+

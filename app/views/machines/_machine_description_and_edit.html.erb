@@ -31,17 +31,20 @@
   <h1><small>Edytuj informacje o maszynie:</small></h1>
   <div class="form">
     <%= form_for(@machine) do |f| %>
+      <h3><small>Nazwa maszyny:</small></h3>
       <%= f.text_field :name, placeholder: "Nazwa maszyny" %>
       <h3><small>Typ maszyny:</small></h3>
       <%= f.collection_select(:machinetype_id, Machinetype.all, :id, :name) %>
+      <h3><small>Producent:</small></h3>
       <%= f.text_field :manufacturer_name, placeholder: "Producenta" %>
+      <h3><small>Model:</small></h3>
       <%= f.text_field :model_name, placeholder: "Model" %>
       <h3><small>Data zakupu:</small></h3>
       <%= f.date_field :buy_date %>
       <h3><small>Data produckji:</small></h3>
       <%= f.date_field :production_date %>
       <%= f.hidden_field :archive, :value => '0' %>
-      <%= f.submit "Edytuj maszynę", class: "button" %>
+      <%= f.submit "Zapisz zmiany", class: "button" %>
     <% end %>
   </div> <!--END OF form-->
 </div> <!--END OF reveal-modal-->

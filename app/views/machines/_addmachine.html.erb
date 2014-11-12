@@ -13,7 +13,7 @@
     <%= form_for(@machine) do |f| %>
       <%= f.text_field :name, placeholder: "Nazwa maszyny" %>
       <h3><small>Typ maszyny:</small></h3>
-      <%= f.collection_select(:machinetype_id, Machinetype.all, :id, :name) %>
+      <%= f.collection_select(:machinetype_id, Machinetype.all, :id, :name, {include_blank: true}) %>
       <%= f.text_field :manufacturer_name, placeholder: "Producenta" %>
       <%= f.text_field :model_name, placeholder: "Model" %>
       <h3><small>Data zakupu:</small></h3>

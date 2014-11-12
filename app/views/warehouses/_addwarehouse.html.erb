@@ -13,7 +13,7 @@
     <%= form_for(@warehouse) do |f| %>
       <%= f.text_field :name, placeholder: "Nazwa magazynu" %>
       <h3><small>Jednostka pojemności:</small></h3>
-      <%= f.collection_select(:volumeunit_id, Volumeunit.all, :id, :name) %>
+      <%= f.collection_select(:volumeunit_id, Volumeunit.all, :id, :name, {include_blank: true}) %>
       <%= f.text_field :volume, placeholder: "Pojemność magazynu" %>
       <%= f.hidden_field :archive, :value => '0' %>
       <%= f.submit "Dodaj magazyn", class: "button" %>

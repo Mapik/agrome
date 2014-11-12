@@ -3,7 +3,10 @@ class Season < ActiveRecord::Base
   has_many :cultivations
   has_one :seasonlist
   default_scope -> { order('season_name DESC') }
+  
   validates :field_id, presence: true
-  validates :season_name, presence: true
+  
+  validates :season_name,   presence: true, 
+                            uniqueness: { scope: :field_id} 
   
 end
