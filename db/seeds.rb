@@ -127,11 +127,11 @@ Mobtype.create!(name:'Kozy')
 Mobtype.create!(name:'Inne')
 
 #Area Units
-AreaUnit.create!(unit:'hektar', symbol:'ha')
-AreaUnit.create!(unit:'ar', symbol:'ar')
-AreaUnit.create!(unit:'akr', symbol:'ak')
-AreaUnit.create!(unit:'metr kwadratowy', symbol:'m2')
-AreaUnit.create!(unit:'morga', symbol:'m')
+AreaUnit.create!(unit:'hektar', unit_symbol:'ha')
+AreaUnit.create!(unit:'ar', unit_symbol:'ar')
+AreaUnit.create!(unit:'akr', unit_symbol:'ak')
+AreaUnit.create!(unit:'metr kwadratowy', unit_symbol:'m2')
+AreaUnit.create!(unit:'morga', unit_symbol:'m')
 
 #Building type
 Buildingtype.create!(name: 'Budynek gospodarczy')
@@ -185,9 +185,9 @@ Machinetype.create!(name: 'Wózek widłowy')
 Machinetype.create!(name: 'Inna')
 
 #Volume unit
-Volumeunit.create!(name: 'litr', symbol: 'l')
-Volumeunit.create!(name: 'tona', symbol: 't')
-Volumeunit.create!(name: 'kilogram', symbol: 'kg')
+Volumeunit.create!(name: 'litr', volumesymbol: 'l')
+Volumeunit.create!(name: 'tona', volumesymbol: 't')
+Volumeunit.create!(name: 'kilogram', volumesymbol: 'kg')
 
 #User type
 UserType.create!(user_type: 'Rolnik')

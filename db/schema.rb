@@ -11,10 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141112213608) do
+ActiveRecord::Schema.define(version: 20141113201409) do
 
-# Could not dump table "area_units" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "area_units", force: true do |t|
+    t.string   "unit"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "added_column"
+    t.string   "unit_symbol"
+  end
 
   create_table "buildings", force: true do |t|
     t.integer  "user_id"
@@ -161,7 +166,7 @@ ActiveRecord::Schema.define(version: 20141112213608) do
 
   create_table "volumeunits", force: true do |t|
     t.string   "name"
-    t.string   "symbol"
+    t.string   "volumesymbol"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
