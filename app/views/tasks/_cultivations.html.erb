@@ -1,0 +1,34 @@
+
+<div class="row">
+  <% if @seasons_to_select.count == 0 %>
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="panel clearfix"> 
+          <h2><small>Brak upraw.</small></h2>
+          <h3><small>Wykorzystaj przycisk "Dodaj uprawy", który znajduje się poniżej
+            w celu dodania swojego pierwszej uprawy.</small></h3>  
+        </div><!--END OF clearfix-->
+      </div><!--END OF columns-->
+    </div><!--END OF row-->
+    <%= link_to "DODAJ UPRAWĘ", @selected_subobject, class: "button" %>
+  <% else %>
+    <% @seasons_to_select.each do |season| %>
+      <h4><small><%= Seasonlist.where(id: season.seasonlist_id).first.name %></small></h4>
+      <% @cultivations = season.cultivations.all %>
+      <div class="button-bar">
+        <ul class="button-group">
+          <% @cultivations.each do |cultivation| %>
+          <li>
+            <div class="last-level">  
+              <%= form_tag('selected_cultivation', :remote => true) do %>
+                <%= hidden_field_tag  'CultivationsId', cultivation.id %>
+                <%= submit_tag  Croptype.where(id: cultivation.croptype_id).first.cropname, class: "button tiny" %>
+            </div><!--END OF last-level-->
+          </li>
+            <% end %><!--END OF FORMTAG-->
+          <% end %><!--END OF CULTIVATIONS EACH DO-->
+        </ul> <!--END OF button-group-->
+      </div><!--END OF button-bar-->
+    <% end %><!--END OF SEASONS EACH DO-->
+  <% end %><!--END OF IF-->
+</div><!--END OF row-->

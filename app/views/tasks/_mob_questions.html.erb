@@ -1,0 +1,139 @@
+<div class="row">
+  <h2>
+    <small>
+      <%= @selected_subobject.name %>
+    </small>  
+  </h2>  
+  <div class="large-12 columns">
+    <%= form_for(@task, :remote => true) do |f| %>
+      
+      <div class="large-6 columns">
+
+        <%= render 'title_obligatory_fields' %>
+
+        <h4><small>ZADANIE:</small></h4>
+        <%= f.collection_select(:task_type_id, TaskType.where(is_for_mob: 1), :id, :name,
+          :prompt => "Wybierz zadanie...") %>
+
+        <h4><small>DATA OPERACJI:</small></h4>
+        <%= f.date_field :operation_date %>
+
+        <h4><small>WARTOŚĆ CAŁKOWITA TRANSAKCJI W ZŁOTÓWKACH:</small></h4>
+        <%= f.text_field :operation_costs, placeholder: 'Podaj liczbę' %>
+        
+        <%= f.submit "ZAREJESTRUJ ZADANIE", class: "button" %>
+
+      </div><!--END OF columns-->
+
+      <div class="large-6 columns">
+        <%= render 'title_additional_fields' %>
+
+      <!--==================================================================-->
+
+        <div class="hide 10 11 9">
+          <h4><small>NAZWA WETERYNARZA:</small></h4>
+          <%= f.text_field :vet_name, placeholder: 'Podaj nazwę' %>
+        </div>
+        
+        <div class="hide 10 11 9">
+          <h4><small>KOSZT WETERYNARZA:</small></h4>
+          <%= f.text_field :vet_cost, placeholder: 'Podaj liczbę' %>
+        </div>
+
+        <div class="hide 10 11 9">        
+          <h4><small>NAZWA LEKU:</small></h4>
+          <%= f.text_field :medicine, placeholder: 'Podaj nazwę' %>
+        </div>
+
+        <div class="hide 10 11 9">
+          <h4><small>KOSZT LEKÓW:</small></h4>
+          <%= f.text_field :medicine_cost, placeholder: 'Podaj liczbę' %>
+        </div>
+
+        <div class="hide 9">        
+          <h4><small>DAWKA LEKU:</small></h4>
+          <%= f.text_field :medicine_dose, placeholder: 'Podaj liczbę' %>
+        </div>
+
+        <div class="hide 9">        
+          <h4><small>DŁUGOŚĆ LECZENIA W DNIACH:</small></h4>
+          <%= f.text_field :treatment_duration, placeholder: 'Podaj liczbę' %>
+        </div>
+
+        <div class="hide 39 38 47">        
+          <h4 class="hide 39 47"><small>LICZBA SPRZEDANYCH SZTUK:</small></h4>
+          <h4 class="hide 38"><small>LICZBA KUPIONYCH SZTUK:</small></h4>
+          <%= f.text_field :quantity, placeholder: 'Podaj liczbę' %>
+        </div>
+
+        <div class="hide 39 38 47">        
+          <h4><small>JEDNOSTKA SPRZEDAŻY:</small></h4>
+          <%= f.collection_select(:volumeunit_id, Volumeunit.where(is_for_livestock: 1), :id, :name, {include_blank: true}) %>
+        </div>
+
+        <div class="hide 39 38 47">        
+          <h4><small>CENA JEDNOSTKOWA:</small></h4>
+          <%= f.text_field :unit_price, placeholder: 'Podaj liczbę' %>
+        </div>
+
+        <div class="hide 39 47">        
+          <h4><small>NAZWA KUPUJĄCEGO:</small></h4>
+          <%= f.text_field :buyer_name, placeholder: 'Podaj nazwę' %>
+        </div>
+
+        <div class="hide 38">        
+          <h4><small>NAZWA SPRZEDAJĄCEGO:</small></h4>
+          <%= f.text_field :seller_name, placeholder: 'Podaj nazwę' %>
+        </div>
+
+      <!--==================================================================-->
+      
+        <div id="comment" class="hide">
+          <h4><small>DODAJ KOMENTARZ:</small></h4>
+          <%= f.text_field :comment, placeholder: 'Twój własny komentarz' %>
+        </div>
+
+      </div><!--END OF columns-->
+
+      <%= f.hidden_field :submob_id, :value => @selected_subobject.id %>
+      <%= f.hidden_field :is_for_mob, :value => 1 %>
+      
+    <% end %><!--END OF FORM_FOR-->
+  </div><!--END OF columns-->
+</div><!--END OF row-->
+
+
+<div>
+  <p>selected_task_div_id:</p>
+</div>
+<div id="selected_task_div_id">
+</div>
+
+<%  @all_task_types = TaskType.all %>
+
+<script>
+  $(document).ready(function() {
+    $('#task_task_type_id').change(function() {
+
+      $( ".hide" ).hide();
+      var task_types = new Array();
+      <% @all_task_types.each do |task| %>
+        task_types.push(new Array(<%= task.id %>, <%= task.div_id %>))
+      <% end %>
+
+      selected_task_id = $( this ).val();
+
+      jQuery.each( task_types, function( i, val ) {
+          if (val[0] == selected_task_id){
+            selected_task_div_id = val[1];
+          } ;
+        });
+
+      $( "#selected_task_div_id" ).text( selected_task_div_id );
+
+      $("." + selected_task_div_id).show();
+      $("#additionalFields").show();
+      $("#comment").show();
+    });
+  });
+</script>

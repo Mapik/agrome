@@ -1,0 +1,30 @@
+
+<div class="row">
+  <% if @submobs_to_select.count == 0 %>
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="panel clearfix"> 
+          <h2><small>Brak substad.</small></h2>
+          <h3><small>Wykorzystaj przycisk "Dodaj substado", który znajduje się poniżej
+            w celu dodania substada.</small></h3>  
+        </div><!--END OF clearfix-->
+      </div><!--END OF columns-->
+    </div><!--END OF row-->
+    <%= link_to "DODAJ SUBSTADO", @selected_subobject, class: "button" %>
+  <% else %>
+    <div class="button-bar">
+      <ul class="button-group">
+        <% @submobs_to_select.each do |submob| %>
+          <li>
+            <div class="last-level">  
+              <%= form_tag('selected_submob', :remote => true) do %>
+                <%= hidden_field_tag  'SubmobsId', submob.id %>
+                <%= submit_tag  submob.name, class: "button tiny" %>
+              <% end %><!--END OF FORMTAG-->
+            </div><!--END OF last-level-->
+          </li>
+        <% end %><!--END OF SUBMOB EACH DO-->
+      </ul> <!--END OF button-group-->
+    </div><!--END OF button-bar-->
+  <% end %><!--END OF IF-->
+</div><!--END OF row-->

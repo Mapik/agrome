@@ -8,6 +8,19 @@
     <link rel="shortcut icon" href="favicon.ico" >
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
+
+    <!--ALTERNATYWNIE MOŻNA DAĆ:
+    javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "jquery.rails.js" 
+
+    LUB
+
+    javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"
+
+    LUB
+
+    javascript_include_tag 'application', 'data-turbolinks-track' => true
+
+    -->
     <%= csrf_meta_tags %>
 
     <!-- GOOGLE ANALYTICS -->

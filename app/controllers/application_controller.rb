@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
   include BuildingsHelper
   include MachinesHelper
   include FieldsHelper
+  include TasksHelper
 
   private
 

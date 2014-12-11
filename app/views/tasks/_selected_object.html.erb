@@ -1,0 +1,140 @@
+<% if @selected_subobjects.count == 0 %>
+  <div class="row">
+        <% if @selected_object == '1' %>
+          <div class="row">
+            <div class="large-12 columns">
+              <div class="panel clearfix"> 
+                <h2><small>Nie dodałeś jeszcze żadnego pola.</small></h2>
+                <h3><small>Wykorzystaj przycisk "Dodaj pole", który znajduje się poniżej
+                  w celu dodania swojego pierwszego pola.</small></h3>  
+              </div>
+            </div>
+          </div>
+          <%= link_to "DODAJ POLE", fields_path, class: "button" %>
+
+        <% elsif  @selected_object == '2' %>
+          <div class="row">
+            <div class="large-12 columns">
+              <div class="panel clearfix"> 
+                <h2><small>Nie dodałeś jeszcze żadnego stada.</small></h2>
+                <h3><small>Wykorzystaj przycisk "Dodaj stado", który znajduje się poniżej
+                  w celu dodania swojego pierwszego stada.</small></h3>  
+              </div>
+            </div>
+          </div>
+          <%= link_to "DODAJ STADO", mobs_path, class: "button" %>
+
+        <% elsif  @selected_object == '3' %>
+          <div class="row">
+            <div class="large-12 columns">
+              <div class="panel clearfix"> 
+                <h2><small>Nie dodałeś jeszcze żadnej maszyny.</small></h2>
+                <h3><small>Wykorzystaj przycisk "Dodaj maszynę", który znajduje się poniżej
+                  w celu dodania swojej pierwszej maszyny.</small></h3>  
+              </div>
+            </div>
+          </div>
+          <%= link_to "DODAJ MASZYNĘ", machines_path, class: "button" %>
+
+        <% elsif  @selected_object == '4' %>
+          <div class="row">
+            <div class="large-12 columns">
+              <div class="panel clearfix"> 
+                <h2><small>Nie dodałeś jeszcze żadnego budynku.</small></h2>
+                <h3><small>Wykorzystaj przycisk "Dodaj budynek", który znajduje się poniżej
+                  w celu dodania swojego pierwszego budynku.</small></h3>  
+              </div>
+            </div>
+          </div>
+          <%= link_to "DODAJ BUDYNEK", buildings_path, class: "button" %>
+
+        <% elsif  @selected_object == '5' %>
+          <div class="row">
+            <div class="large-12 columns">
+              <div class="panel clearfix"> 
+                <h2><small>Nie dodałeś jeszcze żadnego magazynu.</small></h2>
+                <h3><small>Wykorzystaj przycisk "Dodaj magazyn", który znajduje się poniżej
+                  w celu dodania swojego pierwszego magazynu.</small></h3>  
+              </div>
+            </div>
+          </div>
+          <%= link_to "DODAJ BUDYNEK", warehouses_path, class: "button" %>
+
+        <% end %>
+  </div> <!--END OF row-->
+<% else %>    
+
+<div class="row">
+  <div class="selected-object">
+    <ul class="small-block-grid-4">
+      <% @selected_subobjects.each do |obj| %>
+        <% @x = obj.class.to_s %>
+        
+        <% if @x == 'Field' %>
+          <li>
+            <%= form_tag('selected_field', :remote => true) do %>
+              <%= hidden_field_tag  'FieldId', obj.id %>
+              <%= submit_tag  obj.name, class: "button secondary" %>
+            <% end %>
+          </li>
+
+        <% elsif  @x == 'Mob' %>
+          <li>
+            <%= form_tag('selected_mob', :remote => true) do %>
+              <%= hidden_field_tag  'MobId', obj.id %>
+              <%= submit_tag  obj.name, class: "button secondary" %>
+            <% end %>
+          </li>
+
+        <% elsif  @x == 'Machine' %>
+          <li>
+            <%= form_tag('selected_machine', :remote => true) do %>
+              <%= hidden_field_tag  'MacineId', obj.id %>
+              <%= submit_tag  obj.name, class: "button secondary" %>
+            <% end %>
+          </li>
+
+        <% elsif  @x == 'Building' %>
+          <li>
+            <%= form_tag('selected_building', :remote => true) do %>
+              <%= hidden_field_tag  'BuildingId', obj.id %>
+              <%= submit_tag  obj.name, class: "button secondary" %>
+            <% end %>
+          </li>
+
+        <% elsif  @x == 'Warehouse' %>
+          <li>
+            <%= form_tag('selected_warehouse', :remote => true) do %>
+              <%= hidden_field_tag  'WarehouseId', obj.id %>
+              <%= submit_tag  obj.name, class: "button secondary" %>
+            <% end %>
+          </li>
+        <% end %>
+      <% end %>
+
+      <% 
+      case @selected_object
+      when '1' #Field %>
+        <ul class="button-group"><div class="additional-object"><%= link_to "+ dodaj pole",fields_path %></div></ul>
+      <% 
+      when '2' #Mob %>
+        <ul class="button-group"><div class="additional-object"><%= link_to "+ dodaj stado",mobs_path %></div></ul>
+      <% 
+      when '3' #Machine%>
+        <ul class="button-group"><div class="additional-object"><%= link_to "+ dodaj maszynę",machines_path %></div></ul>
+      <% 
+      when '4' #Building%>
+        <ul class="button-group"><div class="additional-object"><%= link_to "+ dodaj budynek",buildings_path %></div></ul>
+      <% 
+      when '5' #Warehouse%>
+        <ul class="button-group"><div class="additional-object"><%= link_to "+ dodaj magazyn",warehouses_path %></div></ul>
+      <% 
+      end
+      %>
+  <% end %>    
+    </ul> <!--END OF small-block-grid-3-->
+  </div> <!--END OF selected_object-->
+</div> <!--END OF row-->
+  
+
+

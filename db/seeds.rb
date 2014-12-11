@@ -48,7 +48,7 @@ end
 =end
 
 
-
+=begin
 Seasonlist.create!(name: '2009/2010')
 Seasonlist.create!(name: '2010/2011')
 Seasonlist.create!(name: '2011/2012')
@@ -110,7 +110,9 @@ Croptype.create!(cropname:'Wyka siewna')
 Croptype.create!(cropname:'Ziemniaki')
 Croptype.create!(cropname:'Żyto')
 Croptype.create!(cropname:'Inna')
-
+=end
+Croptype.create!(cropname:'Gorczyca')
+=begin
 Mobtype.create!(name:'Krowy')
 Mobtype.create!(name:'Byki')
 Mobtype.create!(name:'Świnie')
@@ -188,10 +190,63 @@ Machinetype.create!(name: 'Inna')
 Volumeunit.create!(name: 'litr', volumesymbol: 'l')
 Volumeunit.create!(name: 'tona', volumesymbol: 't')
 Volumeunit.create!(name: 'kilogram', volumesymbol: 'kg')
-
+=end
+Volumeunit.create!(name: 'sztuka', volumesymbol: 'szt')
+=begin
 #User type
 UserType.create!(user_type: 'Rolnik')
 UserType.create!(user_type: 'Jednostka skupu')
 UserType.create!(user_type: 'Konsument')
 UserType.create!(user_type: 'Admin')
+
+=end
+
+#Task Types
+TaskType.create!(name: 'Sprzedaż pola', div_id: 1, is_for_cultivation: 1, is_for_mob: 0, is_for_machine: 0, is_for_building: 0, is_for_warehouse: 0)
+TaskType.create!(name: 'Zakup pola', div_id: 2, is_for_cultivation: 1, is_for_mob: 0, is_for_machine: 0, is_for_building: 0, is_for_warehouse: 0)
+TaskType.create!(name: 'Wybudowanie', div_id: 3, is_for_cultivation: 0, is_for_mob: 0, is_for_machine: 0, is_for_building: 1, is_for_warehouse: 1)
+TaskType.create!(name: 'Zburzenie', div_id: 4, is_for_cultivation: 0, is_for_mob: 0, is_for_machine: 0, is_for_building: 1, is_for_warehouse: 1)
+TaskType.create!(name: 'Remont', div_id: 5, is_for_cultivation: 0, is_for_mob: 0, is_for_machine: 1, is_for_building: 1, is_for_warehouse: 1)
+TaskType.create!(name: 'Przyjęcie towaru', div_id: 6, is_for_cultivation: 0, is_for_mob: 0, is_for_machine: 0, is_for_building: 0, is_for_warehouse: 1)
+TaskType.create!(name: 'Wykorzystanie towaru', div_id: 7, is_for_cultivation: 0, is_for_mob: 0, is_for_machine: 0, is_for_building: 0, is_for_warehouse: 1)
+TaskType.create!(name: 'Sprzedaż towaru', div_id: 8, is_for_cultivation: 0, is_for_mob: 0, is_for_machine: 0, is_for_building: 0, is_for_warehouse: 1)
+TaskType.create!(name: 'Leczenie', div_id: 9, is_for_cultivation: 0, is_for_mob: 1, is_for_machine: 0, is_for_building: 0, is_for_warehouse: 0)
+TaskType.create!(name: 'Inseminacja', div_id: 10, is_for_cultivation: 0, is_for_mob: 1, is_for_machine: 0, is_for_building: 0, is_for_warehouse: 0)
+TaskType.create!(name: 'Kastracja', div_id: 11, is_for_cultivation: 0, is_for_mob: 1, is_for_machine: 0, is_for_building: 0, is_for_warehouse: 0)
+TaskType.create!(name: 'Podorywka', div_id: 12, is_for_cultivation: 1, is_for_mob: 0, is_for_machine: 0, is_for_building: 0, is_for_warehouse: 0)
+TaskType.create!(name: 'Odwrotka ', div_id: 13, is_for_cultivation: 1, is_for_mob: 0, is_for_machine: 0, is_for_building: 0, is_for_warehouse: 0)
+TaskType.create!(name: 'Orka przedzimowa', div_id: 14, is_for_cultivation: 1, is_for_mob: 0, is_for_machine: 0, is_for_building: 0, is_for_warehouse: 0)
+TaskType.create!(name: 'Orka siewna ', div_id: 15, is_for_cultivation: 1, is_for_mob: 0, is_for_machine: 0, is_for_building: 0, is_for_warehouse: 0)
+TaskType.create!(name: 'Orka wiosenna', div_id: 16, is_for_cultivation: 1, is_for_mob: 0, is_for_machine: 0, is_for_building: 0, is_for_warehouse: 0)
+TaskType.create!(name: 'Bronowanie', div_id: 17, is_for_cultivation: 1, is_for_mob: 0, is_for_machine: 0, is_for_building: 0, is_for_warehouse: 0)
+TaskType.create!(name: 'Kultywatorowanie', div_id: 18, is_for_cultivation: 1, is_for_mob: 0, is_for_machine: 0, is_for_building: 0, is_for_warehouse: 0)
+TaskType.create!(name: 'Siew', div_id: 19, is_for_cultivation: 1, is_for_mob: 0, is_for_machine: 0, is_for_building: 0, is_for_warehouse: 0)
+TaskType.create!(name: 'Uprawianie ', div_id: 20, is_for_cultivation: 1, is_for_mob: 0, is_for_machine: 0, is_for_building: 0, is_for_warehouse: 0)
+TaskType.create!(name: 'Oprysk', div_id: 21, is_for_cultivation: 1, is_for_mob: 0, is_for_machine: 0, is_for_building: 0, is_for_warehouse: 0)
+TaskType.create!(name: 'Nawożenie', div_id: 22, is_for_cultivation: 1, is_for_mob: 0, is_for_machine: 0, is_for_building: 0, is_for_warehouse: 0)
+TaskType.create!(name: 'Orka głęboka', div_id: 23, is_for_cultivation: 1, is_for_mob: 0, is_for_machine: 0, is_for_building: 0, is_for_warehouse: 0)
+TaskType.create!(name: 'Głęboszowanie', div_id: 24, is_for_cultivation: 1, is_for_mob: 0, is_for_machine: 0, is_for_building: 0, is_for_warehouse: 0)
+TaskType.create!(name: 'Deszczowanie', div_id: 25, is_for_cultivation: 1, is_for_mob: 0, is_for_machine: 0, is_for_building: 0, is_for_warehouse: 0)
+TaskType.create!(name: 'Mulczowanie', div_id: 26, is_for_cultivation: 1, is_for_mob: 0, is_for_machine: 0, is_for_building: 0, is_for_warehouse: 0)
+TaskType.create!(name: 'Zbiór plonów', div_id: 27, is_for_cultivation: 1, is_for_mob: 0, is_for_machine: 0, is_for_building: 0, is_for_warehouse: 0)
+TaskType.create!(name: 'Ściółkowanie', div_id: 28, is_for_cultivation: 1, is_for_mob: 0, is_for_machine: 0, is_for_building: 0, is_for_warehouse: 0)
+TaskType.create!(name: 'Talerzowanie', div_id: 29, is_for_cultivation: 1, is_for_mob: 0, is_for_machine: 0, is_for_building: 0, is_for_warehouse: 0)
+TaskType.create!(name: 'Wałowanie', div_id: 30, is_for_cultivation: 1, is_for_mob: 0, is_for_machine: 0, is_for_building: 0, is_for_warehouse: 0)
+TaskType.create!(name: 'Włókowanie', div_id: 31, is_for_cultivation: 1, is_for_mob: 0, is_for_machine: 0, is_for_building: 0, is_for_warehouse: 0)
+TaskType.create!(name: 'Przedplon', div_id: 32, is_for_cultivation: 1, is_for_mob: 0, is_for_machine: 0, is_for_building: 0, is_for_warehouse: 0)
+TaskType.create!(name: 'Zbiór słomy', div_id: 33, is_for_cultivation: 1, is_for_mob: 0, is_for_machine: 0, is_for_building: 0, is_for_warehouse: 0)
+TaskType.create!(name: 'Leasing', div_id: 36, is_for_cultivation: 0, is_for_mob: 0, is_for_machine: 1, is_for_building: 1, is_for_warehouse: 1)
+TaskType.create!(name: 'Sprzedaż plonów', div_id: 37, is_for_cultivation: 1, is_for_mob: 0, is_for_machine: 0, is_for_building: 0, is_for_warehouse: 0)
+TaskType.create!(name: 'Zakup zwierząt', div_id: 38, is_for_cultivation: 0, is_for_mob: 1, is_for_machine: 0, is_for_building: 0, is_for_warehouse: 0)
+TaskType.create!(name: 'Sprzedaż zwierząt', div_id: 39, is_for_cultivation: 0, is_for_mob: 1, is_for_machine: 0, is_for_building: 0, is_for_warehouse: 0)
+TaskType.create!(name: 'Zakup maszyny', div_id: 40, is_for_cultivation: 0, is_for_mob: 0, is_for_machine: 1, is_for_building: 0, is_for_warehouse: 0)
+TaskType.create!(name: 'Sprzedaż maszyny', div_id: 41, is_for_cultivation: 0, is_for_mob: 0, is_for_machine: 1, is_for_building: 0, is_for_warehouse: 0)
+TaskType.create!(name: 'Zakup budynku', div_id: 42, is_for_cultivation: 0, is_for_mob: 0, is_for_machine: 0, is_for_building: 1, is_for_warehouse: 0)
+TaskType.create!(name: 'Sprzedaż budynku', div_id: 43, is_for_cultivation: 0, is_for_mob: 0, is_for_machine: 0, is_for_building: 1, is_for_warehouse: 0)
+TaskType.create!(name: 'Zakup magazynu', div_id: 44, is_for_cultivation: 0, is_for_mob: 0, is_for_machine: 0, is_for_building: 0, is_for_warehouse: 1)
+TaskType.create!(name: 'Sprzedaż magazynu', div_id: 45, is_for_cultivation: 0, is_for_mob: 0, is_for_machine: 0, is_for_building: 0, is_for_warehouse: 1)
+TaskType.create!(name: 'Sprzedaż słomy', div_id: 46, is_for_cultivation: 0, is_for_mob: 0, is_for_machine: 0, is_for_building: 0, is_for_warehouse: 0)
+TaskType.create!(name: 'Sprzedaż młodych', div_id: 47, is_for_cultivation: 0, is_for_mob: 1, is_for_machine: 0, is_for_building: 0, is_for_warehouse: 0)
+TaskType.create!(name: 'Odsadzenie młodych', div_id: 48, is_for_cultivation: 0, is_for_mob: 1, is_for_machine: 0, is_for_building: 0, is_for_warehouse: 0)
+TaskType.create!(name: 'Przyjęcie młodych', div_id: 49, is_for_cultivation: 0, is_for_mob: 1, is_for_machine: 0, is_for_building: 0, is_for_warehouse: 0)
 

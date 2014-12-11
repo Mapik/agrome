@@ -1,0 +1,17 @@
+<div class="questions-select">
+  <% @s = @selected_subobject.class.to_s %>
+  <% case @s %>
+  <% when 'Cultivation' then %>
+    <%= render 'field_questions' %>
+  <% when 'Submob' then %>
+    <%= render 'mob_questions' %>
+  <% when 'Machine' then %>
+    <%= render 'machine_questions' %>
+  <% when 'Building' then %>
+    <%= render 'building_questions' %>
+  <% when 'Warehouse' then %>
+    <%= render 'warehouse_questions' %>
+  <% else %>
+    <p>BŁĄD OBSŁUGI</p>
+  <% end %>
+</div>

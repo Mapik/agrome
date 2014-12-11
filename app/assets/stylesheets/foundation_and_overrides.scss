@@ -2061,6 +2061,47 @@ Formatowanie machine Show
     padding-left: 0px;
   }
 }
+
+/*
+Formatowanie New Task
+========================================================================== */
+.new-task{
+  .select-object-title{
+    margin-bottom: 1rem;
+  }
+  .main-objects{
+    .button{
+      width: 11rem;
+    }
+  }
+  .clearfix{
+    margin-top: 0px;
+  }
+  .additional-object{
+      padding-left: 1rem;
+      padding-top: 0.8rem;  
+  }
+  .selected-object{
+    .button{
+      width: 14.5rem;
+      margin-bottom: 0px;
+    }
+  }
+  .last-level{
+    .button{
+      width: 10rem;
+    }
+  }
+  .new_task{
+    .alert-box{
+      //height: 1rem;
+      padding-top: 0.3rem;
+      padding-bottom: 0.3rem;  
+      margin-bottom: 0rem;
+    }
+  }
+}
+
 /*================================================================
 Ustawienia dla urządzeń mobilnych
 */
@@ -2071,7 +2112,7 @@ Ustawienia dla urządzeń mobilnych
 	/*------------------------
 	//Ustawienia głównego menu - do dopracowania!
 	------------------------*/
-
+  
 	.main-header{
 		.fixed{
 			.header-section{

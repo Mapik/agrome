@@ -1,5 +1,6 @@
 class Submob < ActiveRecord::Base
   belongs_to :mob
+  has_many :tasks
   default_scope -> { order('creation_date DESC') }
 
   validates :mob_id, presence: true

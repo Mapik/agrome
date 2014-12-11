@@ -1,0 +1,28 @@
+<script>
+  $(document).ready(function() {
+    $('#task_task_type_id').change(function() {
+
+      $( ".hide" ).hide();
+      var task_types = new Array();
+      <% @all_task_types.each do |task| %>
+        task_types.push(new Array(<%= task.id %>, "<%= task.name %>", <%= task.div_id %>))
+      <% end %>
+
+      selected_task_id = $( this ).val();
+
+      jQuery.each( task_types, function( i, val ) {
+          if (val[0] == selected_task_id){
+            selected_task_name = val[1];
+            selected_task_div_id = val[2];
+          } ;
+        });
+
+      $( "#selected_task_id" ).text( selected_task_id );
+      $( "#selected_task_name" ).text( selected_task_name );
+      
+      $("#" + selected_task_div_id).show();
+
+
+    });
+  });
+</script>

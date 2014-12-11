@@ -1,0 +1,210 @@
+<div class="row">
+  <h2>
+    <small>
+      <%= Croptype.where(id: @selected_subobject.croptype_id).first.cropname %>
+      <% @in_season = Season.where(id: @selected_subobject.season_id).first %>
+      (<%= Seasonlist.where(id: @in_season.seasonlist_id).first.name %>)
+    </small>  
+  </h2>  
+  <div class="large-12 columns">
+    <%= form_for(@task, :remote => true) do |f| %>
+  
+      <div class="large-6 columns">
+  
+        <%= render 'title_obligatory_fields' %>
+
+        <h4><small>ZADANIE:</small></h4>
+        <%= f.collection_select(:task_type_id, TaskType.where(is_for_cultivation: 1), :id, :name,
+          :prompt => "Wybierz zadanie...") %>
+
+        <h4><small>DATA OPERACJI:</small></h4>
+        <%= f.date_field :operation_date %>
+
+        <h4><small>WARTOŚĆ CAŁKOWITA TRANSAKCJI W ZŁOTÓWKACH:</small></h4>
+        <%= f.text_field :operation_costs, placeholder: 'Podaj liczbę' %>
+        
+        <%= f.submit "ZAREJESTRUJ ZADANIE", class: "button" %>
+
+      </div><!--END OF columns-->
+  
+      <div class="large-6 columns">
+      
+        <%= render 'title_additional_fields' %>
+
+      <!--==================================================================-->
+      
+        <div class="hide 32">
+          <h4><small>ROŚLINA:</small></h4>
+          <%= f.collection_select(:croptype_id, Croptype.all, :id, :cropname,
+           {include_blank: true}) %>
+        </div>
+
+        <div class="hide 21">
+          <h4><small>RODZAJ ŚRODKA CHEMICZNEGO:</small></h4>
+          <%= f.text_field :spraying_type, placeholder: 'Rodzaj środka chemicznego' %>
+        </div>
+
+        <div class="hide 21">
+          <h4><small>NAZWA ŚRODKA CHEMICZNEGO:</small></h4>
+          <%= f.text_field :spraying_name, placeholder: 'Nazwa środka chemicznego' %>
+        </div>
+
+        <div class="hide 21">
+          <h4><small>DAWKA ŚRODKA CHEMICZNEGO:</small></h4>
+          <%= f.text_field :spraying_dose, placeholder: 'Dawka środka chemicznego na hektar' %>
+        </div>
+
+        <div class="hide 22">
+          <h4><small>RODZAJ NAWOZU:</small></h4>
+          <%= f.text_field :fertilizer, placeholder: 'Podaj rodzaj' %>
+        </div>
+
+        <div class="hide 22">
+          <h4><small>NAZWA NAWOZU:</small></h4>
+          <%= f.text_field :fertilizer_name, placeholder: 'Podaj nazwę' %>
+        </div>
+
+        <div class="hide 22">
+          <h4><small>DAWKA NAWOZU NA HEKTAR:</small></h4>
+          <%= f.text_field :fertilizer_dose, placeholder: 'Podaj liczbę' %>
+        </div>
+
+        <div class="hide 17 25 24 18 26 13 23 14 15 16 12 19 29 20 30 31 22 21 32 28">
+          <h4><small>DŁUGOŚĆ ZABIEGU W GODZINACH:</small></h4>
+          <%= f.text_field :activity_duration, placeholder: 'Podaj liczbę' %>
+        </div>
+
+        <div class="hide 17 25 24 18 26 13 23 14 15 16 12 19 29 20 30 31 22 21 32 28">
+          <h4><small>LICZBA ROBOCZOGODZIN:</small></h4>
+          <%= f.text_field :machine_hours, placeholder: 'Podaj liczbę' %>
+        </div>
+
+        <div class="hide 17 25 24 18 26 13 23 14 15 16 12 19 29 20 30 31 22 21 32 28">
+          <h4><small>ZUŻYTE PALIWO W LITRACH:</small></h4>
+          <%= f.text_field :fuel_consumption, placeholder: 'Podaj liczbę' %>
+        </div>
+
+        <div class="hide 17 25 24 18 26 13 23 14 15 16 12 19 29 20 30 31 22 21 32 28">
+          <h4><small>CZY TO BYŁA USŁUGA:</small></h4>
+            <div align = "center">
+              <div class="small-6 large-6 columns">
+              <%= f.label :is_service, "Tak" %>
+              <%= f.radio_button :is_service, 1 %> 
+              </div>
+              
+              <div class="small-6 large-6 columns">
+              <%= f.label :is_service, "Nie" %>
+              <%= f.radio_button :is_service, 2 %> 
+              </div>
+
+            </div>
+        </div>
+
+        <div class="hide 17 25 24 18 26 13 23 14 15 16 12 19 29 20 30 31 22 21 32 28">
+          <h4><small>GODZINOWY KOSZT USŁUGI:</small></h4>
+          <%= f.text_field :service_per_hour_cost, placeholder: 'Podaj liczbę' %>
+        </div>
+
+        <div class="hide 17 25 24 18 26 13 23 14 15 16 12 19 29 20 30 31 22 21 32 28">
+          <h4><small>USŁUGODAWCA:</small></h4>
+          <%= f.text_field :service_provider, placeholder: 'Podaj nazwę' %>
+        </div>
+
+        <div class="hide 17 25 24 18 26 13 23 14 15 16 12 19 29 20 30 31 22 21 32 28">
+          <h4><small>INFORMACJA O POGODZIE:</small></h4>
+          <%= f.text_field :weather_comment, placeholder: 'Dodaj komentarz pogodowy' %>
+        </div>
+
+        <div class="hide 37 46 27 33">
+          <h4 class="hide 37 46"><small>SPRZEDANA ILOŚĆ W TONACH:</small></h4>
+          <h4 class="hide 27 33"><small>ILOŚĆ TON Z HEKTARA:</small></h4>
+          <%= f.text_field :quantity, placeholder: 'Podaj liczbę' %>
+        </div>
+
+        <div class="hide 37 1 46 2">
+          <h4 class="hide 37 46"><small>CENA JEDNOSTKOWA ZA TONĘ:</small></h4>
+          <h4 class="hide 1 2"><small>CENA JEDNOSTKOWA ZA HEKTAR:</small></h4>
+          <%= f.text_field :unit_price, placeholder: 'Podaj liczbę' %>
+        </div>
+
+        <div class="hide 37 1 46">
+          <h4><small>NAZWA KUPUJĄCEGO:</small></h4>
+          <%= f.text_field :buyer_name, placeholder: 'Podaj nazwę' %>
+        </div>
+
+        <div class="hide 2">        
+          <h4><small>NAZWA SPRZEDAJĄCEGO:</small></h4>
+          <%= f.text_field :seller_name, placeholder: 'Podaj nazwę' %>
+        </div>
+
+        <div class="hide 2">
+          <h4><small>DOMINUJĄCA FORMA PŁATNOŚCI:</small></h4>
+            <div align = "center">
+              <div class="small-4 large-4 columns">
+              <%= f.label :payment_form, "Gotówka" %>
+              <%= f.radio_button :payment_form, 1 %> 
+              </div>
+              
+              <div class="small-4 large-4 columns">
+              <%= f.label :payment_form, "Kredyt" %>
+              <%= f.radio_button :payment_form, 2 %> 
+              </div>
+
+              <div class="small-4 large-4 columns">
+              <%= f.label :payment_form, "Środki UE" %>
+              <%= f.radio_button :payment_form, 3 %> 
+              </div>
+
+            </div>
+        </div>
+
+      <!--==================================================================-->
+      
+        <div id="comment" class="hide">
+          <h4><small>DODAJ KOMENTARZ:</small></h4>
+          <%= f.text_field :comment, placeholder: 'Twój własny komentarz' %>
+        </div>
+
+      </div><!--END OF columns-->
+
+      <%= f.hidden_field :cultivation_id, :value => @selected_subobject.id %>
+      <%= f.hidden_field :is_for_cultivation, :value => 1 %>
+      
+    <% end %><!--END OF FORM_FOR-->
+  </div><!--END OF columns-->
+</div><!--END OF row-->
+
+<div>
+  <p>selected_task_div_id:</p>
+</div>
+<div id="selected_task_div_id">
+</div>
+
+<%  @all_task_types = TaskType.all %>
+
+<script>
+  $(document).ready(function() {
+    $('#task_task_type_id').change(function() {
+
+      $( ".hide" ).hide();
+      var task_types = new Array();
+      <% @all_task_types.each do |task| %>
+        task_types.push(new Array(<%= task.id %>, <%= task.div_id %>))
+      <% end %>
+
+      selected_task_id = $( this ).val();
+
+      jQuery.each( task_types, function( i, val ) {
+          if (val[0] == selected_task_id){
+            selected_task_div_id = val[1];
+          } ;
+        });
+
+      $( "#selected_task_div_id" ).text( selected_task_div_id );
+
+      $("." + selected_task_div_id).show();
+      $("#additionalFields").show();
+      $("#comment").show();
+    });
+  });
+</script>

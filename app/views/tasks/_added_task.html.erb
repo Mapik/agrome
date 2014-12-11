@@ -1,0 +1,19 @@
+<% if @task.errors.any? %>
+
+  <div class="sign-up-errors">
+      <div class="row">
+        <%= render 'shared/error_messages', object: @task %>
+      </div>
+  </div><!--END OF sign-up-errors-->
+  <div class="row">
+    <p>DODAJ ZADANIE PONOWNIE</p>
+  </div>  
+
+<% else %>
+
+<div class="row">
+  <p>ZADANIE DODANE</p>
+  <P><%= link_to 'LISTA ZAREJESTROWANYCH ZADAŃ', tasks_path %></P>
+</div>  
+
+<% end %>

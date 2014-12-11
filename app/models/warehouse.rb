@@ -1,6 +1,7 @@
 class Warehouse < ActiveRecord::Base
   belongs_to :user
   has_one :volumeunit
+  has_many :tasks
   default_scope -> { order('name ASC') }
 
   validates :name,  presence: true, 

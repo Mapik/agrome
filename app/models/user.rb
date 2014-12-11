@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
 	has_many :warehouses
   has_many :buildings
   has_many :machines
+  has_many :tasks
   attr_accessor :remember_token, :reset_token
 	before_save :downcase_email
 

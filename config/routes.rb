@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
   
+  get 'tasks/new'
+
+  get 'tasks/index'
+
+  get 'tasks/show'
+
+  get 'tasks/edit'
+
   get 'password_resets/edit'
 
   get 'sessions/new'
@@ -24,6 +32,16 @@ Rails.application.routes.draw do
   resources :warehouses,     only: [:index, :create, :show, :update]
   resources :buildings,     only: [:index, :create, :show, :update]
   resources :machines,     only: [:index, :create, :show, :update]
+  resources :tasks,     only: [:index, :create, :show, :update]
+  post 'tasks/select_object' => 'tasks#select_object'
+  post 'tasks/selected_field' => 'tasks#selected_field'
+  post 'tasks/selected_mob' => 'tasks#selected_mob'
+  post 'tasks/selected_machine' => 'tasks#selected_machine'
+  post 'tasks/selected_building' => 'tasks#selected_building'
+  post 'tasks/selected_warehouse' => 'tasks#selected_warehouse'
+  post 'tasks/selected_cultivation' => 'tasks#selected_cultivation'  
+  post 'tasks/selected_submob' => 'tasks#selected_submob'  
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

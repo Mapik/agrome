@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141113201409) do
+ActiveRecord::Schema.define(version: 20141209195117) do
 
   create_table "area_units", force: true do |t|
     t.string   "unit"
@@ -46,13 +46,44 @@ ActiveRecord::Schema.define(version: 20141113201409) do
     t.datetime "updated_at"
   end
 
-# Could not dump table "cultivations" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "cultivations", force: true do |t|
+    t.integer  "croptype_id"
+    t.string   "name"
+    t.integer  "croparea"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "season_id"
+    t.string   "unitsymbol"
+    t.string   "variety"
+  end
+
+  add_index "cultivations", ["croptype_id"], name: "index_cultivations_on_croptype_id"
+
+  create_table "equipment", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "equipmenttype_id"
+    t.string   "name"
+    t.date     "production_date"
+    t.string   "manufacturer_name"
+    t.string   "model_name"
+    t.date     "buy_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "archive"
+  end
+
+  add_index "equipment", ["user_id"], name: "index_equipment_on_user_id"
+
+  create_table "equipmenttypes", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "fields", force: true do |t|
     t.integer  "user_id"
     t.string   "name"
-    t.decimal  "area",           precision: 16, scale: 4
+    t.float    "area"
     t.integer  "area_unit_id"
     t.string   "location"
     t.datetime "created_at"
@@ -61,6 +92,10 @@ ActiveRecord::Schema.define(version: 20141113201409) do
     t.integer  "archive"
     t.string   "archive_string"
   end
+
+  add_index "fields", ["area_unit_id"], name: "index_fields_on_area_unit_id"
+  add_index "fields", ["user_id", "created_at"], name: "index_fields_on_user_id_and_created_at"
+  add_index "fields", ["user_id"], name: "index_fields_on_user_id"
 
   create_table "machines", force: true do |t|
     t.integer  "user_id"
@@ -104,6 +139,12 @@ ActiveRecord::Schema.define(version: 20141113201409) do
     t.datetime "updated_at"
   end
 
+  create_table "season_lists", force: true do |t|
+    t.string   "season_name_from_list"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "seasonlists", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -133,6 +174,86 @@ ActiveRecord::Schema.define(version: 20141113201409) do
   end
 
   add_index "submobs", ["mob_id"], name: "index_submobs_on_mob_id"
+
+  create_table "task_types", force: true do |t|
+    t.string   "name"
+    t.integer  "is_for_cultivation"
+    t.integer  "is_for_mob"
+    t.integer  "is_for_machine"
+    t.integer  "is_for_building"
+    t.integer  "is_for_warehouse"
+    t.integer  "is_for_offer"
+    t.integer  "is_for_groupdeal"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "div_id"
+    t.date     "operation_date"
+    t.float    "operation_costs"
+  end
+
+  create_table "tasks", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "task_type_id"
+    t.integer  "cultivation_id"
+    t.integer  "submob_id"
+    t.integer  "machine_id"
+    t.integer  "building_id"
+    t.integer  "warehouse_id"
+    t.integer  "is_done"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "is_for_cultivation"
+    t.integer  "is_for_mob"
+    t.integer  "is_for_machine"
+    t.integer  "is_for_building"
+    t.integer  "is_for_warehouse"
+    t.integer  "is_for_offer"
+    t.integer  "is_for_groupdeal"
+    t.date     "operation_date"
+    t.float    "operation_costs"
+    t.string   "comment"
+    t.string   "leasing_time"
+    t.string   "leasing_instalment"
+    t.string   "lessor"
+    t.string   "stock_type"
+    t.string   "quantity"
+    t.string   "unit_price"
+    t.string   "stock_source"
+    t.string   "repaired_element"
+    t.string   "buyer_name"
+    t.string   "meter_price"
+    t.string   "volumeunit_id"
+    t.string   "used_for"
+    t.string   "seller_name"
+    t.string   "payment_form"
+    t.string   "Reason"
+    t.string   "vet_name"
+    t.string   "medicine_cost"
+    t.string   "vet_cost"
+    t.string   "medicine"
+    t.string   "medicine_dose"
+    t.string   "treatment_duration"
+    t.string   "activity_duration"
+    t.string   "fuel_consumption"
+    t.string   "is_service"
+    t.string   "service_per_hour_cost"
+    t.string   "service_provider"
+    t.string   "weather_comment"
+    t.string   "fertilizer"
+    t.string   "fertilizer_name"
+    t.string   "fertilizer_dose"
+    t.string   "machine_hours"
+    t.string   "spraying_type"
+    t.string   "spraying_name"
+    t.string   "spraying_dose"
+    t.string   "croptype_id"
+    t.string   "stock_name"
+    t.integer  "is_for_budget"
+    t.integer  "is_for_calendar"
+  end
+
+  add_index "tasks", ["croptype_id"], name: "index_tasks_on_croptype_id"
+  add_index "tasks", ["volumeunit_id"], name: "index_tasks_on_volumeunit_id"
 
   create_table "user_types", force: true do |t|
     t.string   "user_type"
@@ -169,6 +290,7 @@ ActiveRecord::Schema.define(version: 20141113201409) do
     t.string   "volumesymbol"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "is_for_livestock"
   end
 
   create_table "warehouses", force: true do |t|

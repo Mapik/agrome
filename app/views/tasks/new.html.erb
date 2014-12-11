@@ -1,0 +1,67 @@
+<% provide(:title, "Nowe zadanie") %>
+
+<div class="new-task">
+
+  <nav class="breadcrumbs">
+    <%= link_to "Strona główna", root_path %>
+    <%= link_to "Zadania", tasks_path %>
+    <a class="current" href="#">Nowe zadanie</a>
+  </nav> <!--END OF breadcrumbs -->
+
+  <div class="row">
+    <div class="select-object-title">
+      <h1><small>DODAJ ZADANIE DO:</small></h1>
+    </div> <!--END OF select-object-title-->
+  </div> <!--END OF row-->
+
+  <div id="objects" class="main-objects">
+    <div class="row">
+      <ul class="small-block-grid-5">
+        <li>
+          <%= form_tag('select_object', :remote => true) do %>
+            <%= hidden_field_tag  'ObjectName', '1' %>
+            <%= submit_tag  'POLE', class: "button" %>
+          <% end %></li>
+        <li>
+          <%= form_tag('select_object', :remote => true) do %>
+            <%= hidden_field_tag  'ObjectName', '2' %>
+            <%= submit_tag  'INWENTARZ', class: "button" %>
+          <% end %>
+      </li>
+        <li>
+          <%= form_tag('select_object', :remote => true) do %>
+            <%= hidden_field_tag  'ObjectName', '3' %>
+            <%= submit_tag  'MASZYNA', class: "button" %>
+          <% end %>
+      </li>
+        <li>
+          <%= form_tag('select_object', :remote => true) do %>
+            <%= hidden_field_tag  'ObjectName', '4' %>
+            <%= submit_tag  'BUDYNEK', class: "button" %>
+          <% end %>
+      </li>
+        <li>
+          <%= form_tag('select_object', :remote => true) do %>
+            <%= hidden_field_tag  'ObjectName', '5' %>
+            <%= submit_tag  'MAGAZYN', class: "button" %>
+          <% end %>
+      </li>
+
+      </ul> <!--END OF small-block-grid-5-->
+    </div> <!--END OF row-->
+  </div> <!--END OF main-objects-->
+
+<div id="selectedObject">
+</div>
+
+<div id="sublist">
+</div>  
+
+<div id="questions">
+</div>  
+
+
+</div> <!--END OF new-task-->
+
+
+

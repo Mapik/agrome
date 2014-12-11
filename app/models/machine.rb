@@ -2,6 +2,7 @@ class Machine < ActiveRecord::Base
 
   belongs_to :user
   has_one :machintype
+  has_many :tasks
   default_scope -> { order('buy_date DESC') }
 
   validates :name,  presence: true, 
