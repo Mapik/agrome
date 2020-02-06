@@ -1,10 +1,8 @@
-[https://github.com/Mapik/agrome/blob/master/public/images/Logo/logo.png](https://agrome.herokuapp.com)
-
-<img src="https://github.com/Mapik/agrome/blob/master/public/images/Logo/logo.png" title="Agrome" alt="Agrome">
-
-
 <a href="https://agrome.herokuapp.com/"><img src="https://github.com/Mapik/agrome/blob/master/public/images/Logo/logo.png" title="Agrome" alt="Agrome"></a>
 
+# Agrome 
+
+> Farm Activity Tracker
 
  Private & hobby project aiming to help manage farms;
 
