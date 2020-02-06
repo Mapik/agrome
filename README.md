@@ -4,6 +4,8 @@
 
 > Farm Activity Tracker
 
+<img src="https://github.com/Mapik/agrome/blob/master/vendor/assets/Screenshot%20from%202020-02-06%2007-01-45.png">
+
  Private & hobby project aiming to help manage farms;
 
  https://agrome.herokuapp.com/ is mobile friendly web application build on Ruby on Rails framework;
