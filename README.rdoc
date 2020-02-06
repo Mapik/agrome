@@ -1,3 +1,8 @@
+https://github.com/Mapik/agrome/blob/master/public/images/Logo/logo.png
+
+<img src="https://github.com/Mapik/agrome/blob/master/public/images/Logo/logo.png" title="Agrome" alt="Agrome">
+
+
 <a href="https://agrome.herokuapp.com/"><img src="https://github.com/Mapik/agrome/blob/master/public/images/Logo/logo.png" title="Agrome" alt="Agrome"></a>
 
 
