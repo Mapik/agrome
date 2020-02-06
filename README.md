@@ -2,16 +2,10 @@
 
 
 # Agrome 
-
-
+<br/>
 > Farm Activity Tracker
-
-
+<br/>
 <img src="https://github.com/Mapik/agrome/blob/master/vendor/assets/Screenshot%20from%202020-02-06%2007-01-45.png">
-<br/>
-<br/>
-<br/>
-<br/>
 <br/>
 
 # Table of content
