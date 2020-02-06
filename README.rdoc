@@ -1,12 +1,13 @@
+
  Private & hobby project aiming to help manage farms;
 
- www.agrome.pl is mobile friendly web application build on Ruby on Rails framework;
+ https://agrome.herokuapp.com/ is mobile friendly web application build on Ruby on Rails framework;
 
  object-relational database system based on Postgresql;
 
  front end build with Zurb Foundation as well as with SCSS and jQuery;
 
- version control with git and Bitbucket;
+ version control with git and Bitbucket/Github;
 
  Linux based development environment with Sublime as main text editor;
 
