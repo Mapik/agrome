@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 gem 'autoprefixer-rails'
-gem 'sprockets', '2.11.0'
+gem 'sprockets', '2.12.5'
 gem 'bcrypt-ruby', '3.1.2'
 gem 'faker', '1.1.2'
 # Use sqlite3 as the database for Active Record
