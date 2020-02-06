@@ -10,9 +10,6 @@
 
 <br/>
 
-# Tags
-Table goes here...
-
 # Description
 
 - Private & hobby project aiming to help manage farms;
