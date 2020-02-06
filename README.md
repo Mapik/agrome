@@ -16,22 +16,24 @@ Table goes here...
 # Description
 
 - Private & hobby project aiming to help manage farms;
-
 - https://agrome.herokuapp.com/ is mobile friendly web application build on Ruby on Rails framework;
-
 - object-relational database system based on Postgresql;
-
 - front end build with Zurb Foundation as well as with SCSS and jQuery;
-
 - version control with git and Bitbucket/Github;
-
 - Linux based development environment with Sublime as main text editor;
-
 - self-development in programming, managing projects and meeting end user expectations;
-
 - Marketing automation with Mailchimp;
 
 # Features
+
+- registering new user
+- logging in 
+- reseting password 
+- adding fields, herds, machinery, buildings
+- recording activities for all above entities 
+- viewing recorded activities
+- following other users activities 
+
 
 # Technology stack
 
