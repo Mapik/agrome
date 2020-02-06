@@ -2,9 +2,6 @@
 
 
 # Agrome 
-
-<br/>
-
 > Farm Activity Tracker
 
 <br/>
