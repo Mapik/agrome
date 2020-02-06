@@ -1,10 +1,19 @@
 <a href="https://agrome.herokuapp.com/"><img src="https://github.com/Mapik/agrome/blob/master/public/images/Logo/logo.png" title="Agrome" alt="Agrome"></a>
 
+
 # Agrome 
+
 
 > Farm Activity Tracker
 
+
 <img src="https://github.com/Mapik/agrome/blob/master/vendor/assets/Screenshot%20from%202020-02-06%2007-01-45.png">
+
+# Table of content
+Table goes here...
+
+# Description
+
 
  Private & hobby project aiming to help manage farms;
 
@@ -21,3 +30,7 @@
  self-development in programming, managing projects and meeting end user expectations;
 
  Marketing automation with Mailchimp;
+
+# Features
+
+# Technology stack
