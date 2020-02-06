@@ -1,28 +1,15 @@
-== README
+ Private & hobby project aiming to help manage farms;
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ www.agrome.pl is mobile friendly web application build on Ruby on Rails framework;
 
-Things you may want to cover:
+ object-relational database system based on Postgresql;
 
-* Ruby version
+ front end build with Zurb Foundation as well as with SCSS and jQuery;
 
-* System dependencies
+ version control with git and Bitbucket;
 
-* Configuration
+ Linux based development environment with Sublime as main text editor;
 
-* Database creation
+ self-development in programming, managing projects and meeting end user expectations;
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+ Marketing automation with Mailchimp;
