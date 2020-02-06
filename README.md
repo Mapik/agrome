@@ -2,7 +2,7 @@
 
 
 # Agrome 
-> Farm Activity Tracker
+#### Farm Activity Tracker
 
 <br/>
 
@@ -40,29 +40,29 @@ Table goes here...
 # Screenshots
 <br/>
 
-> Log in page
+#### Log in page
 <img src="https://github.com/Mapik/agrome/blob/master/vendor/assets/Screenshot%20from%202020-02-06%2007-02-36.png">
 
-> Register page
+#### Register page
 <img src="https://github.com/Mapik/agrome/blob/master/vendor/assets/Screenshot%20from%202020-02-06%2007-02-58.png">
 
-> Dashboard
+#### Dashboard
 <img src="https://github.com/Mapik/agrome/blob/master/vendor/assets/Screenshot%20from%202020-02-06%2007-03-14.png">
 
-> Users
+#### Users
 <img src="https://github.com/Mapik/agrome/blob/master/vendor/assets/Screenshot%20from%202020-02-06%2007-03-22.png">
 
-> Field view (no fields)
+#### Field view (no fields)
 <img src="https://github.com/Mapik/agrome/blob/master/vendor/assets/Screenshot%20from%202020-02-06%2007-03-34.png">
 
-> Add field form
+#### Add field form
 <img src="https://github.com/Mapik/agrome/blob/master/vendor/assets/Screenshot%20from%202020-02-06%2007-04-00.png">
 
-> Record activity form
+#### Record activity form
 <img src="https://github.com/Mapik/agrome/blob/master/vendor/assets/Screenshot%20from%202020-02-06%2007-04-59.png">
 
-> Activity view
+#### Activity view
 <img src="https://github.com/Mapik/agrome/blob/master/vendor/assets/Screenshot%20from%202020-02-06%2007-05-22.png">
 
-> Recorded activities
+#### Recorded activities
 <img src="https://github.com/Mapik/agrome/blob/master/vendor/assets/Screenshot%20from%202020-02-06%2007-05-34.png">
