@@ -43,7 +43,6 @@ Table goes here...
 * Zurb Foundation
 
 # Screenshots
-<br/>
 
 #### Log in page
 <img src="https://github.com/Mapik/agrome/blob/master/vendor/assets/Screenshot%20from%202020-02-06%2007-02-36.png">
