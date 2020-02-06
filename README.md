@@ -2,7 +2,7 @@
 
 
 # Agrome 
-#### Farm Activity Tracker
+> Farm Activity Tracker
 
 <br/>
 
@@ -37,32 +37,46 @@ Table goes here...
 
 # Technology stack
 
+* Ruby on Rails
+* Postgresql
+* JavaScript
+* Zurb Foundation
+
 # Screenshots
 <br/>
 
 #### Log in page
 <img src="https://github.com/Mapik/agrome/blob/master/vendor/assets/Screenshot%20from%202020-02-06%2007-02-36.png">
+<br/>
 
 #### Register page
 <img src="https://github.com/Mapik/agrome/blob/master/vendor/assets/Screenshot%20from%202020-02-06%2007-02-58.png">
+<br/>
 
 #### Dashboard
 <img src="https://github.com/Mapik/agrome/blob/master/vendor/assets/Screenshot%20from%202020-02-06%2007-03-14.png">
+<br/>
 
 #### Users
 <img src="https://github.com/Mapik/agrome/blob/master/vendor/assets/Screenshot%20from%202020-02-06%2007-03-22.png">
+<br/>
 
 #### Field view (no fields)
 <img src="https://github.com/Mapik/agrome/blob/master/vendor/assets/Screenshot%20from%202020-02-06%2007-03-34.png">
+<br/>
 
 #### Add field form
 <img src="https://github.com/Mapik/agrome/blob/master/vendor/assets/Screenshot%20from%202020-02-06%2007-04-00.png">
+<br/>
 
 #### Record activity form
 <img src="https://github.com/Mapik/agrome/blob/master/vendor/assets/Screenshot%20from%202020-02-06%2007-04-59.png">
+<br/>
 
 #### Activity view
 <img src="https://github.com/Mapik/agrome/blob/master/vendor/assets/Screenshot%20from%202020-02-06%2007-05-22.png">
+<br/>
 
 #### Recorded activities
 <img src="https://github.com/Mapik/agrome/blob/master/vendor/assets/Screenshot%20from%202020-02-06%2007-05-34.png">
+<br/>
