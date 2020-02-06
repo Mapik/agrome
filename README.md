@@ -39,12 +39,9 @@ Table goes here...
 <br/>
 
 > Log in page
-<img src="https://github.com/Mapik/agrome/blob/master/vendor/assets/Screenshot%20from%202020-02-06%2007-01-45.png">
-
-> Register page
 <img src="https://github.com/Mapik/agrome/blob/master/vendor/assets/Screenshot%20from%202020-02-06%2007-02-36.png">
 
-> Dashboard
+> Register page
 <img src="https://github.com/Mapik/agrome/blob/master/vendor/assets/Screenshot%20from%202020-02-06%2007-02-58.png">
 
 > Dashboard
